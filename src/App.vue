@@ -10,7 +10,7 @@
 
   export default {
     components: {
-      TopHeader 
+      TopHeader
     }
   }
 </script>

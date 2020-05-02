@@ -51,14 +51,14 @@
 
     <transition name="fade-adaptivity-menu">
       <div class="interactive-menu" v-show="isMenuShow">
+        <div class="interactive-menu__button" @click="closeMenu">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M28.9914 1.4142C29.3819 1.80472 29.3819 2.43789 28.9914 2.82841L2.82843 28.9914C2.4379 29.3819 1.80474 29.3819 1.41421 28.9914L0.707107 28.2843C0.316583 27.8937 0.316582 27.2606 0.707107 26.87L26.8701 0.707091C27.2606 0.316567 27.8937 0.316567 28.2843 0.707091L28.9914 1.4142Z" fill="#202020"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.707109 1.4142C0.316585 1.80472 0.316585 2.43789 0.707109 2.82841L26.8701 28.9914C27.2606 29.3819 27.8937 29.3819 28.2843 28.9914L28.9914 28.2843C29.3819 27.8937 29.3819 27.2606 28.9914 26.87L2.82843 0.707091C2.43791 0.316567 1.80474 0.316567 1.41422 0.707091L0.707109 1.4142Z" fill="#202020"/>
+          </svg>
+          <span>Закрыть меню</span>
+        </div>
         <div class="interactive-menu__container">
-          <div class="interactive-menu__button" @click="closeMenu">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M28.9914 1.4142C29.3819 1.80472 29.3819 2.43789 28.9914 2.82841L2.82843 28.9914C2.4379 29.3819 1.80474 29.3819 1.41421 28.9914L0.707107 28.2843C0.316583 27.8937 0.316582 27.2606 0.707107 26.87L26.8701 0.707091C27.2606 0.316567 27.8937 0.316567 28.2843 0.707091L28.9914 1.4142Z" fill="#202020"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.707109 1.4142C0.316585 1.80472 0.316585 2.43789 0.707109 2.82841L26.8701 28.9914C27.2606 29.3819 27.8937 29.3819 28.2843 28.9914L28.9914 28.2843C29.3819 27.8937 29.3819 27.2606 28.9914 26.87L2.82843 0.707091C2.43791 0.316567 1.80474 0.316567 1.41422 0.707091L0.707109 1.4142Z" fill="#202020"/>
-            </svg>
-            <span>Закрыть меню</span>
-          </div>
           <nav class="menu-nav">
             <h1>Куда печатаем?</h1>
             <ul class="menu-nav__list-type">
@@ -154,7 +154,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 35px 20px 0 20px;
-    max-width: 1402px;
+    max-width: 1720px;
     width: 100%;
   }
 
@@ -241,16 +241,30 @@ export default {
     }
   }
 
+  // Interactive menu
+
   .interactive-menu {
     position: absolute;
     top: 0;
 
     display: flex;
     justify-content: center;
-    padding: 50px 0 120px 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 120px 0;
     width: 100%;
 
     background-color: #FFFFFF;
+  }
+  
+  .interactive-menu__button {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 100px;
+    max-width: 1720px;
+    width: 100%;
+    cursor: pointer;
   }
 
   .interactive-menu__container {
@@ -263,15 +277,7 @@ export default {
     background: url('~@/assets/img/index-intro-triangle.svg') center / contain no-repeat;
   }
 
-  .interactive-menu__button {
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 100px;
-    max-width: 1402px;
-    width: 100%;
-    cursor: pointer;
-  }
+  
 
   .interactive-menu__button svg {
     margin-right: 10px;
@@ -371,5 +377,54 @@ export default {
   .fade-adaptivity-menu-enter,
   .fade-adaptivity-menu-leave-to {
     opacity: 0;
+  }
+
+  // 1600
+
+  @media (max-width: 1919px) {
+    .menu {
+      max-width: 1400px;
+    }
+
+    .interactive-menu__button {
+      max-width: 1400px;
+    }
+  }
+
+  @media (max-width: 1599px) {
+    .menu {
+      max-width: 1168px;
+    }
+
+    .interactive-menu__button {
+      margin-bottom: 40px;
+      max-width: 1168px;
+    }
+
+    .menu-nav__list-type a {
+      font-size: 48px;
+    }
+  }
+
+  @media (max-width: 1365px) {
+    .menu {
+      max-width: 1000px;
+    }
+
+    .interactive-menu__button {
+      max-width: 1000px;
+    }
+
+    .menu-nav h1 {
+      font-size: 22px;
+    }
+
+    .menu-nav__list a {
+      font-size: 18px;
+    }
+    
+    .interactive-menu__contacts-tel {
+      font-size: 22px;
+    }
   }
 </style>

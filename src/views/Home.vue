@@ -1,12 +1,19 @@
 <template>
   <div class="home">
+    <Intro />
+    <NewWord />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import Intro from '../components/intro'
+import NewWord from '../components/new-word'
 
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Intro,
+    NewWord 
+  }
 }
 </script>
