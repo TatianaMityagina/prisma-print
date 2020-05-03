@@ -1,0 +1,206 @@
+<template>
+  <div class="advantages">
+		<div class="advantages__container">
+			<h2>Преимущества вертикальной печати</h2>
+			<div class="advantages__list">
+				<div class="advantages__item">
+					<span>01</span>
+					<h3>Печать на любой поверхности</h3>
+					<p>
+						Стекло, шткукатурка, металл, обои, керамическая плитка, 
+						дерево и многое другое - принтер печатает на любой 
+						вертикальной поверхности
+					</p>
+				</div>
+
+				<div class="advantages__item">
+					<span>02</span>
+					<h3>Без использования токсичных красок</h3>
+					<p>
+						Специально разработанные краски держатся до 10 лет, 
+						но и совершенно не имеют запаха, не токсичны. За фреской 
+						легко ухаживать - просто смахните пыль влажной микрофиброй
+					</p>
+				</div>
+
+				<div class="advantages__item">
+					<span>03</span>
+					<h3>Устойчивость и долговечность</h3>
+					<p>
+						Изображение нанесенное с помощью технологии 
+						ультрафиолета долго сохраняет сочность и яркость красок
+					</p>
+				</div>
+
+				<div class="advantages__item">
+					<span>04</span>
+					<h3>Высокая степень детализации</h3>
+					<p>
+						Мы не полагаемся на глазомер художника и легкую руку - 
+						принтер печатает рисунок любой сложности с безупречной точностью
+					</p>
+				</div>
+
+				<div class="advantages__item">
+					<span>05</span>
+					<h3>Чистота во время печати</h3>
+					<p>
+						После себя мы не оставляем только один след - роскошную 
+						иллюстрацию. Следы краски на полу и мусор - это не про нас.
+						Время сборки перед печатью - до 20 минут
+					</p>
+				</div>
+
+				<div class="advantages__item">
+					<span>06</span>
+					<h3>Высокая скорость печати</h3>
+					<p>
+						Наша прерогатива - скорость. 4 режима печати. Это позволяет
+						наносить рисунок на поверхность со скоростью 5м<sup>2</sup> в час
+					</p>
+				</div>
+			</div>
+		</div>
+		
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Advantages'
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+	.advantages {
+		display: flex;
+		justify-content: center;
+		padding-top: 305px;
+		max-width: 1400px;
+		width: 100%;
+	}
+
+	.advantages__container {
+		width: 100%;
+	}
+
+	.advantages__container h2 {
+		margin: 0 0 70px 0;
+		width: 940px;
+
+		font-weight: 600;
+		font-size: 68px;
+		line-height: 100%;
+		text-transform: uppercase;
+		color: #961E50;
+	}
+
+	.advantages__list {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	.advantages__item {
+		max-width: 410px;
+		margin-right: auto;
+		margin-bottom: 65px;
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+
+	.advantages__item span {
+		display: flex;
+		align-items: center;
+		justify-content: center;	
+		margin: 0 0 25px 0;
+		width: 91px;
+		height: 91px;
+
+		font-family: GothamPro;
+		font-weight: 300;
+		font-size: 38px;
+		line-height: 80%;
+		text-align: center;
+		color: #961E50;
+
+		background: #FFFFFF;
+		box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+
+		&:hover {
+			color: #FFFFFF;
+			background: #961E50;
+			box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+			transition: 0.4s;
+		}
+	}
+
+	.advantages__item h3 {
+		margin: 0 0 10px 0;
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 100%;
+		color: #961E50;
+	}
+
+	.advantages__item p {
+		font-size: 18px;
+		line-height: 150%;
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+  @media (max-width: 1919px) {
+		.advantage {
+			padding: 280px 20px 0 20px;
+		}
+  }
+
+  @media (max-width: 1599px) {
+		.advantages {
+			padding-top: 170px;
+			max-width: 1166px;
+		}
+
+		.advantages__container h2 {
+			margin-bottom: 40px;
+			width: 651px;
+
+			font-size: 48px;
+		}
+
+		.advantages__item {
+			margin-bottom: 30px;
+			max-width: 365px;
+		}
+
+		.advantages__item span {
+			margin-bottom: 15px;
+			width: 70px;
+			height: 70px;
+
+			font-size: 26px;
+		}
+
+		.advantages__item h3 {
+			font-size: 33px;
+		}
+
+		.advantages__item p {
+			font-size: 14px;
+		}
+  }
+
+  @media (max-width: 1365px) {
+		.advantages {
+			padding-top: 150px;
+			max-width: 1000px;
+		}
+
+		.advantages__item {
+			max-width: 310px;
+		}
+  }
+</style>
