@@ -111,7 +111,7 @@ export default {
 
   @media (max-width: 1365px) {
 		.new-word__container {
-			max-width: 1000px;
+			max-width: 1120px;
 		}
 
 		.new-word__description p {

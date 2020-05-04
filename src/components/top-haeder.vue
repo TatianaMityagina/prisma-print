@@ -408,11 +408,11 @@ export default {
 
   @media (max-width: 1365px) {
     .menu {
-      max-width: 1000px;
+      max-width: 1120px;
     }
 
     .interactive-menu__button {
-      max-width: 1000px;
+      max-width: 1120px;
     }
 
     .menu-nav h1 {

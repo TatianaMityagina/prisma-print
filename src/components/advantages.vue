@@ -153,7 +153,7 @@ export default {
 	}
 
   @media (max-width: 1919px) {
-		.advantage {
+		.advantages {
 			padding: 280px 20px 0 20px;
 		}
   }
@@ -196,7 +196,7 @@ export default {
   @media (max-width: 1365px) {
 		.advantages {
 			padding-top: 150px;
-			max-width: 1000px;
+			max-width: 1120px;
 		}
 
 		.advantages__item {

@@ -4,6 +4,7 @@
     <NewWord />
     <PrintGallery />
     <Advantages />
+    <IndexAbout />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Intro from '../components/intro'
 import NewWord from '../components/new-word'
 import PrintGallery from '../components/print-gallery'
 import Advantages from '../components/advantages'
+import IndexAbout from '../components/index-about'
 
 export default {
   name: 'Home',
@@ -19,7 +21,8 @@ export default {
     Intro,
     NewWord,
     PrintGallery,
-    Advantages 
+    Advantages,
+    IndexAbout 
   }
 }
 </script>
