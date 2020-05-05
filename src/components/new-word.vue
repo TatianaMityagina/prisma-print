@@ -91,7 +91,6 @@ export default {
 		}
 
 		.new-word__container {
-			align-items: flex-start;
 			max-width: 1166px;
 		}
 
@@ -121,6 +120,34 @@ export default {
 		.new-word__image {
 			width: 488px;
 			height: 453px;
+		}
+  }
+
+  @media (max-width: 1199px) {
+    .new-word {
+			padding-top: 0;
+		}
+
+		.new-word__container {
+			max-width: 688px;
+		}
+
+    .new-word__description {
+      max-width: 235px;
+    }
+
+    .new-word__description h2 {
+			width: 99%;
+      font-size: 36px;
+		}
+
+		.new-word__description p {
+			width: 100%;
+		}
+
+		.new-word__image {
+			width: 376px;
+			height: 400px;
 		}
   }
 </style>

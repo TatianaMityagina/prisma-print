@@ -51,8 +51,8 @@
 
     <transition name="fade-adaptivity-menu">
       <div class="interactive-menu" v-show="isMenuShow">
-        <div class="interactive-menu__button" @click="closeMenu">
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="interactive-menu__button">
+          <svg @click="closeMenu" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M28.9914 1.4142C29.3819 1.80472 29.3819 2.43789 28.9914 2.82841L2.82843 28.9914C2.4379 29.3819 1.80474 29.3819 1.41421 28.9914L0.707107 28.2843C0.316583 27.8937 0.316582 27.2606 0.707107 26.87L26.8701 0.707091C27.2606 0.316567 27.8937 0.316567 28.2843 0.707091L28.9914 1.4142Z" fill="#202020"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.707109 1.4142C0.316585 1.80472 0.316585 2.43789 0.707109 2.82841L26.8701 28.9914C27.2606 29.3819 27.8937 29.3819 28.2843 28.9914L28.9914 28.2843C29.3819 27.8937 29.3819 27.2606 28.9914 26.87L2.82843 0.707091C2.43791 0.316567 1.80474 0.316567 1.41422 0.707091L0.707109 1.4142Z" fill="#202020"/>
           </svg>
@@ -142,18 +142,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .top-header {
-    position: relative;
+    position: fixed;
+    z-index: 50;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    background-color: #FFFFFF;
   }
 
   .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 20px 0 20px;
+    padding: 35px 20px 20px 20px;
     max-width: 1720px;
     width: 100%;
   }
@@ -427,4 +430,34 @@ export default {
       font-size: 22px;
     }
   }
+
+   @media (max-width: 1199px) {
+     .menu {
+      max-width: 688px;
+    }
+
+    .interactive-menu {
+      padding-bottom: 0;
+    }
+
+    .interactive-menu__container {
+      padding: 150px 0 220px 0;
+      max-width: 100%;
+
+      background: url('~@/assets/img/index-intro-triangle-tablet.svg') top / contain no-repeat;
+    }
+
+    .interactive-menu__button {
+      max-width: 688px;
+    }
+
+    .menu__logo img {
+      width: 169px;
+      height: 18px;
+    }
+
+    .menu__burger {
+      margin-right: 25px;
+    }
+   }
 </style>

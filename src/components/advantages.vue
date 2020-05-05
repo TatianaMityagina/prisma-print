@@ -77,11 +77,15 @@ export default {
 		display: flex;
 		justify-content: center;
 		padding-top: 305px;
-		max-width: 1400px;
 		width: 100%;
+
+		background-image: url('~@/assets/img/index/bg-triangle-advantages.svg');
+		background-repeat: no-repeat;
+		background-size: 100%;
 	}
 
 	.advantages__container {
+		max-width: 1400px;
 		width: 100%;
 	}
 
@@ -202,5 +206,32 @@ export default {
 		.advantages__item {
 			max-width: 310px;
 		}
+  }
+
+  @media (max-width: 1199px) {
+		.advantages {
+			padding-top: 234px;
+			max-width: 688px;
+		}
+
+    .advantages__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .advantages__container h2 {
+      text-align: center;
+    }
+
+		.advantages__item {
+      &:nth-child(3n) {
+        margin-right: auto;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
   }
 </style>

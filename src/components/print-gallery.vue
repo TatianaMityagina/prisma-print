@@ -50,7 +50,7 @@
         </div>
         <div class="print-gallery__left-bottom">
           <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-3">
-            <img class="print-gallery__photo-3" src="~@/assets/img/index/index-sunset@1x.jpg" srcset="~@/assets/img/index/index-sunset@2x.jpg 2x" alt="Sunset" width="828" height="348">
+            <img class="print-gallery__photo-3" src="~@/assets/img/index/index-sunset@1x.jpg" srcset="~@/assets/img/index/index-sunset@2x.jpg 2x" alt="Sunset" width="828" height="348">           
             <div class="print-gallery__photo-description">
               <table class="print-gallery__table">
                 <tbody>
@@ -160,26 +160,15 @@ export default {
     opacity: 0;
   }
 
+  .image-bg {
+    background-color: transparent;
+    height: 99%;
+  }
+
   .print-gallery__photo-wrapper {
     position: relative;
-
     display: flex;
     justify-content: center;
-
-    &::after {
-      position: absolute;
-      z-index: 1;
-      content: "";
-      top: 0;
-      left: 2px;
-      right: 2px;
-
-      display: none;
-      width: calc(100% -2.2px);
-      height: 99.4%;
-
-      background-color: rgba($color: #ffffff, $alpha: 0.5);
-    }
 
     &:hover {
       background: linear-gradient(0deg, rgba(212, 40, 136, 1) 39.96%, #FFFFFF 100%);
@@ -187,10 +176,6 @@ export default {
       .print-gallery__photo-description {
         opacity: 1;
         transition: 0.5s;
-      }
-
-      &::after {
-        display: block;
       }
     }
 
@@ -461,6 +446,75 @@ export default {
         width: 281px;
         height: 469px;
       }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .print-gallery {
+      padding-top: 50px;
+      max-width: 688px;
+    }
+
+    .print-gallery__left-top {
+      margin-bottom: 30px;
+    }
+
+    .print-gallery__left {
+      margin-right: 30px;
+    }
+
+    .print-gallery__photo-1 {
+      width: 257px;
+      height: 185px;
+    }
+
+    .print-gallery__photo-2 {
+      width: 139px;
+      height: 275px;
+    }
+
+    .print-gallery__photo-3 {
+      width: 337px;
+      height: 141px;
+    }
+
+    .print-gallery__photo-4 {
+      width: 164px;
+      height: 275px;
+    }
+
+    .print-gallery__photo-wrapper {
+      &--photo-1 {
+        margin-right: 43px;
+        width: 261px;
+        height: 188px;
+      }
+
+      &--photo-2 {
+        width: 143px;
+        height: 278px;
+      }
+
+      &--photo-3 {
+        width: 341px;
+        height: 144px;
+      }
+
+      &--photo-4 {
+        width: 168px;
+        height: 278px;
+      }
+    }
+
+    .print-gallery__table-row {
+      margin-bottom: -12px;
+    }
+
+    .print-gallery__photo-description button {
+      width: 100;
+      height: 24px;
+
+      font-size: 11px;
     }
   }
 </style>

@@ -18,6 +18,7 @@ export default {
   .intro {
     display: flex;
     justify-content: center;
+    padding-top: 100px;
     width: 100%;
   }
 
