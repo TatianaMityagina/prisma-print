@@ -10,7 +10,9 @@
           </svg>
           <span>МЕНЮ</span>
         </div>
-        <img src="~@/assets/img/index-menu-logo.svg" alt="Логотип Risma Print" width="249" height="27">      
+        <router-link to="/" name="Index">
+          <img src="~@/assets/img/index-menu-logo.svg" alt="Логотип Risma Print" width="249" height="27">      
+        </router-link>
       </div>
 
       <div class="menu__contacts">
@@ -63,7 +65,9 @@
             <h1>Куда печатаем?</h1>
             <ul class="menu-nav__list-type">
               <li>
-                <a href="#">Домой</a>
+                <router-link to="/home" name="Home" @click.native="anchor">
+                  Домой
+                </router-link>
               </li>
               <li>
                 <a href="#">Коммерция</a>
@@ -134,6 +138,12 @@ export default {
   methods: {
     closeMenu() {
       this.isMenuShow = false
+    },
+    anchor() {
+      this.$emit('closeMenu')
+      this.$nextTick(() => {
+        location.href = this.$router.currentRoute.hash
+      })
     }
   }
 }
