@@ -78,7 +78,9 @@
 
             <ul class="menu-nav__list">
               <li class="menu-nav__list-item">
-                <a href="#">О нас</a>
+                <router-link to="/about" name="About" @click.native="anchor">
+                  О нас
+                </router-link>
               </li>
               <li class="menu-nav__list-item">
                 <a href="#">Галерея работ</a>

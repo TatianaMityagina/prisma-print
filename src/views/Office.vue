@@ -5,6 +5,7 @@
     <PhotosHotel />
     <PhotosMunicipal />
     <PhotosFitness />
+    <PhotosSpa />
     <Advantages />
   </div>
 </template>
@@ -15,6 +16,7 @@ import PhotosOffice from '../components/photos-office'
 import PhotosHotel from '../components/photos-hotel'
 import PhotosMunicipal from '../components/photos-municipal'
 import PhotosFitness from '../components/photos-fitness'
+import PhotosSpa from '../components/photos-spa'
 import Advantages from '../components/advantages'
 
 export default {
@@ -25,6 +27,7 @@ export default {
     PhotosHotel,
     PhotosMunicipal,
     PhotosFitness,
+    PhotosSpa,
     Advantages
   }
 }

@@ -61,7 +61,6 @@ export default {
   .photos-bedroom {
     display: flex;
     justify-content: center;
-    margin-bottom: 250px;
     width: 100%;
     max-width: 1920px;
 
@@ -180,7 +179,6 @@ export default {
 
   @media (max-width: 1919px) {
     .photos-bedroom {
-      margin-bottom: 220px;
       background-size: 449px 530px;
     }
 
@@ -217,7 +215,6 @@ export default {
 
   @media (max-width: 1599px) {
     .photos-bedroom {
-      margin-bottom: 180px;
       background-size: 390px 526px;
     }
 
