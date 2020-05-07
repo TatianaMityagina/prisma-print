@@ -61,6 +61,7 @@ export default {
   .photos-bathroom {
     display: flex;
     justify-content: center;
+    margin-bottom: 250px;
     width: 100%;
     max-width: 1920px;
 
@@ -180,6 +181,7 @@ export default {
 
   @media (max-width: 1919px) {
     .photos-bathroom {
+      margin-bottom: 220px;
       background-size: 447px 537px;
     }
 
@@ -212,6 +214,7 @@ export default {
 
   @media (max-width: 1599px) {
     .photos-bathroom {
+      margin-bottom: 180px;
       background-size: 393px 539px;
     }
 

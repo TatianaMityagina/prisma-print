@@ -179,7 +179,7 @@ export default {
 
   @media (max-width: 1919px) {
     .photos-kitchen {
-      margin-bottom: 180px;
+      margin-bottom: 220px;
       background-size: 334px 511px;
     }
 
@@ -216,7 +216,7 @@ export default {
 
   @media (max-width: 1599px) {
     .photos-kitchen {
-      margin-bottom: 205px;
+      margin-bottom: 180px;
       background-size: 334px 532px;
     }
 
@@ -280,7 +280,6 @@ export default {
 
   @media (max-width: 1365px) {
     .photos-kitchen {
-      margin-bottom: 180px;
       background-size: 319px 509px;
     }
 

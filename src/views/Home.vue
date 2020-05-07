@@ -3,6 +3,10 @@
     <HomePrint />
     <PhotosKitchen />
     <PhotosBathroom />
+    <PhotosChildrenroom />
+    <PhotosLounge />
+    <PhotosBedroom />
+    <Advantages />
   </div>
 </template>
 
@@ -10,13 +14,21 @@
 import HomePrint from '../components/home-print'
 import PhotosKitchen from '../components/photos-kitchen'
 import PhotosBathroom from '../components/photos-bathroom'
+import PhotosChildrenroom from '../components/photos-childrenroom'
+import PhotosLounge from '../components/photos-lounge'
+import PhotosBedroom from '../components/photos-bedroom'
+import Advantages from '../components/advantages'
 
 export default {
   name: 'Home',
   components: {
     HomePrint,
     PhotosKitchen,
-    PhotosBathroom 
+    PhotosBathroom,
+    PhotosChildrenroom,
+    PhotosLounge,
+    PhotosBedroom,
+    Advantages
   }
 }
 </script>

@@ -76,7 +76,7 @@ export default {
 	.advantages {
 		display: flex;
 		justify-content: center;
-		padding-top: 305px;
+		padding-top: 290px;
 		width: 100%;
 
 		background-image: url('~@/assets/img/index/bg-triangle-advantages.svg');

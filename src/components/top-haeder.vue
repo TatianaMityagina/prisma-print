@@ -70,7 +70,9 @@
                 </router-link>
               </li>
               <li>
-                <a href="#">Коммерция</a>
+                <router-link to="/office" name="Office" @click.native="anchor">
+                  Коммерция
+                </router-link>
               </li>
             </ul>
 

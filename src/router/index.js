@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Index from '../views/Index.vue'
 import Home from '../views/Home.vue'
+import Office from '../views/Office.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,12 @@ export default new VueRouter ({
       path: '/home',
       name: 'Home',
       component: Home,
+      props: true
+    },
+    {
+      path: '/office',
+      name: 'Office',
+      component: Office,
       props: true
     }
   ],
