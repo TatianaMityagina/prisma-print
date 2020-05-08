@@ -30,7 +30,7 @@
             Печать производится на совершенно любой поверхности и фактуре. 
             Рельефная структура материала придаст реалистичность пейзажам и не только им.
           </p>
-          <a class="photos-hotel__btn" href="#">
+          <a class="photos-hotel__btn" href="#" @click="showPopup = true">
             Заказать печать для бизнеса
             <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.29197 8.08981C9.12672 8.08981 9.80342 7.41311 9.80342 6.57835C9.80342 5.7436 9.12672 5.06689 8.29197 5.06689C7.45722 5.06689 6.78052 5.7436 6.78052 6.57835C6.78052 7.41311 7.45722 8.08981 8.29197 8.08981Z" fill="white"/>
@@ -41,12 +41,23 @@
         </div>
       </div>      
 		</div>
+    <Modal v-show="showPopup" @closepopup="showPopup = false" />
   </div>
 </template>
 
 <script>
+import Modal from '../components/modal'
+
 export default {
-  name: 'PhotosHotel'
+  name: 'PhotosHotel',
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      showPopup: false
+    }
+  }
 }
 </script>
 

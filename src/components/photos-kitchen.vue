@@ -35,7 +35,7 @@
              организацию быта. Это просто с возможностями 
              вертикальной печати. Это перезапуск и обновление.
           </p>
-          <a class="photos-kitchen__btn" href="#">
+          <a class="photos-kitchen__btn" href="#" @click="showPopup = true">
             Заказать печать на Кухню
             <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.29197 8.08981C9.12672 8.08981 9.80342 7.41311 9.80342 6.57835C9.80342 5.7436 9.12672 5.06689 8.29197 5.06689C7.45722 5.06689 6.78052 5.7436 6.78052 6.57835C6.78052 7.41311 7.45722 8.08981 8.29197 8.08981Z" fill="white"/>
@@ -46,12 +46,23 @@
         </div>
       </div>      
 		</div>
+    <Modal v-show="showPopup" @closepopup="showPopup = false" />
   </div>
 </template>
 
 <script>
+import Modal from '../components/modal'
+
 export default {
-  name: 'PhotosKitchen'
+  name: 'PhotosKitchen',
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      showPopup: false
+    }
+  }
 }
 </script>
 

@@ -217,6 +217,7 @@ export default {
     border: none;
     background: #D73690;
     border-radius: 20px;
+    cursor: pointer;
 
      &:hover {
       filter: contrast(110%);
