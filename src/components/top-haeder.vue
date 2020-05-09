@@ -83,13 +83,17 @@
                 </router-link>
               </li>
               <li class="menu-nav__list-item">
-                <a href="#">Галерея работ</a>
+                <router-link to="/gallery" name="Gallery" @click.native="anchor">
+                  Галерея работ
+                </router-link>
               </li>
               <li class="menu-nav__list-item">
                 <a href="#">Калькулятор стоимости</a>
               </li>
               <li class="menu-nav__list-item">
-                <a href="#">Сотрудничество</a>
+                <router-link to="/contract" name="Contract" @click.native="anchor">
+                  Сотрудничество
+                </router-link>
               </li>
             </ul>
           </nav>

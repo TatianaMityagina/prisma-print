@@ -8,6 +8,7 @@
     <IndexGallery />
     <AboutPaints />
     <PrintPlace />
+    <Calculator />
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import IndexAbout from '../components/index-about'
 import IndexGallery from '../components/index-gallery'
 import AboutPaints from '../components/about-paints'
 import PrintPlace from '../components/print-place'
+import Calculator from '../components/calculator'
 
 export default {
   name: 'Index',
@@ -31,7 +33,8 @@ export default {
     IndexAbout,
     IndexGallery,
     AboutPaints,
-    PrintPlace 
+    PrintPlace,
+    Calculator 
   }
 }
 </script>
@@ -42,5 +45,6 @@ export default {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    padding-bottom: 80px;
   }
 </style>

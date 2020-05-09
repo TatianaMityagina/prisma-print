@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="about">
     <AboutUs />
   </div>
 </template>
@@ -8,7 +8,7 @@
 import AboutUs from '../components/about-us'
 
 export default {
-  name: 'Home',
+  name: 'About',
   components: {
     AboutUs
   }

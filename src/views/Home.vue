@@ -39,6 +39,7 @@ export default {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    padding-bottom: 80px;
   }
 </style>
 

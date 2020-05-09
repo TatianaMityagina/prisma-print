@@ -22,7 +22,7 @@
                   </tr>
                 </tbody>
               </table>
-              <button type="button">Хочу такой принт</button>
+              <button type="button" @click="showPopup = true">Хочу такой принт</button>
             </div>
           </div>
           <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-2">
@@ -44,7 +44,7 @@
                   </tr>
                 </tbody>
               </table>
-              <button type="button">Хочу такой принт</button>
+              <button type="button" @click="showPopup = true">Хочу такой принт</button>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
                   </tr>
                 </tbody>
               </table>
-              <button type="button">Хочу такой принт</button>
+              <button type="button" @click="showPopup = true">Хочу такой принт</button>
             </div>
           </div>
         </div>
@@ -93,17 +93,28 @@
                 </tr>
               </tbody>
             </table>
-            <button type="button">Хочу такой принт</button>
+            <button type="button" @click="showPopup = true">Хочу такой принт</button>
           </div>
         </div>
       </div>
     </div>
+    <Modal v-show="showPopup" @closepopup="showPopup = false" />
   </div>
 </template>
 
 <script>
+import Modal from '../components/modal'
+
 export default {
-  name: 'PrintGallery'
+  name: 'PrintGallery',
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      showPopup: false
+    }
+  }
 }
 </script>
 

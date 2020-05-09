@@ -5,6 +5,8 @@ import Index from '../views/Index.vue'
 import Home from '../views/Home.vue'
 import Office from '../views/Office.vue'
 import About from '../views/About.vue'
+import Contract from '../views/Contract.vue'
+import Gallery from '../views/Gallery.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +35,18 @@ export default new VueRouter ({
       path: '/about',
       name: 'About',
       component: About,
+      props: true
+    },
+    {
+      path: '/contract',
+      name: 'Contract',
+      component: Contract,
+      props: true
+    },
+    {
+      path: '/gallery',
+      name: 'Gallery',
+      component: Gallery,
       props: true
     }
   ],
