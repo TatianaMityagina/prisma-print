@@ -41,11 +41,6 @@
             <div class="modal__consent">
               <input type="checkbox" id="consent" required checked>
               <label class="modal__consent-label" for="consent">
-                <!-- <span class="modal__consent-checked">
-                  <svg class="modal__consent-svg" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 1L3.68583 7L1 4.51395" stroke="white" stroke-linecap="round"/>
-                  </svg>
-                </span> -->
                 Я согласен на обработку персональных данных
               </label>
             </div>
@@ -234,60 +229,49 @@
     border-radius: 35px;
   }
 
-  // .modal__consent label {
-  //   display: flex;
-  //   align-items: center;
-  //   width: 100%;
+  /* прячем input checkbox */
+  .modal__consent input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* стили для метки */
+  .modal__consent-label {
+    display: flex;
+    align-items: center;
 
-  //   font-weight: 300;
-  //   font-size: 12px;
-  //   line-height: 120%;
-  //   color: rgba(51, 51, 51, 0.5);
-  // }
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    color: rgba(51, 51, 51, 0.5);
+    cursor: default;
+  }
+  
+  /* формируем внешний вид чекбокса в псевдоэлементе before */
+  .modal__consent-label:before {
+    position: relative;
+    content: " ";
 
-/* прячем input checkbox */
-.modal__consent input[type="checkbox"] {
-  display: none;
-}
- 
-/* стили для метки */
-.modal__consent-label {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
 
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 120%;
-  color: rgba(51, 51, 51, 0.5);
-  cursor: default;
-}
- 
-/* формируем внешний вид чекбокса в псевдоэлементе before */
-.modal__consent-label:before {
-  position: relative;
-  content: " ";
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-
-  width: 14px;
-  height: 14px;
-  background: #ffffff;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-}
- 
-/* вариации внешнего вида в зав-ти от статуса checkbox */
-/* checked */
-.modal__consent input:checked + .modal__consent-label:before {
-  border: 1px solid #A30E4C;
-  background-color: #A30E4C;
-  background-image: url("../assets/img/check.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  }
+  
+  /* вариации внешнего вида в зав-ти от статуса checkbox */
+  /* checked */
+  .modal__consent input:checked + .modal__consent-label:before {
+    border: 1px solid #A30E4C;
+    background-color: #A30E4C;
+    background-image: url("../assets/img/check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   // Style modal
 </style>

@@ -13,42 +13,47 @@
         </p>
         <div class="cooperation__description-list">
           <div class="cooperation__description-item">
-            <div class="cooperation__icon">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="cooperation__icon" v-show="!isHiddenProject" @click="isHiddenProject = !isHiddenProject">
+              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
               </svg>
-              
+            </div>
+            <div class="cooperation__icon" v-show="isHiddenProject" @click="isHiddenProject = false">
               <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
               </svg>
             </div>
             <h3>По проектам</h3>
-            <p>
+            <p v-if="isHiddenProject">
             У вас есть большие проекты для печати на постоянную основу, мы платим % от проекта. Выгодные условия
             </p>
           </div>
           <div class="cooperation__description-item">
-            <div class="cooperation__icon">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="cooperation__icon" v-show="!isHiddenEquipment" @click="isHiddenEquipment = !isHiddenEquipment">
+              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
               </svg>
-              
+            </div>
+            <div class="cooperation__icon" v-show="isHiddenEquipment" @click="isHiddenEquipment = false">
               <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
               </svg>
             </div>
             <h3>Продажа оборудования</h3>
-            <p>
+            <p v-if="isHiddenEquipment">
               У вас есть большие проекты для печати на постоянную основу, мы платим % от проекта. Выгодные условия
             </p>
           </div>
+
+
           <div class="cooperation__description-item">
-            <div class="cooperation__icon">
-              <svg v-show="!isHidden" @click="isHidden = !isHidden" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="cooperation__icon" v-show="!isHidden" @click="isHidden = !isHidden">
+              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
               </svg>
-              
-              <svg v-show="isHidden" @click="isHidden = true" width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </div>
+            <div class="cooperation__icon" v-show="isHidden" @click="isHidden = false">
+              <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
               </svg>
             </div>
@@ -68,6 +73,8 @@ export default {
   name: 'Intro',
   data() {
     return {
+      isHiddenEquipment: false,
+      isHiddenProject: false,
       isHidden: false
     }
   },
@@ -161,6 +168,7 @@ export default {
 
     background: #A30E4C;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   .cooperation__description-item h3 {

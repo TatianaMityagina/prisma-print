@@ -1,6 +1,6 @@
 <template>
   <div class="photos-lounge">
-		<div class="photos-lounge__container">
+		<div class="photos-lounge__container" id="livingroom">
       <div class="photos-lounge__title-wrapper">
         <h2>Гостинная</h2>
         <span>Там где уединение особенно важно</span>

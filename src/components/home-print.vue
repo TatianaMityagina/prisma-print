@@ -6,35 +6,35 @@
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-kitchen@1x.jpg" srcset="~@/assets/img/home/home-kitchen@2x.jpg 2x" alt="Photo-1" width="317" height="476">
-            <a class="home-print__btn" href="#">Посмотреть</a>
+            <a class="home-print__btn" href="#kitchen">Посмотреть</a>
           </div>
           <h3>Кухня</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bathroom@1x.jpg" srcset="~@/assets/img/home/home-bathroom@2x.jpg 2x" alt="Photo-2" width="317" height="476">
-            <a class="home-print__btn" href="#">Посмотреть</a>
+            <a class="home-print__btn" href="#bathroom">Посмотреть</a>
           </div>
           <h3>Ванная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-childrenroom@1x.jpg" srcset="~@/assets/img/home/home-childrenroom@2x.jpg 2x" alt="Photo-3" width="317" height="476">
-            <a class="home-print__btn" href="#">Посмотреть</a>
+            <a class="home-print__btn" href="#childrenroom">Посмотреть</a>
           </div>
           <h3>Детская комната</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-livingroom@1x.jpg" srcset="~@/assets/img/home/home-livingroom@2x.jpg 2x" alt="Photo-4" width="317" height="476">
-            <a class="home-print__btn" href="#">Посмотреть</a>
+            <a class="home-print__btn" href="#livingroom">Посмотреть</a>
           </div>
           <h3>Гостинная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bedroom@1x.jpg" srcset="~@/assets/img/home/home-bedroom@2x.jpg 2x" alt="Photo-5" width="317" height="476">
-            <a class="home-print__btn" href="#">Посмотреть</a>
+            <a class="home-print__btn" href="#bedroom">Посмотреть</a>
           </div>
           <h3>Спальная</h3>
         </div>
@@ -102,7 +102,6 @@ export default {
 
       img {
         opacity: 0.8;
-        transition-delay: 0.2s;
       }
     }
   }

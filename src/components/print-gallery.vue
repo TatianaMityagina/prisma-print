@@ -4,96 +4,100 @@
       <div class="print-gallery__left">
         <div class="print-gallery__left-top">
           <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-1">
-            <img class="print-gallery__photo-1" src="~@/assets/img/index/index-ferris-wheel@1x.jpg" srcset="~@/assets/img/index/index-ferris-wheel@2x.jpg 2x" alt="Ferris wheel" width="617" height="445">
-            <div class="print-gallery__photo-description">
-              <table class="print-gallery__table">
-                <tbody>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Напечатаем:</td>
-                    <td class="print-gallery__table-field">за 2 часа</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Размер:</td>
-                    <td class="print-gallery__table-field">185*120см</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Стоимость:</td>
-                    <td class="print-gallery__table-field">2000 рублей</td>
-                  </tr>
-                </tbody>
-              </table>
-              <button type="button" @click="showPopup = true">Хочу такой принт</button>
+            <div class="print-gallery__photo-1">
+              <div class="print-gallery__photo-description">
+                <table class="print-gallery__table">
+                  <tbody>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Напечатаем:</td>
+                      <td class="print-gallery__table-field">за 2 часа</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Размер:</td>
+                      <td class="print-gallery__table-field">185*120см</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Стоимость:</td>
+                      <td class="print-gallery__table-field">2000 рублей</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" @click="showPopup = true">Хочу такой принт</button>
+              </div>
             </div>
           </div>
           <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-2">
-            <img class="print-gallery__photo-2" src="~@/assets/img/index/index-plant@1x.jpg" srcset="~@/assets/img/index/index-plant@2x.jpg 2x" alt="Plant" width="345" height="675">
-            <div class="print-gallery__photo-description">
-              <table class="print-gallery__table">
-                <tbody>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Напечатаем:</td>
-                    <td class="print-gallery__table-field">за 2 часа</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Размер:</td>
-                    <td class="print-gallery__table-field">185*120см</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Стоимость:</td>
-                    <td class="print-gallery__table-field">2000 рублей</td>
-                  </tr>
-                </tbody>
-              </table>
-              <button type="button" @click="showPopup = true">Хочу такой принт</button>
+            <div class="print-gallery__photo-2">
+              <div class="print-gallery__photo-description">
+                <table class="print-gallery__table">
+                  <tbody>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Напечатаем:</td>
+                      <td class="print-gallery__table-field">за 2 часа</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Размер:</td>
+                      <td class="print-gallery__table-field">185*120см</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Стоимость:</td>
+                      <td class="print-gallery__table-field">2000 рублей</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" @click="showPopup = true">Хочу такой принт</button>
+              </div>
             </div>
           </div>
         </div>
         <div class="print-gallery__left-bottom">
           <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-3">
-            <img class="print-gallery__photo-3" src="~@/assets/img/index/index-sunset@1x.jpg" srcset="~@/assets/img/index/index-sunset@2x.jpg 2x" alt="Sunset" width="828" height="348">           
-            <div class="print-gallery__photo-description">
-              <table class="print-gallery__table">
-                <tbody>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Напечатаем:</td>
-                    <td class="print-gallery__table-field">за 2 часа</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Размер:</td>
-                    <td class="print-gallery__table-field">185*120см</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Стоимость:</td>
-                    <td class="print-gallery__table-field">2000 рублей</td>
-                  </tr>
-                </tbody>
-              </table>
-              <button type="button" @click="showPopup = true">Хочу такой принт</button>
+            <div class="print-gallery__photo-3">
+              <div class="print-gallery__photo-description">
+                <table class="print-gallery__table">
+                  <tbody>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Напечатаем:</td>
+                      <td class="print-gallery__table-field">за 2 часа</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Размер:</td>
+                      <td class="print-gallery__table-field">185*120см</td>
+                    </tr>
+                    <tr class="print-gallery__table-row">
+                      <td class="print-gallery__table-parameter">Стоимость:</td>
+                      <td class="print-gallery__table-field">2000 рублей</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" @click="showPopup = true">Хочу такой принт</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="print-gallery__right">
         <div class="print-gallery__photo-wrapper print-gallery__photo-wrapper--photo-4">
-          <img class="print-gallery__photo-4" src="~@/assets/img/index/index-eiffel-tower@1x.jpg" srcset="~@/assets/img/index/index-eiffel-tower@2x.jpg 2x" alt="Eiffel tower" width="405" height="678">
-          <div class="print-gallery__photo-description">
-            <table class="print-gallery__table">
-              <tbody>
-                <tr class="print-gallery__table-row">
-                  <td class="print-gallery__table-parameter">Напечатаем:</td>
-                  <td class="print-gallery__table-field">за 2 часа</td>
-                </tr>
-                <tr class="print-gallery__table-row">
-                  <td class="print-gallery__table-parameter">Размер:</td>
-                  <td class="print-gallery__table-field">185*120см</td>
-                </tr>
-                <tr class="print-gallery__table-row">
-                  <td class="print-gallery__table-parameter">Стоимость:</td>
-                  <td class="print-gallery__table-field">2000 рублей</td>
-                </tr>
-              </tbody>
-            </table>
-            <button type="button" @click="showPopup = true">Хочу такой принт</button>
+          <div class="print-gallery__photo-4">
+            <div class="print-gallery__photo-description">
+              <table class="print-gallery__table">
+                <tbody>
+                  <tr class="print-gallery__table-row">
+                    <td class="print-gallery__table-parameter">Напечатаем:</td>
+                    <td class="print-gallery__table-field">за 2 часа</td>
+                  </tr>
+                  <tr class="print-gallery__table-row">
+                    <td class="print-gallery__table-parameter">Размер:</td>
+                    <td class="print-gallery__table-field">185*120см</td>
+                  </tr>
+                  <tr class="print-gallery__table-row">
+                    <td class="print-gallery__table-parameter">Стоимость:</td>
+                    <td class="print-gallery__table-field">2000 рублей</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" @click="showPopup = true">Хочу такой принт</button>
+            </div>
           </div>
         </div>
       </div>
@@ -166,9 +170,12 @@ export default {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0 25px 28px 30px;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 28px 25px 28px 30px;
 
     opacity: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 39.96%, #FFFFFF 100%);
   }
 
   .image-bg {
@@ -177,7 +184,6 @@ export default {
   }
 
   .print-gallery__photo-wrapper {
-    position: relative;
     display: flex;
     justify-content: center;
 
@@ -212,6 +218,38 @@ export default {
     }
   }
 
+  .print-gallery__photo-1 {
+    position: relative;
+    width: 617px;
+    height: 445px;
+
+    background: url('~@/assets/img/index/index-ferris-wheel@1x.jpg') center / cover no-repeat;
+  }
+
+  .print-gallery__photo-2 {
+    position: relative;
+    width: 345px;
+    height: 675px;
+
+    background: url('~@/assets/img/index/index-plant@1x.jpg') center / cover no-repeat;
+  }
+
+  .print-gallery__photo-3 {
+    position: relative;
+    width: 828px;
+    height: 348px;
+
+    background: url('~@/assets/img/index/index-sunset@1x.jpg') center / cover no-repeat;
+  }
+
+  .print-gallery__photo-4 {
+    position: relative;
+    width: 405px;
+    height: 678px;
+
+    background: url('~@/assets/img/index/index-eiffel-tower@1x.jpg') center / cover no-repeat;
+  }
+
   .print-gallery__photo-description button {
     display: inline-flex;
     align-items: center;
@@ -238,6 +276,7 @@ export default {
 
   .print-gallery__table {
     margin-bottom: 15px;
+    
   }
 
   .print-gallery__table-row {

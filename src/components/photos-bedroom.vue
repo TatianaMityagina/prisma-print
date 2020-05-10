@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-bedroom">
+  <div class="photos-bedroom" id="bedroom">
 		<div class="photos-bedroom__container">
       <div class="photos-bedroom__title-wrapper">
         <h2>Спальная</h2>

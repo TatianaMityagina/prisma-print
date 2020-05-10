@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-bathroom">
+  <div class="photos-bathroom" id="bathroom">
 		<div class="photos-bathroom__container">
       <div class="photos-bathroom__title-wrapper">
         <h2>Ванная</h2>

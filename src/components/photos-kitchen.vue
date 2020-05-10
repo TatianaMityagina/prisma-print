@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-kitchen">
+  <div class="photos-kitchen" id="kitchen">
 		<div class="photos-kitchen__container">
       <div class="photos-kitchen__title-wrapper">
         <h2>КУХНЯ</h2>
