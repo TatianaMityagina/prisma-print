@@ -13,7 +13,7 @@
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bathroom@1x.jpg" srcset="~@/assets/img/home/home-bathroom@2x.jpg 2x" alt="Photo-2" width="317" height="476">
-            <a class="home-print__btn" href="#bathroom">Посмотреть</a>
+            <a class="home-print__btn" href="#bathroom" @click.native="anchor">Посмотреть</a>
           </div>
           <h3>Ванная</h3>
         </div>

@@ -21,6 +21,7 @@ body {
   font-size: 18px;
 	line-height: 150%;
   color: #000000;
+  scroll-behavior: smooth;
   // убирает подсветку элементов при тапе на iOS
   -webkit-tap-highlight-color: transparent;
 }
@@ -49,4 +50,32 @@ ol, ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #C71866;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+scroll-bar::-webkit-scrollbar {
+  width: 10px;
+}
+
+scroll-bar::-webkit-scrollbar-thumb {
+  background: #C71866;
+  border-radius: 20px;
+}
+
+scroll-bar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
 }

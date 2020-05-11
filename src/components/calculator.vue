@@ -15,58 +15,69 @@
             <h3>Тип поверхности:</h3>
             <ul class="calculator__form-list">
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="walls" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="walls" name="type" v-model="pick" v-bind:value="65">
                 <label class="calculator__form-label" for="walls">Обои</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="putty" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="putty" name="type" v-model="pick" v-bind:value="25">
                 <label class="calculator__form-label" for="putty">Шпаклевка</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="plastic" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="plastic" name="type" v-model="pick" v-bind:value="58">
                 <label class="calculator__form-label" for="plastic">Пластик</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="ceramic" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="ceramic" name="type" v-model="pick" v-bind:value="36">
                 <label class="calculator__form-label" for="ceramic">Керамика</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="glass" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="glass" name="type" v-model="pick" v-bind:value="158">
                 <label class="calculator__form-label" for="glass">Стекло</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="wood" name="type">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="wood" name="type" v-model="pick" v-bind:value="111">
                 <label class="calculator__form-label" for="wood">Дерево</label>
               </li>
             </ul>
           </div>
 
-          <div>
+          <div class="calculator__result">
             <ul class="calculator__result-list">
               <li class="calculator__result-item">
                 <p>Ширина</p>
-                <span>см</span>
+                <div class="calculator__result-feild">
+                  <input type="text" id="width" v-model="valueWidth">
+                  <label for="width">см</label>
+                </div>
               </li>
               <li class="calculator__result-item">
                 <p>Высота</p>
-                <span>см</span>
+                <div class="calculator__result-feild">
+                  <input type="text" id="height" v-model="valueHeight">
+                  <label for="height">см</label>
+                </div>
               </li>
               <li class="calculator__result-item">
                 <p>Размер</p>
-                <span>м<sup class="calculator__sup">2</sup></span>
+                <span>{{size}} м<sup class="calculator__sup">2</sup></span>
               </li>
               <li class="calculator__result-item">
                 <p>Стоимость</p>
-                <span>руб</span>
+                <span>{{resultSum}} руб</span>
               </li>
             </ul>
           </div>
         </form>
 
-        <form>
+        <div class="calculator__bg-wrapper">
           <div class="calculator__bg">
+            <vue-slider class="calculator__horizontal-range" v-model="valueWidth" v-bind="horizontal" />
+            <vue-slider class="calculator__vertical-range" v-model="valueHeight" v-bind="vertical" />
+            <!-- <img class="calculator__figure" src="~@/assets/img/figure-bg.svg" alt="Photo figure" :width="valueWidth" :height="valueHeight"> -->
+
+            <canvas class="calculator__figure" ref="canvas" id="canvas"/>
           </div>
-        </form>
+        </div>
 
       </div>
 		</div>
@@ -74,8 +85,87 @@
 </template>
 
 <script>
+import VueSlider from 'vue-slider-component'
+import '../assets/style/calculator.css'
+
 export default {
-  name: 'Calculator'
+  name: 'Calculator',
+  components: {
+    VueSlider
+  }, 
+  data() {
+    return {
+      vueCanvas: null,
+      valueWidth: 50,
+      valueHeight: 50,
+      pick: '65',
+      horizontal: {
+        width: '1114',
+        height: 1,
+        contained: false,
+        data: null,
+        min: 0,
+        max: 500,
+        interval: 1,
+        disabled: false,
+        clickable: true,
+        tooltip: 'always',
+        tooltipPlacement: 'bottom',
+        useKeyboard: true,
+        keydownHook: null,
+        dragOnClick: true,
+        enableCross: true,
+        fixed: true,
+        order: true,
+        process: true
+      },
+      vertical: {
+        width: '1',
+        height: 418,
+        contained: false,
+        data: null,
+        min: 0,
+        max: 185,
+        interval: 1,
+        direction: 'btt',
+        disabled: false,
+        clickable: true,
+        tooltip: 'always',
+        tooltipPlacement: 'bottom',
+        useKeyboard: true,
+        keydownHook: null,
+        dragOnClick: true,
+        enableCross: true,
+        fixed: true,
+        order: true,
+        process: true
+      }
+    }
+  },
+  computed: {
+    size() {
+      return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(3)
+    },
+    resultSum() {
+      return (this.pick * (this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(1)
+    }
+  },
+  mounted() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    this.VueCanvas = ctx;
+  },
+  methods: {
+    drawRect() {
+      // clear canvas
+      this.vueCanvas.clearRect(0, 0, 400, 200);
+      
+      // draw rect
+      this.vueCanvas.beginPath();
+      this.vueCanvas.rect(0, 0, this.valueWidth, this.valueHeight);
+      this.vueCanvas.stroke();      
+    }
+  }
 }
 </script>
 
@@ -90,15 +180,30 @@ height: 508px;
 
 .calculator__horizontal-range {
   position: absolute;
-  left: 97px;
-  bottom: 52px;
+  left: 98px;
+  bottom: 47px;
 
   height: 1px;
   width: 1114px;
+}
 
-  -webkit-appearance: none;
-  background-color: transparent;
-  outline: none;
+.calculator__vertical-range {
+  position: absolute;
+  left: 61px;
+  top: 6px;
+  width: 1px;
+  height: 418px;
+}
+
+.calculator__figure {
+  position: absolute;
+  top: 6px;
+  left: 98px;
+
+  width: 1109px;
+  height: 418px;
+
+  border: 2px solid gray;
 }
 
   .calculator {
@@ -150,10 +255,13 @@ height: 508px;
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-bottom: 80px;
+  }
 
-    &:nth-child(2) {
-      margin-top: 80px;
-    }
+  .calculator__bg-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .calculator__wrapper-list {
@@ -227,7 +335,8 @@ height: 508px;
   .calculator__result-item  {
     display: flex;
     flex-direction: column;
-    margin-right: 25px;
+    margin-right: 20px;
+    min-width: 85px;
 
     font-family: GothamPro;
     font-style: normal;
@@ -247,6 +356,7 @@ height: 508px;
     font-family: GothamPro;
     font-style: normal;
     font-weight: bold;
+    text-align: start;
     font-size: 18px;
     line-height: 140%;
     color: #1893E2;
@@ -254,6 +364,21 @@ height: 508px;
 
   .calculator__sup {
     line-height: 90%;
+  }
+
+  .calculator__result-feild input {
+    border: none;
+    outline: none;
+    max-width: 40px;
+  }
+
+  .calculator__result-feild input[type=text] {
+    font-family: GothamPro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    color: #1893E2;
   }
 
   // Grafic
