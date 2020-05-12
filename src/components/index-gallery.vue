@@ -144,4 +144,41 @@ export default {
       }
     }
   }
+
+   @media (max-width: 1199px) {
+    .index-gallery {
+      padding: 120px 0 0 0;
+			max-width: 92vw;
+    }
+
+    .index-gallery__container h2 {
+      width: 100%;
+      margin-bottom: 5px;
+
+      font-size: 36px;
+      text-align: center;
+    }
+
+    .index-gallery__container p {
+      text-align: center;
+    }
+
+    .index-galler__items {
+      justify-content: space-between;
+    }
+
+    .index-galler__items img {
+      margin-right: 0;
+      width: 164px;
+      height: 164px;
+
+      &:nth-child(6n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
 </style>

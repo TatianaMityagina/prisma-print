@@ -338,6 +338,10 @@ export default {
 
   .menu-nav__list-type li {
     margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .menu-nav__list {
@@ -358,6 +362,10 @@ export default {
 
   .menu-nav__list-item {
     margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .interactive-menu__contacts-tel {
@@ -476,6 +484,84 @@ export default {
 
     .menu__burger {
       margin-right: 25px;
+    }
+   }
+
+  @media (max-width: 767px) {
+    .top-header {
+      box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .menu {
+      padding: 20px 0 15px 0;
+      justify-content: space-between;
+      max-width: 92vw;
+    }
+
+    .interactive-menu {
+      padding-top: 60px;
+      min-height: 100vh;
+      justify-content: flex-start;
+    }
+
+    .interactive-menu__container {
+      padding: 65px 0 0 0;
+      max-width: 100%;
+
+      background: url('~@/assets/img/triangle-mobile-menu.svg') center / cover no-repeat;
+    }
+
+    .interactive-menu__button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 0;
+      max-width: 92vw;
+    }
+
+    .interactive-menu__button span {
+      padding-top: 10px;
+    }
+
+    .menu__logo img {
+      width: 108px;
+      height: 12px;
+    }
+
+    .menu__burger {
+      margin-right: 12px;
+    }
+
+    .menu__burger span {
+      display: none;
+    }
+
+    .menu__burger svg {
+      width: 39px;
+      height: 20px;
+    }
+
+    .menu__contacts-tel {
+      margin-right: 0;
+    }
+
+    .menu__contacts-tel a {
+      margin-bottom: 5px;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .menu__social-list {
+      display: none;
+    }
+
+    .menu-nav__list-type {
+      margin-bottom: 40px;
+    }
+
+    .interactive-menu__social-list {
+      margin-top: 40px;
     }
    }
 </style>

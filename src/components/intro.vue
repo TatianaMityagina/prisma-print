@@ -75,7 +75,27 @@ export default {
     .intro__container {
       max-width: 960px;
 
-      background: url('~@/assets/img/index-intro-triangle.svg') center / contain no-repeat;
+      background: url('~@/assets/img/index-intro-triangle.svg') center / cover no-repeat;
+    }
+  }
+
+   @media (max-width: 767px) {
+    .intro__container {
+      padding-top: 60px;
+      max-width: 92vw;
+
+      background: url('~@/assets/img/index-intro-triangle-mobile.svg') center / cover no-repeat;
+    }
+
+    .intro__triangle {
+      margin-bottom: 18px;
+      width: 258px;
+      height: 205px;
+    }
+    
+    .intro__logo-text {
+      width: 225px;
+      height: 46px;
     }
   }
 </style>

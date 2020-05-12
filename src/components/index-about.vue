@@ -230,4 +230,59 @@ export default {
       padding-top: 20px;
     }
   }
+
+  @media (max-width: 767px) {
+    .index-about {
+			padding: 155px 0 0 0;
+			max-width: 92vw;
+		}
+
+    .index-about__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .index-about__container h2 {
+      margin-bottom: 80px;
+      width: 90%;
+
+      font-size: 36px;
+    }
+
+    .index-about__list {
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .index-about__item {
+      max-width: 165px;
+
+      &--first {
+        order: 2;
+        padding-top: 40px;
+      }
+
+      &--second {
+        position: absolute;
+        top: 123px;
+        right: 0;
+      }
+
+      &--third {
+        order: 1;
+        padding-top: 0;
+      }
+    }
+
+    .index-about__item img {
+      width: 165px;
+      height: 256px;
+    }
+
+    .index-about__item p {
+      font-size: 13px;
+    }
+  }
 </style>

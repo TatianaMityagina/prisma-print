@@ -131,5 +131,32 @@ export default {
 		.about-paints__description {
 			max-width: 400px;
 		}
+	}
+	
+	@media (max-width: 767px) {
+    .about-paints {
+			position: relative;
+			padding: 120px 0 0 0;
+		}
+
+		.about-paints__image {
+			margin-right: 15px;
+			width: 180px;
+			height: 529px;
+		}
+
+		.about-paints__description {
+			position: absolute;
+			top: 200px;
+			right: 0;
+
+			max-width: 255px;
+		}
+
+		.about-paints__description h2 {
+			width: 100%;
+
+			font-size: 36px;
+		}
   }
 </style>

@@ -233,5 +233,54 @@ export default {
         margin-right: 0;
       }
     }
+	}
+	
+	@media (max-width: 1199px) {
+		.advantages {
+			padding: 120px 0 0 0;
+			max-width: 92vw;
+
+			background: none;
+		}
+
+    .advantages__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .advantages__container h2 {
+			width: 100%;
+			font-size: 36px;
+		}
+		
+		.advantages__list {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.advantages__item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin:  0 0 50px 0;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+			}
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		.advantages__item h3 {
+			font-size: 28px;
+			text-align: center;
+		}
+
+		.advantages__item p {
+			text-align: center;
+		}
   }
 </style>

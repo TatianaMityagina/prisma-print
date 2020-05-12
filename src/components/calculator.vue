@@ -5,7 +5,7 @@
         КАЛЬКУЛЯТОР 
         <span>СТОИМОСТИ</span>
       </h2>
-      <p>
+      <p class="calculator__title-text">
         Выберите поверхность и укажите размеры вашего рисунка 
         в ширину и высоту для подсчета стоимости итоговой печати
       </p>
@@ -73,10 +73,27 @@
           <div class="calculator__bg">
             <vue-slider class="calculator__horizontal-range" v-model="valueWidth" v-bind="horizontal" />
             <vue-slider class="calculator__vertical-range" v-model="valueHeight" v-bind="vertical" />
-            <!-- <img class="calculator__figure" src="~@/assets/img/figure-bg.svg" alt="Photo figure" :width="valueWidth" :height="valueHeight"> -->
-
-            <canvas class="calculator__figure" ref="canvas" id="canvas"/>
+            <img class="calculator__figure" src="~@/assets/img/figure-bg.svg" alt="Photo figure" :width="446" :height="387">
           </div>
+        </div>
+
+        <div class="calculator__mobile">
+          <h3>Ширина и высота рисунка</h3>
+          <vue-slider class="calculator__mobile-width" v-model="valueWidth" v-bind="mobileWidth" />
+          <div class="bg-width"></div>
+          <vue-slider class="calculator__mobile-height" v-model="valueHeight" v-bind="mobileHeight" />
+          <div class="bg-height"></div>
+
+          <table class="calculator__mobile-table">
+            <tr class="calculator__table-row">
+              <td class="calculator__row-title">Размер</td>
+              <td class="calculator__row-result">{{size}} м<sup>2</sup></td>
+            </tr>
+            <tr class="calculator__table-row">
+              <td class="calculator__row-title">Стоимость</td>
+              <td class="calculator__row-result">{{resultSum}} руб</td>
+            </tr>
+          </table>
         </div>
 
       </div>
@@ -95,6 +112,7 @@ export default {
   }, 
   data() {
     return {
+      width: null,
       vueCanvas: null,
       valueWidth: 50,
       valueHeight: 50,
@@ -139,31 +157,80 @@ export default {
         fixed: true,
         order: true,
         process: true
-      }
+      },
+      mobileWidth: {
+        width: 'auto',
+        height: 1,
+        contained: false,
+        data: null,
+        min: 0,
+        max: 500,
+        interval: 1,
+        disabled: false,
+        clickable: true,
+        tooltip: 'always',
+        tooltipPlacement: 'top',
+        useKeyboard: true,
+        keydownHook: null,
+        dragOnClick: true,
+        enableCross: true,
+        fixed: true,
+        order: true,
+        process: true
+      },
+      mobileHeight: {
+        width: 'auto',
+        height: 1,
+        contained: false,
+        data: null,
+        min: 0,
+        max: 185,
+        interval: 1,
+        disabled: false,
+        clickable: true,
+        tooltip: 'always',
+        tooltipPlacement: 'top',
+        useKeyboard: true,
+        keydownHook: null,
+        dragOnClick: true,
+        enableCross: true,
+        fixed: true,
+        order: true,
+        process: true
+      },
     }
   },
   computed: {
     size() {
-      return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(3)
+      return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(1)
     },
     resultSum() {
       return (this.pick * (this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(1)
     }
   },
-  mounted() {
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
-    this.VueCanvas = ctx;
+  created() {
+    window.addEventListener('resize', this.updateWidth)
+    this.updateWidth()
+    this.changeHeight()
   },
   methods: {
-    drawRect() {
-      // clear canvas
-      this.vueCanvas.clearRect(0, 0, 400, 200);
-      
-      // draw rect
-      this.vueCanvas.beginPath();
-      this.vueCanvas.rect(0, 0, this.valueWidth, this.valueHeight);
-      this.vueCanvas.stroke();      
+    updateWidth() {
+      this.width = window.innerWidth
+      this.changeHeight()
+    },
+
+    changeHeight() {
+      if (this.width < 1600) {
+        this.vertical.height = 384;
+      } 
+
+      if (this.width < 1366) {
+        this.vertical.height = 329;
+      } 
+
+      if (this.width < 1200) {
+        this.vertical.height = 223;
+      } else this.vertical.height = 418;
     }
   }
 }
@@ -171,41 +238,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.calculator__bg {
-  position: relative;
-  width: 1225px;
-height: 508px;
-  background: url('~@/assets/img/calculator-bg.svg') center / 1225px 508px no-repeat;
-}
-
-.calculator__horizontal-range {
-  position: absolute;
-  left: 98px;
-  bottom: 47px;
-
-  height: 1px;
-  width: 1114px;
-}
-
-.calculator__vertical-range {
-  position: absolute;
-  left: 61px;
-  top: 6px;
-  width: 1px;
-  height: 418px;
-}
-
-.calculator__figure {
-  position: absolute;
-  top: 6px;
-  left: 98px;
-
-  width: 1109px;
-  height: 418px;
-
-  border: 2px solid gray;
-}
-
   .calculator {
     display: flex;
     justify-content: center;
@@ -236,7 +268,7 @@ height: 508px;
     font-weight: bold;
   }
 
-  .calculator__container p {
+  .calculator__title-text {
     margin: 0 0 50px 0;
     max-width: 832px;
 
@@ -387,12 +419,370 @@ height: 508px;
     min-height: 597px;
   }
 
+  .calculator__bg {
+  position: relative;
+  width: 1225px;
+  height: 508px;
+  background: url('~@/assets/img/calculator-bg.svg') center / 1225px 508px no-repeat;
+}
+
+.calculator__horizontal-range {
+  position: absolute;
+  left: 98px;
+  bottom: 47px;
+
+  height: 1px;
+  width: 1114px;
+}
+
+.calculator__vertical-range {
+  position: absolute;
+  left: 61px;
+  top: 6px;
+  width: 1px;
+  height: 418px;
+}
+
+.calculator__figure {
+  position: absolute;
+  top: 38px;
+  left: 98px;
+}
+
   @media (max-width: 1919px) {
   }
 
   @media (max-width: 1599px) {
+    .calculator__container {
+      max-width: 1166px;
+    }
+
+    .calculator__title {
+      font-size: 48px;
+    }
+
+    .calculator__title-text {
+      font-size: 14px;
+      max-width: 650px;
+    }
+
+    .calculator__form-list {
+      margin-right: 40px;
+    }
+
+    .calculator__result-item {
+      margin-right: 15px;
+    }
+
+    .calculator__wrapper form {
+      padding-left: 50px;
+      margin-bottom: 60px;
+    }
+    
+    // Calculator
+
+    .calculator__bg {
+      position: relative;
+      height: 468px;
+      background: url('~@/assets/img/calculator-bg.svg') center/1225px 468px no-repeat;
+    }
+
+    .calculator__horizontal-range {
+      position: absolute;
+      left: 90px;
+      bottom: 42px;
+
+      width: 1024px;
+    }
+
+    .calculator__vertical-range {
+      position: absolute;
+      left: 55px;
+      top: 6px;
+
+      height: 384px;
+    }
+
+    .calculator__figure {
+      position: absolute;
+      top: 35px;
+      left: 88px;
+
+      width: 410px;
+      height: 356px;
+    }
   }
 
   @media (max-width: 1365px) {
+    .calculator__container {
+      max-width: 1120px;
+    }
+
+    .calculator__wrapper-list h3 {
+      margin-bottom: 11px;
+      font-size: 14px;
+    }
+
+    .calculator__result-item p,
+    .calculator__result-item {
+      font-size: 14px;
+    }
+
+    .calculator__result-item {
+      min-width: 70px;
+    }
+
+    .calculator__result-feild input[type=text]  {
+      max-width: 30px;
+      font-size: 14px;
+    }
+
+    .calculator__form-list {
+      margin-right: 40px;
+    }
+
+    .calculator__result-item {
+      margin-right: 15px;
+    }
+
+    .calculator__wrapper form {
+      padding-left: 50px;
+      margin-bottom: 60px;
+    }
+    
+    // Calculator
+
+    .calculator__bg {
+      position: relative;
+      width: 962px;
+      height: 400px;
+      background: url('~@/assets/img/calculator-bg.svg') center/962px 400px no-repeat;
+    }
+
+    .calculator__horizontal-range {
+      position: absolute;
+      left: 136px;
+      bottom: 36px;
+
+      width: 876px;
+    }
+
+    .calculator__vertical-range {
+      position: absolute;
+      left: 105px;
+      top: 6px;
+
+      height: 329px;
+    }
+
+    .calculator__figure {
+      position: absolute;
+      top: 30px;
+      left: 136px;
+
+      width: 351px;
+      height: 304px;
+    }
   }
+
+   @media (max-width: 1199px) {
+    .calculator__container {
+      max-width: 688px;
+    }
+
+    .calculator__title-text {
+      margin-bottom: 35px;
+    }
+
+    .calculator__form-list {
+      margin-right: 0;
+    }
+
+    .calculator__wrapper form {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 0;
+      margin-bottom: 40px;
+    }
+
+    .calculator__wrapper-list {
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .calculator__wrapper-list h3 {
+      font-size: 18px;
+    }
+
+    .calculator__result-item p {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .calculator__result-item p,
+    .calculator__result-item {
+      font-size: 18px;
+    }
+
+    .calculator__result-item {
+      min-width: 85px;
+    }
+
+    .calculator__result-feild input[type=text]  {
+      max-width: 30px;
+      font-size: 18px;
+    }
+    
+    // Calculator
+
+    .calculator__bg {
+      position: relative;
+      width: 657px;
+      height: 273px;
+      background: url('~@/assets/img/calculator-bg.svg') center/657px 273px no-repeat;
+    }
+
+    .calculator__horizontal-range {
+      position: absolute;
+      left: 48px;
+      bottom: 22px;
+
+      width: 596px;
+    }
+
+    .calculator__vertical-range {
+      position: absolute;
+      left: 25px;
+      top: 4px;
+
+      height: 223px;
+    }
+
+    .calculator__figure {
+      position: absolute;
+      top: 25px;
+      left: 47px;
+
+      width: 236px;
+      height: 205px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .calculator__container {
+      max-width: 92vw;
+      padding: 120px 0 0 0;
+    }
+
+    .calculator__title {
+      font-size: 36px;
+    }
+
+    .calculator__title-text {
+      width: 100%;
+    }
+
+    .calculator__form-list {
+      display: flex;
+      flex-direction: column; 
+      flex-wrap: wrap;
+      height: 130px;
+      width: 100%;
+    }
+    
+    .calculator__form-item {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin-bottom: 20px;
+      margin-right: 50px;
+
+      &:nth-child(3n) {
+        margin-bottom: 0;
+      }
+
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+
+      &:nth-child(6) {
+        margin-right: 0;
+      }
+    }
+
+    .calculator__result {
+      display: none;
+    }
+
+    .calculator__bg-wrapper {
+      display: none;
+    }
+
+    .bg-height {
+      margin-bottom: 40px;
+      width: 100%;
+      height: 36px;
+      background: url('~@/assets/img/bg-mobile-height.svg') center/ contain no-repeat;
+    }
+
+    .bg-width {
+      margin-bottom: 65px;
+      width: 100%;
+      height: 26px;
+      background: url('~@/assets/img/bg-mobile-width.svg') center/ contain no-repeat;
+    }
+
+    .calculator__mobile h3 {
+      margin: 0 0 65px 0;
+
+      font-family: GothamPro;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 140%;
+      text-align: center;
+      color: #1893E2;
+    }
+
+    .calculator__row-title {
+      font-family: GothamPro;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 140%;
+      color: #218ACD;
+    }
+
+    .calculator__mobile-table {
+      display: flex;
+      justify-content: center;
+      width: 85vw;
+    }
+
+    .calculator__table-row {
+      display: flex;
+      flex-direction: column;
+      width: 110px;
+    }
+
+    .calculator__row-result {
+      font-family: GothamPro;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 27px;
+      white-space: nowrap;
+      color: #218ACD;
+    }
+
+    .calculator__row-result sup {
+      font-size: 14px;
+      line-height: 10px;
+    }
+  }
+  
 </style>

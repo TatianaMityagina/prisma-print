@@ -149,5 +149,40 @@ export default {
 			width: 376px;
 			height: 400px;
 		}
+	}
+	
+	@media (max-width: 768px) {
+    .new-word {
+			padding-top: 0;
+		}
+
+		.new-word__container {
+			flex-direction: column;
+			align-items: center;
+			padding: 0;
+			max-width: 92vw;
+		}
+
+    .new-word__description {
+			flex-direction: column;
+			align-items: center;
+      max-width: 100%;
+    }
+
+    .new-word__description h2 {
+			width: 100%;
+			margin-bottom: 40px;
+      text-align: center;
+		}
+
+		.new-word__description p {
+			margin-bottom: 25px;
+			text-align: center;
+		}
+
+		.new-word__image {
+			width: 100%;
+			height: 302px;
+		}
   }
 </style>
