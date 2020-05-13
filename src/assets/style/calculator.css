@@ -6,7 +6,7 @@
 
 /* rail style */
 .vue-slider-rail {
-  background-color: black;
+  background-color: transparent;
   border-radius: 15px;
 }
 
@@ -122,6 +122,12 @@
   opacity: 1;
 }
 
+@media (max-width: 1600px) {
+  .vue-slider-dot-handle {
+    top: -6px;
+  }
+}
+
 @media (max-width: 1199px) {
   .vue-slider-dot-handle {
     width: 22px;
@@ -135,7 +141,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .vue-slider-rail {
     background-color: rgba(150, 30, 80, 0.5);
   }

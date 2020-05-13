@@ -358,4 +358,77 @@ export default {
       height: 112px;
     }
   }
+  
+  @media (max-width: 767px) {
+    .photos-municipal {
+      margin-bottom: 120px;
+      background-size: 230px 235px;
+      background-position: top right;
+      background-position-y: 25px;
+    }
+
+    .photos-municipal__container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 92vw;
+      padding: 0;
+    }
+
+    .photos-municipal__title-wrapper {
+      padding: 0;
+      margin-bottom: 218px;
+    }
+
+    .photos-municipal__title-wrapper h2 {
+      text-align: center;
+    }
+
+    .photos-municipal__gallery {
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .photos-municipal__gallery h3 {
+      text-align: center;
+    }
+
+    .photos-municipal__left {
+      margin-bottom: 40px;
+    }
+
+    .photos-municipal__left-top {
+      margin-bottom: 5px;
+    }
+
+    .photos-municipal__left-top img {
+      width: 100%;
+      height: 208px;
+    }
+
+    .photos-municipal__left-bottom img {
+      width: 168px;
+      height: 97px;
+    }
+
+    .photos-municipal__right {
+      align-items: center;
+    }
+
+    .photos-municipal__right-gallery {
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .photos-municipal__right-gallery img {
+      margin-right: 0;
+      margin-bottom: 5px;
+      width: 110px;
+      height: 123px;
+    }
+
+    .photos-municipal__right p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
 </style>

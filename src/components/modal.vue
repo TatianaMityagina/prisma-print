@@ -41,7 +41,7 @@
             <div class="modal__consent">
               <input type="checkbox" id="consent" required checked>
               <label class="modal__consent-label" for="consent">
-                Я согласен на обработку персональных данных
+                Я согласен на обработку <span>персональных данных</span>
               </label>
             </div>
           </form>
@@ -245,6 +245,21 @@
     color: rgba(51, 51, 51, 0.5);
     cursor: default;
   }
+
+  .modal__consent-label span {
+    margin-left: 4px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    color: rgba(51, 51, 51, 0.5);
+    
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+
+    &:hover {
+      border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+      transition: 0.4s;
+    }
+  }
   
   /* формируем внешний вид чекбокса в псевдоэлементе before */
   .modal__consent-label:before {
@@ -273,5 +288,74 @@
     background-position: center;
   }
 
-  // Style modal
+  @media (max-width: 767px) {
+    .modal__content {
+      max-width: 92vw;
+      padding: 20px 15px 20px 15px;
+    }
+
+    .modal__close-btn {
+      margin-bottom: 20px;
+
+      font-size: 12px;
+    }
+
+    .modal__close-btn svg {
+      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+    }
+
+    .modal__wrapper-content h2 {
+      margin-bottom: 22px;
+
+      font-size: 14px;
+    }
+
+    .modal__form-field {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &:nth-child(2) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .modal__form-field input {
+    padding: 0 35px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .modal__form-field label {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+  }
+
+  .modal__form-field svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modal__form-field input::placeholder {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .modal__form-field input[type=text],
+  .modal__form-field input[type=tel] {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .modal__sumbit {
+    width: 193px;
+    height: 45px;
+
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
 </style>

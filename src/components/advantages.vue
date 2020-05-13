@@ -235,7 +235,7 @@ export default {
     }
 	}
 	
-	@media (max-width: 1199px) {
+	@media (max-width: 767px) {
 		.advantages {
 			padding: 120px 0 0 0;
 			max-width: 92vw;

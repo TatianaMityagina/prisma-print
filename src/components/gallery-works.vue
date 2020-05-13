@@ -2,7 +2,7 @@
   <div class="gallery-works">
 		<div class="gallery-works__container">
       <h2>Галерея работ</h2>
-      <div class="index-galler__items">
+      <div class="gallery-works__items">
         <img src="~@/assets/img/index/index-galary-photo1@1x.jpg" srcset="~@/assets/img/index/index-galary-photo1@2x.jpg 2x" alt="Photo-1" width="268" height="268">      
         <img src="~@/assets/img/index/index-galary-photo2@1x.jpg" srcset="~@/assets/img/index/index-galary-photo2@2x.jpg 2x" alt="Photo-2" width="268" height="268">
         <img src="~@/assets/img/index/index-galary-photo3@1x.jpg" srcset="~@/assets/img/index/index-galary-photo3@2x.jpg 2x" alt="Photo-3" width="268" height="268">      
@@ -66,13 +66,13 @@ export default {
 		color: #961E50;
 	}
 
-  .index-galler__items {
+  .gallery-works__items {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .index-galler__items img {
+  .gallery-works__items img {
     margin: 0 14px 14px 0;
 
     &:nth-child(6n) {
@@ -85,7 +85,7 @@ export default {
       max-width: 1400px;
     }
 
-    .index-galler__items img {
+    .gallery-works__items img {
       width: 213px;
       height: 213px;
     }
@@ -100,7 +100,7 @@ export default {
       font-size: 48px;
     }
 
-    .index-galler__items img {
+    .gallery-works__items img {
       margin-right: 12px;
       margin-bottom: 12px;
       width: 177px;
@@ -114,7 +114,7 @@ export default {
       max-width: 1120px;
     }
 
-    .index-galler__items img {
+    .gallery-works__items img {
       margin-right: 12px;
       width: 170px;
       height: 170px;
@@ -127,7 +127,7 @@ export default {
 			max-width: 688px;
     }
 
-    .index-galler__items img {
+    .gallery-works__items img {
       margin-right: 14px;
       width: 151px;
       height: 151px;
@@ -137,6 +137,32 @@ export default {
       }
 
       &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .gallery-works {
+      padding: 120px 0 100px 0;
+			max-width: 92vw;
+    }
+
+    .gallery-works__container h2 {
+      width: 100%;
+      margin-bottom: 40px;
+
+      font-size: 46px;
+      text-align: center;
+    }
+
+    .gallery-works__items img {
+      margin-right: 4%;
+      margin-bottom: 5px;
+      width: 47.7%;
+      height: 164px;
+
+      &:nth-child(2n) {
         margin-right: 0;
       }
     }

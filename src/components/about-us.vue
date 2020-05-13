@@ -126,8 +126,33 @@ export default {
   }
 
   @media (max-width: 1199px) {
-        .about-us__container p {
+    .about-us__container p {
       max-width: 520px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-us__container {
+      max-width: 92vw;
+      padding: 65px 0 0 0;
+
+      background: url('~@/assets/img/about-triangle-mobile.svg') top / contain no-repeat;
+    }
+
+    .about-us__triangle {
+      margin-bottom: 15px;
+      width: 258px;
+      height: 205px;
+    }
+
+    .about-us__logo-text {
+      width: 225px;
+      height: 46px;
+    }
+
+    .about-us__container p {
+      max-width: 100%;
+      font-size: 20px;
     }
   }
 </style>

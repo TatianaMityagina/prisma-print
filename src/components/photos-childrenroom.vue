@@ -362,4 +362,73 @@ export default {
       height: 112px;
     }
   }
+
+  @media (max-width: 767px) {
+    .photos-childrenroom {
+      margin-bottom: 120px;
+      background-size: 200px 253px;
+      background-position: top left;
+      background-position-y: 30px;
+    }
+
+    .photos-childrenroom__container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 92vw;
+      padding: 0;
+    }
+
+    .photos-childrenroom__title-wrapper {
+      padding: 0;
+      margin-bottom: 218px;
+    }
+
+    .photos-childrenroom__gallery {
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .photos-childrenroom__gallery h3 {
+      text-align: center;
+    }
+
+    .photos-childrenroom__left {
+      margin-bottom: 40px;
+    }
+
+    .photos-childrenroom__left-top {
+      margin-bottom: 5px;
+    }
+
+    .photos-childrenroom__left-top img {
+      width: 100%;
+      height: 208px;
+    }
+
+    .photos-childrenroom__left-bottom img {
+      width: 168px;
+      height: 97px;
+    }
+
+    .photos-childrenroom__right {
+      align-items: center;
+    }
+
+    .photos-childrenroom__right-gallery {
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .photos-childrenroom__right-gallery img {
+      margin-right: 0;
+      margin-bottom: 5px;
+      width: 110px;
+      height: 123px;
+    }
+
+    .photos-childrenroom__right p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
 </style>

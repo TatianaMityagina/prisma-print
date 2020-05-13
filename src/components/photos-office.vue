@@ -355,4 +355,77 @@ export default {
       height: 112px;
     }
   }
+
+  @media (max-width: 767px) {
+    .photos-office {
+      margin-bottom: 120px;
+      background-size: 237px 237px;
+      background: url('~@/assets/img/office/office-office-mobile@1x.svg') top center / 237px 237px  no-repeat;
+      background-position-y: 35px;
+    }
+
+    .photos-office__container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 92vw;
+      padding: 0;
+    }
+
+    .photos-office__title-wrapper {
+      padding: 0;
+      margin-bottom: 218px;
+    }
+
+    .photos-office__title-wrapper h2 {
+      font-size: 65px;
+    }
+
+    .photos-office__gallery {
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .photos-office__gallery h3 {
+      text-align: center;
+    }
+
+    .photos-office__left {
+      margin-bottom: 40px;
+    }
+
+    .photos-office__left-top {
+      margin-bottom: 5px;
+    }
+
+    .photos-office__left-top img {
+      width: 100%;
+      height: 208px;
+    }
+
+    .photos-office__left-bottom img {
+      width: 168px;
+      height: 97px;
+    }
+
+    .photos-office__right {
+      align-items: center;
+    }
+
+    .photos-office__right-gallery {
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .photos-office__right-gallery img {
+      margin-right: 0;
+      margin-bottom: 5px;
+      width: 110px;
+      height: 123px;
+    }
+
+    .photos-office__right p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
 </style>

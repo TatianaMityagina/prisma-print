@@ -88,7 +88,9 @@
                 </router-link>
               </li>
               <li class="menu-nav__list-item">
-                <a href="#">Калькулятор стоимости</a>
+                <router-link to="/calculation" name="Calculation" @click.native="anchor">
+                  Калькулятор стоимости
+                </router-link>
               </li>
               <li class="menu-nav__list-item">
                 <router-link to="/contract" name="Contract" @click.native="anchor">

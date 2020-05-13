@@ -3,7 +3,7 @@
 		<div class="index-gallery__container">
       <h2>Галерея работ</h2>
       <p>Уникальные идеи наших любимых клиентов</p>
-      <div class="index-galler__items">
+      <div class="index-gallery__items">
         <img src="~@/assets/img/index/index-galary-photo1@1x.jpg" srcset="~@/assets/img/index/index-galary-photo1@2x.jpg 2x" alt="Photo-1" width="268" height="268">      
         <img src="~@/assets/img/index/index-galary-photo2@1x.jpg" srcset="~@/assets/img/index/index-galary-photo2@2x.jpg 2x" alt="Photo-2" width="268" height="268">
         <img src="~@/assets/img/index/index-galary-photo3@1x.jpg" srcset="~@/assets/img/index/index-galary-photo3@2x.jpg 2x" alt="Photo-3" width="268" height="268">      
@@ -103,7 +103,7 @@ export default {
       font-size: 48px;
     }
 
-    .index-galler__items img {
+    .index-gallery__items img {
       margin-right: 12px;
       margin-bottom: 12px;
       width: 177px;
@@ -117,7 +117,7 @@ export default {
       max-width: 1120px;
     }
 
-    .index-galler__items img {
+    .index-gallery__items img {
       margin-right: 12px;
       width: 170px;
       height: 170px;
@@ -130,7 +130,7 @@ export default {
 			max-width: 688px;
     }
 
-    .index-galler__items img {
+    .index-gallery__items img {
       margin-right: 14px;
       width: 151px;
       height: 151px;
@@ -145,7 +145,7 @@ export default {
     }
   }
 
-   @media (max-width: 1199px) {
+  @media (max-width: 767px) {
     .index-gallery {
       padding: 120px 0 0 0;
 			max-width: 92vw;
@@ -162,21 +162,14 @@ export default {
     .index-gallery__container p {
       text-align: center;
     }
-
-    .index-galler__items {
-      justify-content: space-between;
-    }
-
-    .index-galler__items img {
-      margin-right: 0;
-      width: 164px;
+    
+    .index-gallery__items img {
+      margin-right: 4%;
+      margin-bottom: 5px;
+      width: 47.7%;
       height: 164px;
 
-      &:nth-child(6n) {
-        margin-right: 0;
-      }
-
-      &:nth-child(4n) {
+      &:nth-child(2n) {
         margin-right: 0;
       }
     }

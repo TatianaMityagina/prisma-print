@@ -354,4 +354,73 @@ export default {
       height: 112px;
     }
   }
+
+  @media (max-width: 767px) {
+    .photos-bathroom {
+      margin-bottom: 120px;
+      background-size: 180px 245px;
+      background-position: top right;
+      background-position-y: 50px;
+    }
+
+    .photos-bathroom__container {
+      flex-direction: column;
+      align-items: center;
+      max-width: 92vw;
+      padding: 0;
+    }
+
+    .photos-bathroom__title-wrapper {
+      padding: 0;
+      margin-bottom: 218px;
+    }
+
+    .photos-bathroom__gallery {
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .photos-bathroom__gallery h3 {
+      text-align: center;
+    }
+
+    .photos-bathroom__left {
+      margin-bottom: 40px;
+    }
+
+    .photos-bathroom__left-top {
+      margin-bottom: 5px;
+    }
+
+    .photos-bathroom__left-top img {
+      width: 100%;
+      height: 208px;
+    }
+
+    .photos-bathroom__left-bottom img {
+      width: 168px;
+      height: 97px;
+    }
+
+    .photos-bathroom__right {
+      align-items: center;
+    }
+
+    .photos-bathroom__right-gallery {
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .photos-bathroom__right-gallery img {
+      margin-right: 0;
+      margin-bottom: 5px;
+      width: 110px;
+      height: 123px;
+    }
+
+    .photos-bathroom__right p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
 </style>

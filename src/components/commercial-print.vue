@@ -2,7 +2,7 @@
   <div class="commercial-print">
 		<div class="commercial-print__container">
       <h2>Коммерческая печать</h2>
-      <div class="commercial-print__list-wrapper">
+      <div class="commercial-print__list-wrapper commercial-print__list-wrapper--content-hidden">
         <ul class="commercial-print__list">
           <li>Кафе</li>
           <li>Рестораны</li>
@@ -74,14 +74,34 @@
           <li>Базы отдыха</li>
         </ul>
       </div>
-            
+      <button type="button" class="commercial-print__btn commercial-print__btn--close" @click="toggleList">
+        <span class="commercial-print__btn-text commercial-print__btn-text--close">Посмотреть все</span>
+        <span class="commercial-print__btn-text commercial-print__btn-text--open">Скрыть</span>
+      </button> 
 		</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CommercialPrint'
+  name: 'CommercialPrint',
+  methods: {
+    toggleList() {
+      let listWrapper = document.querySelector('.commercial-print__list-wrapper');
+      var toggle = document.querySelector('.commercial-print__btn');
+      if (listWrapper.classList.contains('commercial-print__list-wrapper--content-hidden')) {
+        listWrapper.classList.remove('commercial-print__list-wrapper--content-hidden');
+        toggle.classList.remove('commercial-print__btn--close');
+
+        toggle.blur();
+      } else {
+        listWrapper.classList.add('commercial-print__list-wrapper--content-hidden');
+        toggle.classList.add('commercial-print__btn--close');
+
+        toggle.blur();
+      }
+    }
+  }
 }
 </script>
 
@@ -132,6 +152,23 @@ export default {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  .commercial-print__btn {
+    display: none;
+    margin: 0 auto;
+
+    font-family: Panton;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: rgba($color: #ffffff, $alpha: 0.5);
+
+    border: none;
+    background: transparent;
+    outline: none;
   }
 
   @media (max-width: 1919px) {
@@ -202,6 +239,91 @@ export default {
       &:nth-child(4n) {
         margin-right: 0;
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .commercial-print {
+      margin-bottom: 85px;
+      margin-top: 72px;
+      padding-bottom: 20px;
+    }
+    
+    .commercial-print__container {
+      padding: 0;
+      max-width: 92vw;
+    }
+
+    .commercial-print__container h2 {
+      margin-bottom: 30px;
+      
+      font-size: 31px;
+      text-align: center;
+    }
+
+    .commercial-print__list-wrapper {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    .commercial-print__list-wrapper--content-hidden {
+      max-height: 250px;
+      overflow-y: hidden;
+    }
+
+    .commercial-print__list {
+      margin-right: 20px;
+      margin-bottom: 40px;
+
+      &:nth-child(4n) {
+        margin-right: 20px;
+      }
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 20px;
+      }
+
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4) {
+        margin-right: 5px;
+      }
+
+
+      &:nth-child(5) {
+        margin-right: 10px;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    .commercial-print__list li {
+      font-size: 14px;
+    }
+
+    .commercial-print__btn {
+      display: block;
+    }
+
+    .commercial-print__btn .commercial-print__btn-text--close {
+      display: none;
+    }
+
+    .commercial-print__btn--close .commercial-print__btn-text--close {
+      display: inline;
+    }
+
+    .commercial-print__btn--close .commercial-print__btn-text--open {
+      display: none;
     }
   }
 </style>

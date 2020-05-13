@@ -13,14 +13,14 @@
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bathroom@1x.jpg" srcset="~@/assets/img/home/home-bathroom@2x.jpg 2x" alt="Photo-2" width="317" height="476">
-            <a class="home-print__btn" href="#bathroom" @click.native="anchor">Посмотреть</a>
+            <a class="home-print__btn" href="#bathroom">Посмотреть</a>
           </div>
           <h3>Ванная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-childrenroom@1x.jpg" srcset="~@/assets/img/home/home-childrenroom@2x.jpg 2x" alt="Photo-3" width="317" height="476">
-            <a class="home-print__btn" href="#childrenroom">Посмотреть</a>
+            <a class="home-print__btn" href="#childrenroom" @click="openBlock">Посмотреть</a>
           </div>
           <h3>Детская комната</h3>
         </div>
@@ -46,7 +46,32 @@
 
 <script>
 export default {
-  name: 'HomePrint'
+  name: 'HomePrint',
+  methods: {
+    async openBlock(name_block){
+      // Получение ссылки на элемент
+      let block = this.$id[`${name_block}`]
+      // Число циклов в анимации, ее качество
+      let count = 100;
+      // Определение раастояние от начала страницы до элемента
+      let top = window.scrollY + block.getBoundingClientRect().y;
+      // Определение раастояние от начала страницы до элемента
+      let start_top = window.scrollY;
+      // Вычисление перемещения (скролла) за одну итерацию
+      let delta = (top - window.scrollY) / 100;
+      // Начало анимации
+      for (let i=0;i<100; i++) {
+        // Ожидание 1 секунды, деленного на качетсво анимации
+        await new Promise(resolve => {
+            window.setTimeout(function () {
+                resolve()
+            }, 1000 / count)
+        })
+        // Выполнение перемещения на значение delta  у учетом текущего скролла
+        window.scrollTo(0, start_top + delta)
+      }
+    }
+  }
 }
 </script>
 
@@ -224,6 +249,63 @@ export default {
 
     .home-print__item h3 {
       font-size: 13px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .home-print {
+      margin-bottom: 110px;
+    }
+    
+    .home-print__container {
+      padding: 0;
+      max-width: 92vw;
+    }
+
+    .home-print__container h2 {
+      font-size: 36px;
+    }
+
+    .home-print__list {
+      justify-content: flex-start;
+      overflow-x: scroll;
+      padding-bottom: 10px;
+    }
+
+    .home-print__list::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .home-print__list::-webkit-scrollbar-thumb {
+      background: #C71866;
+      border-radius: 30px;
+    }
+
+    .home-print__list::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 30px;
+    }
+
+    scroll-bar::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    scroll-bar::-webkit-scrollbar-thumb {
+      background: #C71866;
+      border-radius: 20px;
+    }
+
+    scroll-bar::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 20px;
+    }
+
+    .home-print__item {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 </style>

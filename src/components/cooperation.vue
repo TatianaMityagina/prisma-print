@@ -1,8 +1,11 @@
 <template>
   <div class="cooperation">
 		<div class="cooperation__container">
-      <h2>Сотрудничество с prismaprinт</h2>
-      <img src="~@/assets/img/index/index-mac@1x.jpg" srcset="~@/assets/img/index/index-mac@2x.jpg 2x" alt="Laptop" width="1680" height="281"> 
+      <h2>мы готовы к сотрудничеству</h2>
+      <picture>
+        <source media="(max-width: 767px)" src="~@/assets/img/cooperation-mobile@1x.jpg" srcset="~@/assets/img/cooperation-mobile@2x.jpg 2x">
+        <img src="~@/assets/img/index/index-mac@1x.jpg" srcset="~@/assets/img/index/index-mac@2x.jpg 2x" alt="Laptop" width="1680" height="281">
+      </picture>
       <div class="cooperation__description-wrapper">
         <p class="cooperation__description-text">
           Мы разработали ряд партнёрских выгодных условий. 
@@ -265,6 +268,56 @@ export default {
     .cooperation__description-list {
       max-width: 45%;
       margin-left: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cooperation {
+      padding-top: 110px;
+      padding-bottom: 100px;
+    }
+
+    .cooperation__container {
+      max-width: 92vw;
+      padding: 0;
+    }
+
+    .cooperation__container h2 {
+      margin: 0 0 40px 0;
+      width: 80vw;
+      font-size: 35px;
+    }
+
+    .cooperation__container img {
+      margin-bottom: 20px;
+      height: 199px;
+    }
+
+    .cooperation__description-wrapper {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .cooperation__description-text {
+      max-width: 100%;
+      margin-bottom: 45px;
+    }
+
+    .cooperation__description-list {
+      max-width: 100%;
+      padding-left: 45px;
+    }
+
+    .cooperation__description-item {
+      width: 100%;
+    }
+
+    .cooperation__description-item h3 {
+      font-size: 20px;
+    }
+
+    .cooperation__description-item p {
+      font-size: 14px;
     }
   }
 </style>
