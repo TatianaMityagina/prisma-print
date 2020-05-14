@@ -65,37 +65,37 @@
             <h1>Куда печатаем?</h1>
             <ul class="menu-nav__list-type">
               <li>
-                <router-link to="/home" name="Home" @click.native="anchor">
+                <span  @click="anchor('Home')">
                   Домой
-                </router-link>
+                </span>
               </li>
               <li>
-                <router-link to="/office" name="Office" @click.native="anchor">
+                <span @click="anchor('Office')">
                   Коммерция
-                </router-link>
+                </span>
               </li>
             </ul>
 
             <ul class="menu-nav__list">
               <li class="menu-nav__list-item">
-                <router-link to="/about" name="About" @click.native="anchor">
+                <span @click="anchor('About')">
                   О нас
-                </router-link>
+                </span>
               </li>
               <li class="menu-nav__list-item">
-                <router-link to="/gallery" name="Gallery" @click.native="anchor">
+                <span @click="anchor('Gallery')">
                   Галерея работ
-                </router-link>
+                </span>
               </li>
               <li class="menu-nav__list-item">
-                <router-link to="/calculation" name="Calculation" @click.native="anchor">
+                <span @click="anchor('Calculation')">
                   Калькулятор стоимости
-                </router-link>
+                </span>
               </li>
               <li class="menu-nav__list-item">
-                <router-link to="/contract" name="Contract" @click.native="anchor">
+                <span @click="anchor('Contract')">
                   Сотрудничество
-                </router-link>
+                </span>
               </li>
             </ul>
           </nav>
@@ -149,11 +149,9 @@ export default {
     closeMenu() {
       this.isMenuShow = false
     },
-    anchor() {
-      this.$emit('closeMenu')
-      this.$nextTick(() => {
-        location.href = this.$router.currentRoute.hash
-      })
+    anchor(name) {
+      this.isMenuShow = false
+      this.$router.push({ name: name})
     }
   }
 }
@@ -300,8 +298,6 @@ export default {
     background: url('~@/assets/img/index-intro-triangle.svg') center / contain no-repeat;
   }
 
-  
-
   .interactive-menu__button svg {
     margin-right: 10px;
   }
@@ -330,12 +326,19 @@ export default {
     margin-bottom: 40px;
   }
 
-  .menu-nav__list-type a {
+  .menu-nav__list-type span {
     font-weight: 600;
     font-size: 68px;
     line-height: 100%;
     color: #961E50;
     text-decoration: none;
+
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.4s;
+      color: #C71866;
+    }
   }
 
   .menu-nav__list-type li {
@@ -353,13 +356,20 @@ export default {
     margin-bottom: 45px;
   }
 
-  .menu-nav__list a {
+  .menu-nav__list span {
     font-weight: 600;
     font-size: 28px;
     line-height: 100%;
     text-align: center;
     color: #202020;
     text-decoration: none;
+
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.4s;
+      text-decoration: underline;
+    }
   }
 
   .menu-nav__list-item {
@@ -377,6 +387,11 @@ export default {
     text-align: center;
     color: #2D9CDB;
     text-decoration: none;
+
+    &:hover {
+      transition: 0.4s;
+      color: rgb(7, 141, 219);
+    }
   }
 
   .interactive-menu__social-list {
@@ -409,8 +424,6 @@ export default {
   .fade-adaptivity-menu-leave-to {
     opacity: 0;
   }
-
-  // 1600
 
   @media (max-width: 1919px) {
     .menu {

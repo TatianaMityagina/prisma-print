@@ -268,9 +268,10 @@ export default {
     border-radius: 20px;
     cursor: pointer;
 
-     &:hover {
-      filter: contrast(110%);
+    &:hover {
       transition: 0.4s;
+      background: rgb(175, 43, 118);
+      box-shadow: 0px 4px 10px rgba(139, 17, 85, 0.5);
     }
   }
 

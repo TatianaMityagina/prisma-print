@@ -110,7 +110,7 @@ export default {
   .commercial-print {
     display: flex;
     justify-content: center;
-    max-width: 1920px;
+    max-width: 1720px;
     margin-top: 106px;
     margin-bottom: 250px;
     padding: 60px 0;

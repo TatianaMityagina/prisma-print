@@ -70,16 +70,34 @@ export default {
   .youtube {
     color: #B21112;
     border-bottom: 1px solid #B21112;
+
+    &:hover {
+      transition: 0.4s;
+      color: rgb(221, 74, 74);
+      border-bottom: 1px solid rgb(221, 74, 74);
+    }
   }
 
   .site {
     color: #218ACD;
     border-bottom: 1px solid #218ACD;
+
+    &:hover {
+      transition: 0.4s;
+      color: rgb(40, 164, 241);
+      border-bottom: 1px solid rgb(40, 164, 241);
+    }
   }
 
   .insta {
     color: #D42888;
     border-bottom: 1px solid #D42888;
+
+    &:hover {
+      transition: 0.4s;
+      color: rgb(189, 10, 108);
+      border-bottom: 1px solid rgb(189, 10, 108);
+    }
   }
 
   @media (max-width: 1919px) {

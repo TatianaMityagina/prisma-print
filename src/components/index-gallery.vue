@@ -63,13 +63,13 @@ export default {
     color: rgba($color: #000000, $alpha: 0.6);
   }
 
-  .index-galler__items {
+  .index-gallery__items {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .index-galler__items img {
+  .index-gallery__items img {
     margin: 0 14px 14px 0;
 
     &:nth-child(6n) {
@@ -87,7 +87,7 @@ export default {
       margin-bottom: 40px;
     }
 
-    .index-galler__items img {
+    .index-gallery__items img {
       width: 213px;
       height: 213px;
     }

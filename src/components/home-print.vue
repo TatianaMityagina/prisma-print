@@ -6,35 +6,35 @@
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-kitchen@1x.jpg" srcset="~@/assets/img/home/home-kitchen@2x.jpg 2x" alt="Photo-1" width="317" height="476">
-            <a class="home-print__btn" href="#kitchen">Посмотреть</a>
+            <a class="home-print__btn" href="#kitchen" v-scroll-to="'#kitchen'">Посмотреть</a>
           </div>
           <h3>Кухня</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bathroom@1x.jpg" srcset="~@/assets/img/home/home-bathroom@2x.jpg 2x" alt="Photo-2" width="317" height="476">
-            <a class="home-print__btn" href="#bathroom">Посмотреть</a>
+            <a class="home-print__btn" href="#bathroom" v-scroll-to="'#bathroom'">Посмотреть</a>
           </div>
           <h3>Ванная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-childrenroom@1x.jpg" srcset="~@/assets/img/home/home-childrenroom@2x.jpg 2x" alt="Photo-3" width="317" height="476">
-            <a class="home-print__btn" href="#childrenroom" @click="openBlock">Посмотреть</a>
+            <a class="home-print__btn" href="#childrenroom" v-scroll-to="'#childrenroom'">Посмотреть</a>
           </div>
           <h3>Детская комната</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-livingroom@1x.jpg" srcset="~@/assets/img/home/home-livingroom@2x.jpg 2x" alt="Photo-4" width="317" height="476">
-            <a class="home-print__btn" href="#livingroom">Посмотреть</a>
+            <a class="home-print__btn" href="#livingroom"  v-scroll-to="'#livingroom'">Посмотреть</a>
           </div>
           <h3>Гостинная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bedroom@1x.jpg" srcset="~@/assets/img/home/home-bedroom@2x.jpg 2x" alt="Photo-5" width="317" height="476">
-            <a class="home-print__btn" href="#bedroom">Посмотреть</a>
+            <a class="home-print__btn" href="#bedroom" v-scroll-to="'#bedroom'">Посмотреть</a>
           </div>
           <h3>Спальная</h3>
         </div>
@@ -46,32 +46,7 @@
 
 <script>
 export default {
-  name: 'HomePrint',
-  methods: {
-    async openBlock(name_block){
-      // Получение ссылки на элемент
-      let block = this.$id[`${name_block}`]
-      // Число циклов в анимации, ее качество
-      let count = 100;
-      // Определение раастояние от начала страницы до элемента
-      let top = window.scrollY + block.getBoundingClientRect().y;
-      // Определение раастояние от начала страницы до элемента
-      let start_top = window.scrollY;
-      // Вычисление перемещения (скролла) за одну итерацию
-      let delta = (top - window.scrollY) / 100;
-      // Начало анимации
-      for (let i=0;i<100; i++) {
-        // Ожидание 1 секунды, деленного на качетсво анимации
-        await new Promise(resolve => {
-            window.setTimeout(function () {
-                resolve()
-            }, 1000 / count)
-        })
-        // Выполнение перемещения на значение delta  у учетом текущего скролла
-        window.scrollTo(0, start_top + delta)
-      }
-    }
-  }
+  name: 'HomePrint'
 }
 </script>
 
