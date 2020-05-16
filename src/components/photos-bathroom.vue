@@ -9,23 +9,23 @@
         <div class="photos-bathroom__left">
           <h3>Фото готовых работ</h3>
           <div class="photos-bathroom__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
+            <img src="~@/assets/img/home/home-bath1@1x.jpg" srcset="~@/assets/img/home/home-bath1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
           </div>
           <div class="photos-bathroom__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+            <img src="~@/assets/img/home/home-bath2@1x.jpg" srcset="~@/assets/img/home/home-bath2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
+            <img src="~@/assets/img/home/home-bath3@1x.jpg" srcset="~@/assets/img/home/home-bath3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
           </div>
         </div>
 
         <div class="photos-bathroom__right">
           <h3>Галерея идей для Ванной</h3>
           <div class="photos-bathroom__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath4@1x.jpg" srcset="~@/assets/img/home/home-bath4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath5@1x.jpg" srcset="~@/assets/img/home/home-bath5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath6@1x.jpg" srcset="~@/assets/img/home/home-bath6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath7@1x.jpg" srcset="~@/assets/img/home/home-bath7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath8@1x.jpg" srcset="~@/assets/img/home/home-bath8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
+            <img src="~@/assets/img/home/home-bath9@1x.jpg" srcset="~@/assets/img/home/home-bath9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 

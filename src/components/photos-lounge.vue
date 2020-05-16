@@ -9,23 +9,23 @@
         <div class="photos-lounge__left">
           <h3>Фото готовых работ</h3>
           <div class="photos-lounge__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
+            <img src="~@/assets/img/home/home-salon1@1x.jpg" srcset="~@/assets/img/home/home-salon1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
           </div>
           <div class="photos-lounge__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+            <img src="~@/assets/img/home/home-salon2@1x.jpg" srcset="~@/assets/img/home/home-salon2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
+            <img src="~@/assets/img/home/home-salon3@1x.jpg" srcset="~@/assets/img/home/home-salon3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
           </div>
         </div>
 
         <div class="photos-lounge__right">
           <h3>Галерея идей для Гостинной</h3>
           <div class="photos-lounge__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon4@1x.jpg" srcset="~@/assets/img/home/home-salon4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon5@1x.jpg" srcset="~@/assets/img/home/home-salon5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon6@1x.jpg" srcset="~@/assets/img/home/home-salon6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon7@1x.jpg" srcset="~@/assets/img/home/home-salon7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon8@1x.jpg" srcset="~@/assets/img/home/home-salon8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
+            <img src="~@/assets/img/home/home-salon9@1x.jpg" srcset="~@/assets/img/home/home-salon9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 

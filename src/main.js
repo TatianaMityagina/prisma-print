@@ -7,6 +7,9 @@ import Es6Promise from 'es6-promise'
 Es6Promise.polyfill()
 
 var VueScrollTo = require('vue-scrollto');
+
+const VueInputMask = require('vue-inputmask').default
+Vue.use(VueInputMask)
  
 Vue.use(VueScrollTo, {
   container: "body",

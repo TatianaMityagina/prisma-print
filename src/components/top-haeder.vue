@@ -514,13 +514,13 @@ export default {
     }
 
     .interactive-menu {
-      padding-top: 60px;
+      padding-top: 30px;
       min-height: 100vh;
       justify-content: flex-start;
     }
 
     .interactive-menu__container {
-      padding: 65px 0 0 0;
+      padding: 35px 0 0 0;
       max-width: 100%;
 
       background: url('~@/assets/img/triangle-mobile-menu.svg') center / cover no-repeat;

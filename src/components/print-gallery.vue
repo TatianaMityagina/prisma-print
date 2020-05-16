@@ -262,6 +262,7 @@ export default {
     font-size: 14px;
     line-height: 140%;
     color: #FFFFFF;
+    white-space: nowrap;
 
     border: none;
     background: #D73690;

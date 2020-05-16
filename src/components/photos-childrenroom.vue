@@ -9,23 +9,23 @@
         <div class="photos-childrenroom__left">
           <h3>Фото готовых работ</h3>
           <div class="photos-childrenroom__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
+            <img src="~@/assets/img/home/home-child-wall1@1x.jpg" srcset="~@/assets/img/home/home-child-wall1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
           </div>
           <div class="photos-childrenroom__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+            <img src="~@/assets/img/home/home-child-wall2@1x.jpg" srcset="~@/assets/img/home/home-child-wall2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
+            <img src="~@/assets/img/home/home-child-wall3@1x.jpg" srcset="~@/assets/img/home/home-child-wall3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
           </div>
         </div>
 
         <div class="photos-childrenroom__right">
           <h3>Галерея идей для Детской</h3>
           <div class="photos-childrenroom__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall4@1x.jpg" srcset="~@/assets/img/home/home-child-wall4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall5@1x.jpg" srcset="~@/assets/img/home/home-child-wall5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall6@1x.jpg" srcset="~@/assets/img/home/home-child-wall6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall7@1x.jpg" srcset="~@/assets/img/home/home-child-wall7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall8@1x.jpg" srcset="~@/assets/img/home/home-child-wall8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
+            <img src="~@/assets/img/home/home-child-wall9@1x.jpg" srcset="~@/assets/img/home/home-child-wall9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 

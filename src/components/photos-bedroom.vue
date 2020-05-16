@@ -9,11 +9,11 @@
         <div class="photos-bedroom__left">
           <h3>Фото готовых работ</h3>
           <div class="photos-bedroom__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
+            <img src="~@/assets/img/home/home-bed1@1x.jpg" srcset="~@/assets/img/home/home-bed1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
           </div>
           <div class="photos-bedroom__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+            <img src="~@/assets/img/home/home-bed2@1x.jpg" srcset="~@/assets/img/home/home-bed2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
+            <img src="~@/assets/img/home/home-bed3@1x.jpg" srcset="~@/assets/img/home/home-bed3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
           </div>
         </div>
 
