@@ -7,24 +7,19 @@
       <div class="photos-spa__gallery">
         <div class="photos-spa__left">
           <h3>Фото готовых работ</h3>
-          <div class="photos-spa__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
-          </div>
-          <div class="photos-spa__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+          <div v-viewer class="photos-spa__left-gallery clearfix">
+            <template v-for="photo in photos">
+              <img :src="photo" :key="photo" width="338" height="195">
+            </template>
           </div>
         </div>
 
         <div class="photos-spa__right">
           <h3>Галерея идей для сферы услуг</h3>
-          <div class="photos-spa__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+          <div v-viewer class="photos-spa__right-gallery clearfix">
+            <template v-for="image in images">
+              <img :src="image" :key="image" width="130" height="145">
+            </template>
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 
@@ -60,7 +55,20 @@ export default {
   },
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      photos: [
+        '/img/spa/spa-photo1.jpg',    	
+        '/img/spa/spa-photo2.jpg',
+        '/img/spa/spa-photo3.jpg'
+      ],
+      images: [
+        '/img/spa/spa-photo4.jpg',    	
+        '/img/spa/spa-photo5.jpg',
+        '/img/spa/spa-photo6.jpg',
+        '/img/spa/spa-photo7.jpg',    	
+        '/img/spa/spa-photo8.jpg',
+        '/img/spa/spa-photo9.jpg'
+      ]
     }
   }
 }
@@ -130,13 +138,31 @@ export default {
     flex-direction: column;
   }
 
-  .photos-spa__left-top {
-    margin-bottom: 18px;
+  .photos-spa__left-gallery {
+    display: grid;
+    grid-template-areas:
+    'img1 img1'
+    'img2 img3';
+    grid-gap: 15px;
+    max-width: 694px;
   }
 
-  .photos-spa__left-bottom {
-    display: flex;
-    justify-content: space-between;
+  .photos-spa__left-gallery img {
+    cursor: pointer;
+    
+    &:nth-child(1) {
+      grid-area: img1;
+      width: 100%;
+      height: 418px;
+    }
+
+    &:nth-child(2) {
+      grid-area: img2;
+    }
+
+    &:nth-child(3) {
+      grid-area: img3;
+    }
   }
 
   .photos-spa__right {
@@ -155,6 +181,8 @@ export default {
   .photos-spa__right-gallery img {
     margin-right: 5px;
     margin-bottom: 5px;
+
+    cursor: pointer;
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -217,14 +245,18 @@ export default {
       max-width: 1017px;
     }
 
-    .photos-spa__left-top img {
-      width: 558px;
-      height: 336px;
+    .photos-spa__left-gallery {
+      max-width: 558px;
     }
 
-    .photos-spa__left-bottom img {
-      width: 272px;
+    .photos-spa__left-gallery img {
+      width: 100%;
       height: 157px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 336px;
+      }
     }
   }
 
@@ -253,8 +285,17 @@ export default {
       font-size: 18px;
     }
 
-    .photos-spa__left-top {
-      margin-bottom: 10px;
+    .photos-spa__left-gallery {
+      max-width: 431px;
+    }
+
+    .photos-spa__left-gallery img {
+      height: 121px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 265px;
+      }
     }
 
     .photos-spa__right {
@@ -263,18 +304,6 @@ export default {
 
     .photos-spa__right p {
       font-size: 14px;
-    }
-
-    .photos-spa__left-top img {
-      width: 431px;
-      height: 260px;
-      object-fit: contain;
-    }
-
-    .photos-spa__left-bottom img {
-      width: 210px;
-      height: 121px;
-      object-fit: contain;
     }
 
     .photos-spa__right-gallery {
@@ -312,14 +341,17 @@ export default {
       margin-bottom: 10px;
     }
 
-    .photos-spa__left-top img {
-      width: 395px;
-      height: 238px;
+    .photos-spa__left-gallery {
+      max-width: 395px;
     }
 
-    .photos-spa__left-bottom img {
-      width: 193px;
+    .photos-spa__left-gallery img {
       height: 111px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 238px;
+      }
     }
   }
 
@@ -346,16 +378,6 @@ export default {
 
     .photos-spa__left {
       margin-bottom: 40px;
-    }
-
-    .photos-spa__left-top img {
-      width: 400px;
-      height: 240px;
-    }
-
-    .photos-spa__left-bottom img {
-      width: 195px;
-      height: 112px;
     }
   }
 
@@ -394,18 +416,18 @@ export default {
       margin-bottom: 40px;
     }
 
-    .photos-spa__left-top {
-      margin-bottom: 5px;
+    .photos-spa__left-gallery {
+      max-width: 100%;
+      grid-gap: 8px;
     }
 
-    .photos-spa__left-top img {
-      width: 100%;
-      height: 208px;
-    }
-
-    .photos-spa__left-bottom img {
-      width: 168px;
+    .photos-spa__left-gallery img {
       height: 97px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 208px;
+      }
     }
 
     .photos-spa__right {

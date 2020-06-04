@@ -7,24 +7,19 @@
       <div class="photos-hotel__gallery">
         <div class="photos-hotel__left">
           <h3>Фото готовых работ</h3>
-          <div class="photos-hotel__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
-          </div>
-          <div class="photos-hotel__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+          <div v-viewer class="photos-hotel__left-gallery clearfix">
+            <template v-for="photo in photos">
+              <img :src="photo" :key="photo" width="338" height="195">
+            </template>
           </div>
         </div>
 
         <div class="photos-hotel__right">
           <h3>Галерея идей для бизнеса</h3>
-          <div class="photos-hotel__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+          <div v-viewer class="photos-hotel__right-gallery clearfix">
+            <template v-for="image in images">
+              <img :src="image" :key="image" width="130" height="145">
+            </template>
           </div>
           <p>
             Печать производится на совершенно любой поверхности и фактуре. 
@@ -55,7 +50,20 @@ export default {
   },
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      photos: [
+        '/img/hotel/hotel-photo1.jpg',    	
+        '/img/hotel/hotel-photo2.jpg',
+        '/img/hotel/hotel-photo3.jpg'
+      ],
+      images: [
+        '/img/hotel/hotel-photo4.jpg',    	
+        '/img/hotel/hotel-photo5.jpg',
+        '/img/hotel/hotel-photo6.jpg',
+        '/img/hotel/hotel-photo7.jpg',    	
+        '/img/hotel/hotel-photo8.jpg',
+        '/img/hotel/hotel-photo9.jpg'
+      ]
     }
   }
 }
@@ -125,13 +133,31 @@ export default {
     flex-direction: column;
   }
 
-  .photos-hotel__left-top {
-    margin-bottom: 18px;
+  .photos-hotel__left-gallery {
+    display: grid;
+    grid-template-areas:
+    'img1 img1'
+    'img2 img3';
+    grid-gap: 15px;
+    max-width: 694px;
   }
 
-  .photos-hotel__left-bottom {
-    display: flex;
-    justify-content: space-between;
+  .photos-hotel__left-gallery img {
+    cursor: pointer;
+    
+    &:nth-child(1) {
+      grid-area: img1;
+      width: 100%;
+      height: 418px;
+    }
+
+    &:nth-child(2) {
+      grid-area: img2;
+    }
+
+    &:nth-child(3) {
+      grid-area: img3;
+    }
   }
 
   .photos-hotel__right {
@@ -150,6 +176,8 @@ export default {
   .photos-hotel__right-gallery img {
     margin-right: 5px;
     margin-bottom: 5px;
+
+    cursor: pointer;
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -201,6 +229,10 @@ export default {
       max-width: 1400px;
     }
 
+    .photos-hotel__title-wrapper {
+      padding-top: 42px;
+    }
+
     .photos-hotel__title-wrapper h2 {
       width: 329px;
       font-size: 45px;
@@ -214,14 +246,18 @@ export default {
       max-width: 1017px;
     }
 
-    .photos-hotel__left-top img {
-      width: 558px;
-      height: 336px;
+    .photos-hotel__left-gallery {
+      max-width: 558px;
     }
 
-    .photos-hotel__left-bottom img {
-      width: 272px;
+    .photos-hotel__left-gallery img {
+      width: 100%;
       height: 157px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 336px;
+      }
     }
 
     .photos-hotel__right p {
@@ -256,8 +292,17 @@ export default {
       font-size: 18px;
     }
 
-    .photos-hotel__left-top {
-      margin-bottom: 10px;
+    .photos-hotel__left-gallery {
+      max-width: 431px;
+    }
+
+    .photos-hotel__left-gallery img {
+      height: 121px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 265px;
+      }
     }
 
     .photos-hotel__right {
@@ -266,18 +311,6 @@ export default {
 
     .photos-hotel__right p {
       font-size: 14px;
-    }
-
-    .photos-hotel__left-top img {
-      width: 431px;
-      height: 260px;
-      object-fit: contain;
-    }
-
-    .photos-hotel__left-bottom img {
-      width: 210px;
-      height: 121px;
-      object-fit: contain;
     }
 
     .photos-hotel__right-gallery {
@@ -324,14 +357,17 @@ export default {
       margin-bottom: 10px;
     }
 
-    .photos-hotel__left-top img {
-      width: 395px;
-      height: 238px;
+    .photos-hotel__left-gallery {
+      max-width: 395px;
     }
 
-    .photos-hotel__left-bottom img {
-      width: 193px;
+    .photos-hotel__left-gallery img {
       height: 111px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 238px;
+      }
     }
   }
 
@@ -361,16 +397,6 @@ export default {
 
     .photos-hotel__left {
       margin-bottom: 40px;
-    }
-
-    .photos-hotel__left-top img {
-      width: 400px;
-      height: 240px;
-    }
-
-    .photos-hotel__left-bottom img {
-      width: 195px;
-      height: 112px;
     }
   }
 
@@ -410,18 +436,18 @@ export default {
       margin-bottom: 40px;
     }
 
-    .photos-hotel__left-top {
-      margin-bottom: 5px;
+    .photos-hotel__left-gallery {
+      max-width: 100%;
+      grid-gap: 8px;
     }
 
-    .photos-hotel__left-top img {
-      width: 100%;
-      height: 208px;
-    }
-
-    .photos-hotel__left-bottom img {
-      width: 168px;
+    .photos-hotel__left-gallery img {
       height: 97px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 208px;
+      }
     }
 
     .photos-hotel__right {

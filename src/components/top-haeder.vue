@@ -269,11 +269,11 @@ export default {
     top: 0;
 
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 40px 0 120px 0;
     width: 100%;
+    min-height: 100vh;
 
     background-color: #FFFFFF;
   }

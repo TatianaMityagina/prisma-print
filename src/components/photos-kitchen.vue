@@ -8,24 +8,19 @@
       <div class="photos-kitchen__gallery">
         <div class="photos-kitchen__left">
           <h3>Фото готовых работ</h3>
-          <div class="photos-kitchen__left-top">
-            <img src="~@/assets/img/home/home-kitchen1@1x.jpg" srcset="~@/assets/img/home/home-kitchen1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
-          </div>
-          <div class="photos-kitchen__left-bottom">
-            <img src="~@/assets/img/home/home-kitchen2@1x.jpg" srcset="~@/assets/img/home/home-kitchen2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-kitchen3@1x.jpg" srcset="~@/assets/img/home/home-kitchen3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+          <div v-viewer class="photos-kitchen__left-gallery clearfix">
+            <template v-for="photo in photos">
+              <img :src="photo" :key="photo" width="338" height="195">
+            </template>
           </div>
         </div>
 
         <div class="photos-kitchen__right">
           <h3>Галерея идей для Кухни</h3>
-          <div class="photos-kitchen__right-gallery">
-            <img src="~@/assets/img/home/home-kitchen4@1x.jpg" srcset="~@/assets/img/home/home-kitchen4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen5@1x.jpg" srcset="~@/assets/img/home/home-kitchen5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen6@1x.jpg" srcset="~@/assets/img/home/home-kitchen6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen7@1x.jpg" srcset="~@/assets/img/home/home-kitchen7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen8@1x.jpg" srcset="~@/assets/img/home/home-kitchen8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-kitchen9@1x.jpg" srcset="~@/assets/img/home/home-kitchen9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+          <div v-viewer class="photos-kitchen__right-gallery clearfix">
+            <template v-for="image in images">
+              <img :src="image" :key="image" width="130" height="145">
+            </template>
           </div>
           <p>
             Превратите дверь вашего холодильника в портал, 
@@ -60,7 +55,20 @@ export default {
   },
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      photos: [
+        '/img/kitchen/kitchen-photo1.jpg',    	
+        '/img/kitchen/kitchen-photo2.jpg',
+        '/img/kitchen/kitchen-photo3.jpg'
+      ],
+      images: [
+        '/img/kitchen/kitchen-photo4.jpg',    	
+        '/img/kitchen/kitchen-photo5.jpg',
+        '/img/kitchen/kitchen-photo6.jpg',
+        '/img/kitchen/kitchen-photo7.jpg',    	
+        '/img/kitchen/kitchen-photo8.jpg',
+        '/img/kitchen/kitchen-photo9.jpg'
+      ]
     }
   }
 }
@@ -129,13 +137,31 @@ export default {
     flex-direction: column;
   }
 
-  .photos-kitchen__left-top {
-    margin-bottom: 18px;
+  .photos-kitchen__left-gallery {
+    display: grid;
+    grid-template-areas:
+    'img1 img1'
+    'img2 img3';
+    grid-gap: 15px;
+    max-width: 694px;
   }
 
-  .photos-kitchen__left-bottom {
-    display: flex;
-    justify-content: space-between;
+  .photos-kitchen__left-gallery img {
+    cursor: pointer;
+    
+    &:nth-child(1) {
+      grid-area: img1;
+      width: 100%;
+      height: 418px;
+    }
+
+    &:nth-child(2) {
+      grid-area: img2;
+    }
+
+    &:nth-child(3) {
+      grid-area: img3;
+    }
   }
 
   .photos-kitchen__right {
@@ -154,6 +180,8 @@ export default {
   .photos-kitchen__right-gallery img {
     margin-right: 5px;
     margin-bottom: 5px;
+
+    cursor: pointer;
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -216,14 +244,18 @@ export default {
       max-width: 1017px;
     }
 
-    .photos-kitchen__left-top img {
-      width: 558px;
-      height: 336px;
+    .photos-kitchen__left-gallery {
+      max-width: 558px;
     }
 
-    .photos-kitchen__left-bottom img {
-      width: 272px;
+    .photos-kitchen__left-gallery img {
+      width: 100%;
       height: 157px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 336px;
+      }
     }
 
     .photos-kitchen__right p {
@@ -253,10 +285,6 @@ export default {
       font-size: 18px;
     }
 
-    .photos-kitchen__left-top {
-      margin-bottom: 10px;
-    }
-
     .photos-kitchen__right {
       max-width: 365px;
     }
@@ -265,16 +293,17 @@ export default {
       font-size: 14px;
     }
 
-    .photos-kitchen__left-top img {
-      width: 431px;
-      height: 260px;
-      object-fit: contain;
+    .photos-kitchen__left-gallery {
+      max-width: 431px;
     }
 
-    .photos-kitchen__left-bottom img {
-      width: 210px;
+    .photos-kitchen__left-gallery img {
       height: 121px;
-      object-fit: contain;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 265px;
+      }
     }
 
     .photos-kitchen__right-gallery {
@@ -312,14 +341,17 @@ export default {
       margin-bottom: 10px;
     }
 
-    .photos-kitchen__left-top img {
-      width: 395px;
-      height: 238px;
+    .photos-kitchen__left-gallery {
+      max-width: 395px;
     }
 
-    .photos-kitchen__left-bottom img {
-      width: 193px;
+    .photos-kitchen__left-gallery img {
       height: 111px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 238px;
+      }
     }
   }
 
@@ -344,16 +376,6 @@ export default {
 
     .photos-kitchen__left {
       margin-bottom: 40px;
-    }
-
-    .photos-kitchen__left-top img {
-      width: 400px;
-      height: 240px;
-    }
-
-    .photos-kitchen__left-bottom img {
-      width: 195px;
-      height: 112px;
     }
   }
 
@@ -388,18 +410,18 @@ export default {
       margin-bottom: 40px;
     }
 
-    .photos-kitchen__left-top {
-      margin-bottom: 5px;
+    .photos-kitchen__left-gallery {
+      max-width: 100%;
+      grid-gap: 8px;
     }
 
-    .photos-kitchen__left-top img {
-      width: 100%;
-      height: 208px;
-    }
-
-    .photos-kitchen__left-bottom img {
-      width: 168px;
+    .photos-kitchen__left-gallery img {
       height: 97px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 208px;
+      }
     }
 
     .photos-kitchen__right {

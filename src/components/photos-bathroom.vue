@@ -8,24 +8,19 @@
       <div class="photos-bathroom__gallery">
         <div class="photos-bathroom__left">
           <h3>Фото готовых работ</h3>
-          <div class="photos-bathroom__left-top">
-            <img src="~@/assets/img/home/home-bath1@1x.jpg" srcset="~@/assets/img/home/home-bath1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
-          </div>
-          <div class="photos-bathroom__left-bottom">
-            <img src="~@/assets/img/home/home-bath2@1x.jpg" srcset="~@/assets/img/home/home-bath2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-bath3@1x.jpg" srcset="~@/assets/img/home/home-bath3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+          <div v-viewer class="photos-bathroom__left-gallery clearfix">
+            <template v-for="photo in photos">
+              <img :src="photo" :key="photo" width="338" height="195">
+            </template>
           </div>
         </div>
 
         <div class="photos-bathroom__right">
           <h3>Галерея идей для Ванной</h3>
-          <div class="photos-bathroom__right-gallery">
-            <img src="~@/assets/img/home/home-bath4@1x.jpg" srcset="~@/assets/img/home/home-bath4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-bath5@1x.jpg" srcset="~@/assets/img/home/home-bath5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-bath6@1x.jpg" srcset="~@/assets/img/home/home-bath6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-bath7@1x.jpg" srcset="~@/assets/img/home/home-bath7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-bath8@1x.jpg" srcset="~@/assets/img/home/home-bath8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-bath9@1x.jpg" srcset="~@/assets/img/home/home-bath9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+          <div v-viewer class="photos-bathroom__right-gallery clearfix">
+            <template v-for="image in images">
+              <img :src="image" :key="image" width="130" height="145">
+            </template>
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 
@@ -61,7 +56,20 @@ export default {
   },
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      photos: [
+        '/img/bath/bath-photo1.jpg',    	
+        '/img/bath/bath-photo2.jpg',
+        '/img/bath/bath-photo3.jpg'
+      ],
+      images: [
+        '/img/bath/bath-photo4.jpg',    	
+        '/img/bath/bath-photo5.jpg',
+        '/img/bath/bath-photo6.jpg',
+        '/img/bath/bath-photo7.jpg',    	
+        '/img/bath/bath-photo8.jpg',
+        '/img/bath/bath-photo9.jpg'
+      ]
     }
   }
 }
@@ -131,13 +139,31 @@ export default {
     flex-direction: column;
   }
 
-  .photos-bathroom__left-top {
-    margin-bottom: 18px;
+  .photos-bathroom__left-gallery {
+    display: grid;
+    grid-template-areas:
+    'img1 img1'
+    'img2 img3';
+    grid-gap: 15px;
+    max-width: 694px;
   }
 
-  .photos-bathroom__left-bottom {
-    display: flex;
-    justify-content: space-between;
+  .photos-bathroom__left-gallery img {
+    cursor: pointer;
+
+    &:nth-child(1) {
+      grid-area: img1;
+      width: 100%;
+      height: 418px;
+    }
+
+    &:nth-child(2) {
+      grid-area: img2;
+    }
+
+    &:nth-child(3) {
+      grid-area: img3;
+    }
   }
 
   .photos-bathroom__right {
@@ -156,6 +182,8 @@ export default {
   .photos-bathroom__right-gallery img {
     margin-right: 5px;
     margin-bottom: 5px;
+
+    cursor: pointer;
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -218,14 +246,22 @@ export default {
       max-width: 1017px;
     }
 
-    .photos-bathroom__left-top img {
-      width: 558px;
-      height: 336px;
+    .photos-bathroom__gallery {
+      max-width: 1017px;
     }
 
-    .photos-bathroom__left-bottom img {
-      width: 272px;
+    .photos-bathroom__left-gallery {
+      max-width: 558px;
+    }
+
+    .photos-bathroom__left-gallery img {
+      width: 100%;
       height: 157px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 336px;
+      }
     }
   }
 
@@ -251,8 +287,17 @@ export default {
       font-size: 18px;
     }
 
-    .photos-bathroom__left-top {
-      margin-bottom: 10px;
+    .photos-bathroom__left-gallery {
+      max-width: 431px;
+    }
+
+    .photos-bathroom__left-gallery img {
+      height: 121px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 265px;
+      }
     }
 
     .photos-bathroom__right {
@@ -261,18 +306,6 @@ export default {
 
     .photos-bathroom__right p {
       font-size: 14px;
-    }
-
-    .photos-bathroom__left-top img {
-      width: 431px;
-      height: 260px;
-      object-fit: contain;
-    }
-
-    .photos-bathroom__left-bottom img {
-      width: 210px;
-      height: 121px;
-      object-fit: contain;
     }
 
     .photos-bathroom__right-gallery {
@@ -310,14 +343,17 @@ export default {
       margin-bottom: 10px;
     }
 
-    .photos-bathroom__left-top img {
-      width: 395px;
-      height: 238px;
+    .photos-bathroom__left-gallery {
+      max-width: 395px;
     }
 
-    .photos-bathroom__left-bottom img {
-      width: 193px;
+    .photos-bathroom__left-gallery img {
       height: 111px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 238px;
+      }
     }
   }
 
@@ -348,16 +384,6 @@ export default {
 
     .photos-bathroom__left {
       margin-bottom: 40px;
-    }
-
-    .photos-bathroom__left-top img {
-      width: 400px;
-      height: 240px;
-    }
-
-    .photos-bathroom__left-bottom img {
-      width: 195px;
-      height: 112px;
     }
   }
 
@@ -394,18 +420,18 @@ export default {
       margin-bottom: 40px;
     }
 
-    .photos-bathroom__left-top {
-      margin-bottom: 5px;
+    .photos-bathroom__left-gallery {
+      max-width: 100%;
+      grid-gap: 8px;
     }
 
-    .photos-bathroom__left-top img {
-      width: 100%;
-      height: 208px;
-    }
-
-    .photos-bathroom__left-bottom img {
-      width: 168px;
+    .photos-bathroom__left-gallery img {
       height: 97px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 208px;
+      }
     }
 
     .photos-bathroom__right {

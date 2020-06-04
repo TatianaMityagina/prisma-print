@@ -8,24 +8,19 @@
       <div class="photos-lounge__gallery">
         <div class="photos-lounge__left">
           <h3>Фото готовых работ</h3>
-          <div class="photos-lounge__left-top">
-            <img src="~@/assets/img/home/home-salon1@1x.jpg" srcset="~@/assets/img/home/home-salon1@2x.jpg 2x" alt="Photo-1" width="694" height="418">
-          </div>
-          <div class="photos-lounge__left-bottom">
-            <img src="~@/assets/img/home/home-salon2@1x.jpg" srcset="~@/assets/img/home/home-salon2@2x.jpg 2x" alt="Photo-2" width="338" height="195">
-            <img src="~@/assets/img/home/home-salon3@1x.jpg" srcset="~@/assets/img/home/home-salon3@2x.jpg 2x" alt="Photo-3" width="338" height="195">
+          <div v-viewer class="photos-lounge__left-gallery clearfix">
+            <template v-for="photo in photos">
+              <img :src="photo" :key="photo" width="338" height="195">
+            </template>
           </div>
         </div>
 
         <div class="photos-lounge__right">
           <h3>Галерея идей для Гостинной</h3>
-          <div class="photos-lounge__right-gallery">
-            <img src="~@/assets/img/home/home-salon4@1x.jpg" srcset="~@/assets/img/home/home-salon4@2x.jpg 2x" alt="Photo-4" width="130" height="145">
-            <img src="~@/assets/img/home/home-salon5@1x.jpg" srcset="~@/assets/img/home/home-salon5@2x.jpg 2x" alt="Photo-5" width="130" height="145">
-            <img src="~@/assets/img/home/home-salon6@1x.jpg" srcset="~@/assets/img/home/home-salon6@2x.jpg 2x" alt="Photo-6" width="130" height="145">
-            <img src="~@/assets/img/home/home-salon7@1x.jpg" srcset="~@/assets/img/home/home-salon7@2x.jpg 2x" alt="Photo-7" width="130" height="145">
-            <img src="~@/assets/img/home/home-salon8@1x.jpg" srcset="~@/assets/img/home/home-salon8@2x.jpg 2x" alt="Photo-8" width="130" height="145">
-            <img src="~@/assets/img/home/home-salon9@1x.jpg" srcset="~@/assets/img/home/home-salon9@2x.jpg 2x" alt="Photo-9" width="130" height="145">
+          <div v-viewer class="photos-lounge__right-gallery clearfix">
+            <template v-for="image in images">
+              <img :src="image" :key="image" width="130" height="145">
+            </template>
           </div>
           <p>
             Мы уверены, вы уже знаете, что хотите напечатать. 
@@ -61,7 +56,20 @@ export default {
   },
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      photos: [
+        '/img/lounge/lounge-photo1.jpg',    	
+        '/img/lounge/lounge-photo2.jpg',
+        '/img/lounge/lounge-photo3.jpg'
+      ],
+      images: [
+        '/img/lounge/lounge-photo4.jpg',    	
+        '/img/lounge/lounge-photo5.jpg',
+        '/img/lounge/lounge-photo6.jpg',
+        '/img/lounge/lounge-photo7.jpg',    	
+        '/img/lounge/lounge-photo8.jpg',
+        '/img/lounge/lounge-photo9.jpg'
+      ]
     }
   }
 }
@@ -132,13 +140,31 @@ export default {
     flex-direction: column;
   }
 
-  .photos-lounge__left-top {
-    margin-bottom: 18px;
+  .photos-lounge__left-gallery {
+    display: grid;
+    grid-template-areas:
+    'img1 img1'
+    'img2 img3';
+    grid-gap: 15px;
+    max-width: 694px;
   }
 
-  .photos-lounge__left-bottom {
-    display: flex;
-    justify-content: space-between;
+  .photos-lounge__left-gallery img {
+    cursor: pointer;
+    
+    &:nth-child(1) {
+      grid-area: img1;
+      width: 100%;
+      height: 418px;
+    }
+
+    &:nth-child(2) {
+      grid-area: img2;
+    }
+
+    &:nth-child(3) {
+      grid-area: img3;
+    }
   }
 
   .photos-lounge__right {
@@ -157,6 +183,8 @@ export default {
   .photos-lounge__right-gallery img {
     margin-right: 5px;
     margin-bottom: 5px;
+
+    cursor: pointer;
 
     &:nth-child(3n) {
       margin-right: 0;
@@ -219,14 +247,18 @@ export default {
       max-width: 1017px;
     }
 
-    .photos-lounge__left-top img {
-      width: 558px;
-      height: 336px;
+    .photos-lounge__left-gallery {
+      max-width: 558px;
     }
 
-    .photos-lounge__left-bottom img {
-      width: 272px;
+    .photos-lounge__left-gallery img {
+      width: 100%;
       height: 157px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 336px;
+      }
     }
   }
 
@@ -256,8 +288,17 @@ export default {
       font-size: 18px;
     }
 
-    .photos-lounge__left-top {
-      margin-bottom: 10px;
+    .photos-lounge__left-gallery {
+      max-width: 431px;
+    }
+
+    .photos-lounge__left-gallery img {
+      height: 121px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 265px;
+      }
     }
 
     .photos-lounge__right {
@@ -266,18 +307,6 @@ export default {
 
     .photos-lounge__right p {
       font-size: 14px;
-    }
-
-    .photos-lounge__left-top img {
-      width: 431px;
-      height: 260px;
-      object-fit: contain;
-    }
-
-    .photos-lounge__left-bottom img {
-      width: 210px;
-      height: 121px;
-      object-fit: contain;
     }
 
     .photos-lounge__right-gallery {
@@ -315,14 +344,17 @@ export default {
       margin-bottom: 10px;
     }
 
-    .photos-lounge__left-top img {
-      width: 395px;
-      height: 238px;
+    .photos-lounge__left-gallery {
+      max-width: 395px;
     }
 
-    .photos-lounge__left-bottom img {
-      width: 193px;
+    .photos-lounge__left-gallery img {
       height: 111px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 238px;
+      }
     }
   }
 
@@ -352,16 +384,6 @@ export default {
 
     .photos-lounge__left {
       margin-bottom: 40px;
-    }
-
-    .photos-lounge__left-top img {
-      width: 400px;
-      height: 240px;
-    }
-
-    .photos-lounge__left-bottom img {
-      width: 195px;
-      height: 112px;
     }
   }
 
@@ -397,18 +419,18 @@ export default {
       margin-bottom: 40px;
     }
 
-    .photos-lounge__left-top {
-      margin-bottom: 5px;
+    .photos-lounge__left-gallery {
+      max-width: 100%;
+      grid-gap: 8px;
     }
 
-    .photos-lounge__left-top img {
-      width: 100%;
-      height: 208px;
-    }
-
-    .photos-lounge__left-bottom img {
-      width: 168px;
+    .photos-lounge__left-gallery img {
       height: 97px;
+
+      &:nth-child(1) {
+        width: 100%;
+        height: 208px;
+      }
     }
 
     .photos-lounge__right {

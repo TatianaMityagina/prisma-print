@@ -2,34 +2,10 @@
   <div class="gallery-works">
 		<div class="gallery-works__container">
       <h2>Галерея работ</h2>
-      <div class="gallery-works__items">
-        <img src="~@/assets/img/index/index-galary-photo1@1x.jpg" srcset="~@/assets/img/index/index-galary-photo1@2x.jpg 2x" alt="Photo-1" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo2@1x.jpg" srcset="~@/assets/img/index/index-galary-photo2@2x.jpg 2x" alt="Photo-2" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo3@1x.jpg" srcset="~@/assets/img/index/index-galary-photo3@2x.jpg 2x" alt="Photo-3" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo4@1x.jpg" srcset="~@/assets/img/index/index-galary-photo4@2x.jpg 2x" alt="Photo-4" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo5@1x.jpg" srcset="~@/assets/img/index/index-galary-photo5@2x.jpg 2x" alt="Photo-5" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo6@1x.jpg" srcset="~@/assets/img/index/index-galary-photo6@2x.jpg 2x" alt="Photo-6" width="268" height="268">
-
-        <img src="~@/assets/img/index/index-galary-photo7@1x.jpg" srcset="~@/assets/img/index/index-galary-photo7@2x.jpg 2x" alt="Photo-7" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo8@1x.jpg" srcset="~@/assets/img/index/index-galary-photo8@2x.jpg 2x" alt="Photo-8" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo9@1x.jpg" srcset="~@/assets/img/index/index-galary-photo9@2x.jpg 2x" alt="Photo-9" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo10@1x.jpg" srcset="~@/assets/img/index/index-galary-photo10@2x.jpg 2x" alt="Photo-10" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo11@1x.jpg" srcset="~@/assets/img/index/index-galary-photo11@2x.jpg 2x" alt="Photo-11" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo12@1x.jpg" srcset="~@/assets/img/index/index-galary-photo12@2x.jpg 2x" alt="Photo-12" width="268" height="268">
-
-        <img src="~@/assets/img/index/index-galary-photo7@1x.jpg" srcset="~@/assets/img/index/index-galary-photo7@2x.jpg 2x" alt="Photo-7" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo8@1x.jpg" srcset="~@/assets/img/index/index-galary-photo8@2x.jpg 2x" alt="Photo-8" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo9@1x.jpg" srcset="~@/assets/img/index/index-galary-photo9@2x.jpg 2x" alt="Photo-9" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo10@1x.jpg" srcset="~@/assets/img/index/index-galary-photo10@2x.jpg 2x" alt="Photo-10" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo11@1x.jpg" srcset="~@/assets/img/index/index-galary-photo11@2x.jpg 2x" alt="Photo-11" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo12@1x.jpg" srcset="~@/assets/img/index/index-galary-photo12@2x.jpg 2x" alt="Photo-12" width="268" height="268">
-
-        <img src="~@/assets/img/index/index-galary-photo7@1x.jpg" srcset="~@/assets/img/index/index-galary-photo7@2x.jpg 2x" alt="Photo-7" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo8@1x.jpg" srcset="~@/assets/img/index/index-galary-photo8@2x.jpg 2x" alt="Photo-8" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo9@1x.jpg" srcset="~@/assets/img/index/index-galary-photo9@2x.jpg 2x" alt="Photo-9" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo10@1x.jpg" srcset="~@/assets/img/index/index-galary-photo10@2x.jpg 2x" alt="Photo-10" width="268" height="268">
-        <img src="~@/assets/img/index/index-galary-photo11@1x.jpg" srcset="~@/assets/img/index/index-galary-photo11@2x.jpg 2x" alt="Photo-11" width="268" height="268">      
-        <img src="~@/assets/img/index/index-galary-photo12@1x.jpg" srcset="~@/assets/img/index/index-galary-photo12@2x.jpg 2x" alt="Photo-12" width="268" height="268">
+      <div class="gallery-works__items clearfix">
+        <template v-for="photo in photos">
+          <img :src="photo" :key="photo" width="268" height="268">
+        </template>
       </div>
                
 		</div>
@@ -38,7 +14,26 @@
 
 <script>
 export default {
-  name: 'IndexGallery'
+  name: 'IndexGallery',
+  data() {
+    return {
+      showPopup: false,
+      photos: [
+        '/img/gallery/gallery-photo1.jpg',    	
+        '/img/gallery/gallery-photo2.jpg',
+        '/img/gallery/gallery-photo3.jpg',
+        '/img/gallery/gallery-photo4.jpg',    	
+        '/img/gallery/gallery-photo5.jpg',
+        '/img/gallery/gallery-photo6.jpg',
+        '/img/gallery/gallery-photo7.jpg',    	
+        '/img/gallery/gallery-photo8.jpg',
+        '/img/gallery/gallery-photo9.jpg',
+        '/img/gallery/gallery-photo10.jpg',    	
+        '/img/gallery/gallery-photo11.jpg',
+        '/img/gallery/gallery-photo12.jpg'
+      ]
+    }
+  }
 }
 </script>
 

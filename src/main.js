@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import './assets/style/main-slyle.scss'
 import Es6Promise from 'es6-promise'
+import 'viewerjs/dist/viewer.css'
+import Viewer from 'v-viewer'
+Vue.use(Viewer)
 
 Es6Promise.polyfill()
 
