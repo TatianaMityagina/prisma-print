@@ -3,7 +3,7 @@
 		<div class="index-gallery__container">
       <h2>Галерея работ</h2>
       <p>Уникальные идеи наших любимых клиентов</p>
-      <div class="index-gallery__items clearfix">
+      <div v-viewer class="index-gallery__items clearfix">
         <template v-for="photo in photos">
           <img :src="photo" :key="photo" width="268" height="268">
         </template>
@@ -80,6 +80,8 @@ export default {
 
   .index-gallery__items img {
     margin: 0 14px 14px 0;
+
+    cursor: pointer;
 
     &:nth-child(6n) {
       margin-right: 0;

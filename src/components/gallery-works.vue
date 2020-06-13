@@ -2,7 +2,7 @@
   <div class="gallery-works">
 		<div class="gallery-works__container">
       <h2>Галерея работ</h2>
-      <div class="gallery-works__items clearfix">
+      <div v-viewer class="gallery-works__items clearfix">
         <template v-for="photo in photos">
           <img :src="photo" :key="photo" width="268" height="268">
         </template>
@@ -69,6 +69,8 @@ export default {
 
   .gallery-works__items img {
     margin: 0 14px 14px 0;
+
+    cursor: pointer;
 
     &:nth-child(6n) {
       margin-right: 0;
