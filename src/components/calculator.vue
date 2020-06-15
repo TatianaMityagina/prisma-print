@@ -15,27 +15,27 @@
             <h3>Тип поверхности:</h3>
             <ul class="calculator__form-list">
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="walls" name="type" v-model="pick" v-bind:value="65">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="walls" name="type" v-model="pick" value="wall">
                 <label class="calculator__form-label" for="walls">Обои</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="putty" name="type" v-model="pick" v-bind:value="25">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="putty" name="type" v-model="pick" value="putty">
                 <label class="calculator__form-label" for="putty">Шпаклевка</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="plastic" name="type" v-model="pick" v-bind:value="58">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="plastic" name="type" v-model="pick" value="plastic">
                 <label class="calculator__form-label" for="plastic">Пластик</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="ceramic" name="type" v-model="pick" v-bind:value="36">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="ceramic" name="type" v-model="pick" value="ceramic">
                 <label class="calculator__form-label" for="ceramic">Керамика</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="glass" name="type" v-model="pick" v-bind:value="158">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="glass" name="type" v-model="pick" value="glass">
                 <label class="calculator__form-label" for="glass">Стекло</label>
               </li>
               <li class="calculator__form-item">
-                <input class="calculator__form-radio visually-hidden" type="radio" id="wood" name="type" v-model="pick" v-bind:value="111">
+                <input class="calculator__form-radio visually-hidden" type="radio" id="wood" name="type" v-model="pick" value="wood">
                 <label class="calculator__form-label" for="wood">Дерево</label>
               </li>
             </ul>
@@ -73,7 +73,6 @@
           <div class="calculator__bg">
             <vue-slider class="calculator__horizontal-range" v-model="valueWidth" v-bind="horizontal" />
             <vue-slider class="calculator__vertical-range" v-model="valueHeight" v-bind="vertical" />
-            <img class="calculator__figure" src="~@/assets/img/figure-bg.svg" alt="Photo figure" :width="446" :height="387">
           </div>
         </div>
 
@@ -116,7 +115,7 @@ export default {
       vueCanvas: null,
       valueWidth: 50,
       valueHeight: 50,
-      pick: '65',
+      pick: 'wall',
       horizontal: {
         width: '1114',
         height: 1,
@@ -200,12 +199,67 @@ export default {
       },
     }
   },
+  watch: {
+    pick(data){
+      console.log(data);
+    }
+  },
   computed: {
     size() {
-      return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(1)
+      return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(2)
     },
     resultSum() {
-      return (this.pick * (this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(1)
+      if(this.pick === 'wall' && this.size < 1){
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'wall' && 1 <= this.size < 3){
+        return (3000 * this.size).toFixed(0)
+      } else if(this.pick === 'wall' && 3 <= this.size < 10) {
+        return (2500 * this.size).toFixed(0)
+      } else if(this.pick === 'wall' && 10 <= this.size < 30) {
+        return (2000 * this.size).toFixed(0)
+      } else if(this.pick === 'putty' && this.size < 1){
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'putty' && 1 <= this.size < 3){
+        return (3000 * this.size).toFixed(0)
+      } else if(this.pick === 'putty' && 3 <= this.size < 10) {
+        return (2500 * this.size).toFixed(0)
+      } else if(this.pick === 'putty' && 10 <= this.size < 30) {
+        return (2000 * this.size).toFixed(0)
+      } else if(this.pick === 'plastic' && this.size < 1){
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'plastic' && 1 <= this.size < 3){
+        return (3150 * this.size).toFixed(0)
+      } else if(this.pick === 'plastic' && 3 <= this.size < 10) {
+        return (2625 * this.size).toFixed(0)
+      } else if(this.pick === 'plastic' && 10 <= this.size < 30) {
+        return (2100 * this.size).toFixed(0)
+      } else if(this.pick === 'ceramic' && this.size < 1) {
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'ceramic' && 1 <= this.size < 3) {
+        return (3150 * this.size).toFixed(0)
+      } else if(this.pick === 'ceramic' && 3 <= this.size < 10) {
+        return (2625 * this.size).toFixed(0)
+      } else if(this.pick === 'ceramic' && 10 <= this.size < 30) {
+        return (2100 * this.size).toFixed(0)
+      } else if(this.pick === 'glass' && this.size < 1) {
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'glass' && 1 <= this.size < 3){
+        return (3150 * this.size).toFixed(0)
+      } else if(this.pick === 'glass' && 3 <= this.size < 10) {
+        return (2625 * this.size).toFixed(0)
+      } else if(this.pick === 'glass' && 10 <= this.size < 30) {
+        return (2100 * this.size).toFixed(0)
+      } else if(this.pick === 'wood' && this.size < 1) {
+        return (0* this.size).toFixed(0)
+      } else if(this.pick === 'wood' && 1 <= this.size < 3){
+        return (3000 * this.size).toFixed(0)
+      } else if(this.pick === 'wood' && 3 <= this.size < 10) {
+        return (2500 * this.size).toFixed(0)
+      } else if(this.pick === 'wood' && 10 <= this.size < 30) {
+        return (2000 * this.size).toFixed(0)
+      } else {
+        return (0 * this.size).toFixed(0)
+      }
     }
   },
   created() {
@@ -344,27 +398,25 @@ export default {
   .calculator__form-label::before {
     position: absolute;
     content: "";
-    left: -26px;
-    top: -3px;
+    left: -28px;
+    top: -4px;
 
     width: 20px;
     height: 20px;
 
-    border: 1px solid #961E50;
-    border-radius: 50%;
+    background: url('~@/assets/img/ellipse.svg') top / contain no-repeat;
   }
 
-  .calculator__form-radio:checked + .calculator__form-label::after {
+  .calculator__form-radio:checked + .calculator__form-label::before {
     content: "";
     position: absolute;
-    left: -21px;
-    top: 2px;
+    left: -28px;
+    top: -4px;
 
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
 
-    background: #961E50;
-    border-radius: 50%;
+    background: url('~@/assets/img/ellipse-tick.svg') top / contain no-repeat;
   }
 
   .calculator__result-list {
@@ -450,12 +502,6 @@ export default {
   height: 418px;
 }
 
-.calculator__figure {
-  position: absolute;
-  top: 38px;
-  left: 98px;
-}
-
   @media (max-width: 1919px) {
   }
 
@@ -508,15 +554,6 @@ export default {
       top: 6px;
 
       height: 384px;
-    }
-
-    .calculator__figure {
-      position: absolute;
-      top: 35px;
-      left: 88px;
-
-      width: 410px;
-      height: 356px;
     }
   }
 
@@ -580,15 +617,6 @@ export default {
       top: 6px;
 
       height: 329px;
-    }
-
-    .calculator__figure {
-      position: absolute;
-      top: 30px;
-      left: 76px;
-
-      width: 351px;
-      height: 304px;
     }
   }
 

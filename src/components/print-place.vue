@@ -3,9 +3,9 @@
 		<div class="print-place__container">
 			<h2 class="print-place__title">УЖЕ ПРИДУМАЛИ <span>КУДА ПЕЧАТАЕМ?</span></h2>
 			<div class="print-place__items">
-				<div class="print-place__item">
+				<div class="print-place__item" @click="anchor('Home')">
 					<div class="print-place__image-wrapper">
-						<span>01</span>
+						<span class="print-place__number">01</span>
 						<img src="~@/assets/img/index/index-chair@1x.jpg" srcset="~@/assets/img/index/index-chair@2x.jpg 2x" alt="Photo-1" width="350" height="459">
 					</div>
 					<div class="print-place__item-text">
@@ -18,9 +18,9 @@
 					</div>
 				</div>
 
-				<div class="print-place__item print-place__item--second">
+				<div class="print-place__item print-place__item--second" @click="anchor('Office')">
 					<div class="print-place__image-wrapper print-place__image-wrapper--second">
-						<span>02</span>
+						<span class="print-place__number">02</span>
 						<img src="~@/assets/img/index/index-office@1x.jpg" srcset="~@/assets/img/index/index-office@2x.jpg 2x" alt="Photo-2" width="350" height="459">
 					</div>
 					<div class="print-place__item-text print-place__item-text--second">
@@ -39,7 +39,12 @@
 
 <script>
 export default {
-  name: 'PrintPlace'
+	name: 'PrintPlace',
+  methods: {
+    anchor(name) {
+      this.$router.push({ name: name})
+    }
+  }
 }
 </script>
 
@@ -85,8 +90,19 @@ export default {
 		flex-direction: column;
 		margin-right: 75px;
 
+		cursor: pointer;
+
 		&:last-child {
 			margin-right: 0;
+		}
+
+		&:hover {
+			.print-place__number {
+				color: #FFFFFF;
+				background: #961E50;
+				box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+				transition: 0.4s;
+			}	
 		}
 	}
 
@@ -95,7 +111,7 @@ export default {
 		margin-bottom: 40px;
 	}
 
-	.print-place__image-wrapper span {
+	.print-place__number {
 		position: absolute;
 		top: -45px;
 		right: -45px;
@@ -114,13 +130,6 @@ export default {
 
 		background: #FFFFFF;
 		box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-
-		&:hover {
-			color: #FFFFFF;
-			background: #961E50;
-			box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-			transition: 0.4s;
-		}
 	}
 
 	.print-place__item-text h3 {
@@ -168,7 +177,7 @@ export default {
 			}
 		}
 
-		.print-place__image-wrapper span {
+		.print-place__number {
 			top: -35px;
 			right: 10px;
 
@@ -251,7 +260,7 @@ export default {
 			}
 		}
 
-		.print-place__image-wrapper span {
+		.print-place__number {
 			top: -40px;
 			right: 10px;
 
@@ -319,7 +328,7 @@ export default {
 			}
 		}
 
-		.print-place__image-wrapper span {
+		.print-place__number {
 			top: -40px;
 			right: calc(50% - 40px);
 		}

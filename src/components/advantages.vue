@@ -114,6 +114,15 @@ export default {
 		&:nth-child(3n) {
 			margin-right: 0;
 		}
+
+		&:hover {
+			span {
+				color: #FFFFFF;
+				background: #961E50;
+				box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+				transition: 0.4s;
+			}
+		}
 	}
 
 	.advantages__item span {
@@ -133,13 +142,6 @@ export default {
 
 		background: #FFFFFF;
 		box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-
-		&:hover {
-			color: #FFFFFF;
-			background: #961E50;
-			box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-			transition: 0.4s;
-		}
 	}
 
 	.advantages__item h3 {

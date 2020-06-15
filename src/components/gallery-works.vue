@@ -4,7 +4,7 @@
       <h2>Галерея работ</h2>
       <div v-viewer class="gallery-works__items clearfix">
         <template v-for="photo in photos">
-          <img :src="photo" :key="photo" width="268" height="268">
+          <img :src="photo" :key="photo" width="268" height="268" alt="Photo">
         </template>
       </div>
                
@@ -30,7 +30,19 @@ export default {
         '/img/gallery/gallery-photo9.jpg',
         '/img/gallery/gallery-photo10.jpg',    	
         '/img/gallery/gallery-photo11.jpg',
-        '/img/gallery/gallery-photo12.jpg'
+        '/img/gallery/gallery-photo12.jpg',
+        '/img/gallery/gallery-photo13.jpg',    	
+        '/img/gallery/gallery-photo14.jpg',
+        '/img/gallery/gallery-photo15.jpg',
+        '/img/gallery/gallery-photo16.jpg',    	
+        '/img/gallery/gallery-photo17.jpg',
+        '/img/gallery/gallery-photo18.jpg',
+        '/img/gallery/gallery-photo19.jpg',    	
+        '/img/gallery/gallery-photo20.jpg',
+        '/img/gallery/gallery-photo21.jpg',
+        '/img/gallery/gallery-photo22.jpg',    	
+        '/img/gallery/gallery-photo23.jpg',
+        '/img/gallery/gallery-photo24.jpg'
       ]
     }
   }

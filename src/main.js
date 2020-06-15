@@ -5,6 +5,9 @@ import './assets/style/main-slyle.scss'
 import Es6Promise from 'es6-promise'
 import 'viewerjs/dist/viewer.css'
 import Viewer from 'v-viewer'
+import VBodyScrollLock from 'v-body-scroll-lock'
+
+Vue.use(VBodyScrollLock)
 Vue.use(Viewer)
 
 Es6Promise.polyfill()

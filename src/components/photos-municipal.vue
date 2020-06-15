@@ -9,7 +9,7 @@
           <h3>Фото готовых работ</h3>
           <div v-viewer class="photos-municipal__left-gallery clearfix">
             <template v-for="photo in photos">
-              <img :src="photo" :key="photo" width="338" height="195">
+              <img :src="photo" :key="photo" width="338" height="195" alt="Photo">
             </template>
           </div>
         </div>
