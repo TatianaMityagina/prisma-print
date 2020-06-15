@@ -5,7 +5,7 @@
       <p>Уникальные идеи наших любимых клиентов</p>
       <div v-viewer class="index-gallery__items clearfix">
         <template v-for="photo in photos">
-          <img :src="photo" :key="photo" width="268" height="268">
+          <img :src="photo" :key="photo" width="268" height="268" alt="Photo">
         </template>
       </div>
                
