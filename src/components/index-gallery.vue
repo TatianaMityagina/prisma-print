@@ -20,18 +20,18 @@ export default {
     return {
       showPopup: false,
       photos: [
-        '/img/gallery/gallery-photo1.jpg',    	
-        '/img/gallery/gallery-photo2.jpg',
-        '/img/gallery/gallery-photo3.jpg',
-        '/img/gallery/gallery-photo4.jpg',    	
-        '/img/gallery/gallery-photo5.jpg',
-        '/img/gallery/gallery-photo6.jpg',
-        '/img/gallery/gallery-photo7.jpg',    	
-        '/img/gallery/gallery-photo8.jpg',
-        '/img/gallery/gallery-photo9.jpg',
-        '/img/gallery/gallery-photo10.jpg',    	
-        '/img/gallery/gallery-photo11.jpg',
-        '/img/gallery/gallery-photo12.jpg'
+        '/img/gallery-main/gallery-photo1.jpg',    	
+        '/img/gallery-main/gallery-photo2.jpg',
+        '/img/gallery-main/gallery-photo3.jpg',
+        '/img/gallery-main/gallery-photo4.jpg',    	
+        '/img/gallery-main/gallery-photo5.jpg',
+        '/img/gallery-main/gallery-photo6.jpg',
+        '/img/gallery-main/gallery-photo7.jpg',    	
+        '/img/gallery-main/gallery-photo8.jpg',
+        '/img/gallery-main/gallery-photo9.jpg',
+        '/img/gallery-main/gallery-photo10.jpg',    	
+        '/img/gallery-main/gallery-photo11.jpg',
+        '/img/gallery-main/gallery-photo12.jpg'
       ]
     }
   }

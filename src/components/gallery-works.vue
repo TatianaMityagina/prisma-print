@@ -45,6 +45,20 @@ export default {
         '/img/gallery/gallery-photo24.jpg'
       ]
     }
+  },
+  methods: {
+    getIllustrations () {
+      const path = require('path')
+      const fs = require('fs')
+      console.log(__dirname, path.join(__dirname, '/img/gallery'));
+      fs.readdir(path.join(__dirname, '../public/img/gallery'), (err, items) => {
+        if (err) { console.log(err) }
+        console.log(items)
+      })
+    }
+  },
+  mounted () {
+    this.getIllustrations()
   }
 }
 </script>

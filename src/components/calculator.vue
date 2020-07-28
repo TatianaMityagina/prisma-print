@@ -67,6 +67,11 @@
               </li>
             </ul>
           </div>
+            
+          <div class="calculator__form-btn">
+            <button type="button" @click="showPopup = true" >Оставить заявки на печать</button>
+            <a href="#" @click="showPopup = true">хочу дешевле!</a>
+          </div>
         </form>
 
         <div class="calculator__bg-wrapper">
@@ -94,23 +99,26 @@
             </tr>
           </table>
         </div>
-
       </div>
 		</div>
+    <Modal v-show="showPopup" @closepopup="showPopup = false" />
   </div>
 </template>
 
 <script>
 import VueSlider from 'vue-slider-component'
 import '../assets/style/calculator.css'
+import Modal from '../components/modal'
 
 export default {
   name: 'Calculator',
   components: {
-    VueSlider
+    VueSlider,
+    Modal
   }, 
   data() {
     return {
+      showPopup: false,
       width: null,
       vueCanvas: null,
       valueWidth: 50,
@@ -341,11 +349,18 @@ export default {
   }
 
   .calculator__wrapper {
+    position: relative;
     width: 100%;
   }
 
   .calculator__wrapper form {
+    position: absolute;
+    z-index: 3;
+    top: 50px;
+
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
     margin-bottom: 80px;
@@ -359,7 +374,9 @@ export default {
 
   .calculator__wrapper-list {
     display: flex;
+    align-items: center;
     flex-direction: column;
+    margin-bottom: 40px;
   }
 
   .calculator__wrapper-list h3 {
@@ -375,7 +392,6 @@ export default {
 
   .calculator__form-list {
     display: flex;
-    margin-right: 105px;
   }
 
   .calculator__form-item {
@@ -419,6 +435,10 @@ export default {
     background: url('~@/assets/img/ellipse-tick.svg') top / contain no-repeat;
   }
 
+  .calculator__result {
+    margin-bottom: 65px;
+  }
+
   .calculator__result-list {
     display: flex;
   }
@@ -426,6 +446,7 @@ export default {
   .calculator__result-item  {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-right: 20px;
     min-width: 85px;
 
@@ -470,6 +491,44 @@ export default {
     font-size: 18px;
     line-height: 140%;
     color: #1893E2;
+  }
+
+  .calculator__form-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calculator__form-btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 252px;
+    height: 38px;
+    margin-bottom: 15px;
+
+    font-family: GothamPro;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+
+    background: #D73690;
+    box-shadow: 0px 4px 10px rgba(139, 17, 85, 0.35);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .calculator__form-btn a {
+    font-family: Panton;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    color: #2F80ED;
+    text-decoration: none;
   }
 
   // Grafic
@@ -590,6 +649,8 @@ export default {
     }
 
     .calculator__wrapper form {
+      top: 20px;
+      
       padding-left: 50px;
       margin-bottom: 60px;
     }
@@ -634,11 +695,17 @@ export default {
     }
 
     .calculator__wrapper form {
+      top: 0;
+
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       padding-left: 0;
       margin-bottom: 40px;
+    }
+
+    .calculator__form-item {
+      margin-right: 35px;
     }
 
     .calculator__wrapper-list {
@@ -647,26 +714,41 @@ export default {
     }
 
     .calculator__wrapper-list h3 {
-      font-size: 18px;
+      font-size: 16px;
+    }
+
+    .calculator__result {
+      margin-bottom: 25px;
     }
 
     .calculator__result-item p {
       margin-bottom: 10px;
-      font-size: 18px;
     }
 
     .calculator__result-item p,
     .calculator__result-item {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .calculator__result-item {
       min-width: 85px;
     }
 
+    .calculator__form-label {
+      font-size: 12px;
+      line-height: 13px;
+    }
+
     .calculator__result-feild input[type=text]  {
       max-width: 30px;
       font-size: 18px;
+    }
+
+    .calculator__form-btn button {
+      width: 230px;
+      height: 32px;
+      font-size: 14px;
+      line-height: 16%;
     }
     
     // Calculator
@@ -719,6 +801,14 @@ export default {
 
     .calculator__title-text {
       width: 100%;
+    }
+
+    .calculator__wrapper form {
+      position: inherit;
+    }
+
+    .calculator__form-btn {
+      display: none;
     }
 
     .calculator__form-list {

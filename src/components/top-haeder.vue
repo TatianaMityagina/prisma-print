@@ -278,7 +278,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0 120px 0;
+    padding: 40px 0 40px 0;
     width: 100%;
     min-height: 100vh;
 
@@ -289,7 +289,7 @@ export default {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    margin-bottom: 100px;
+    margin-bottom: 28px;
     max-width: 1720px;
     width: 100%;
     cursor: pointer;
@@ -322,7 +322,7 @@ export default {
     font-weight: 300;
     font-size: 28px;
     line-height: 100%;
-    color: rgba(150, 30, 80, 0.4);
+    color: rgba(150, 30, 80, 0.8);
     text-align: center;
   }
 
@@ -330,7 +330,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .menu-nav__list-type span {
@@ -510,7 +510,7 @@ export default {
     }
 
     .interactive-menu__container {
-      padding: 150px 0 220px 0;
+      padding: 20px 0 220px 0;
       max-width: 100%;
 
       background: url('~@/assets/img/index-intro-triangle-tablet.svg') top / contain no-repeat;
@@ -527,6 +527,14 @@ export default {
 
     .menu__burger {
       margin-right: 25px;
+    }
+
+    .menu-nav__list-type span {
+      font-size: 48px;
+    }
+
+    .menu-nav__list span {
+      font-size: 18px;
     }
    }
 
@@ -585,11 +593,21 @@ export default {
       height: 20px;
     }
 
+    .menu-nav__list-type span {
+      font-size: 41px;
+      line-height: 100%;
+    }
+
+    .menu-nav__list span {
+      font-size: 18px;
+      line-height: 100%;
+    }
+
     .menu__contacts-tel {
       margin-right: 0;
     }
 
-    .menu__contacts-tel a {
+    .menu__contacts-tel {
       margin-bottom: 5px;
       font-size: 16px;
       white-space: nowrap;
@@ -605,6 +623,15 @@ export default {
 
     .interactive-menu__social-list {
       margin-top: 40px;
+    }
+
+    .interactive-menu__contacts-tel {
+      margin-bottom: 10px;
+    }
+
+    .interactive-menu__contacts-mail {
+      font-size: 20px;
+    line-height: 100%;
     }
    }
 </style>

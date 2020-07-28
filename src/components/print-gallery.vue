@@ -12,14 +12,6 @@
                       <td class="print-gallery__table-parameter">Напечатаем:</td>
                       <td class="print-gallery__table-field">за 2 часа</td>
                     </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Размер:</td>
-                      <td class="print-gallery__table-field">185*120см</td>
-                    </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Стоимость:</td>
-                      <td class="print-gallery__table-field">2000 рублей</td>
-                    </tr>
                   </tbody>
                 </table>
                 <button type="button" @click="showPopup = true">Хочу такой принт</button>
@@ -34,14 +26,6 @@
                     <tr class="print-gallery__table-row">
                       <td class="print-gallery__table-parameter">Напечатаем:</td>
                       <td class="print-gallery__table-field">за 2 часа</td>
-                    </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Размер:</td>
-                      <td class="print-gallery__table-field">185*120см</td>
-                    </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Стоимость:</td>
-                      <td class="print-gallery__table-field">2000 рублей</td>
                     </tr>
                   </tbody>
                 </table>
@@ -60,14 +44,6 @@
                       <td class="print-gallery__table-parameter">Напечатаем:</td>
                       <td class="print-gallery__table-field">за 2 часа</td>
                     </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Размер:</td>
-                      <td class="print-gallery__table-field">185*120см</td>
-                    </tr>
-                    <tr class="print-gallery__table-row">
-                      <td class="print-gallery__table-parameter">Стоимость:</td>
-                      <td class="print-gallery__table-field">2000 рублей</td>
-                    </tr>
                   </tbody>
                 </table>
                 <button type="button" @click="showPopup = true">Хочу такой принт</button>
@@ -85,14 +61,6 @@
                   <tr class="print-gallery__table-row">
                     <td class="print-gallery__table-parameter">Напечатаем:</td>
                     <td class="print-gallery__table-field">за 2 часа</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Размер:</td>
-                    <td class="print-gallery__table-field">185*120см</td>
-                  </tr>
-                  <tr class="print-gallery__table-row">
-                    <td class="print-gallery__table-parameter">Стоимость:</td>
-                    <td class="print-gallery__table-field">2000 рублей</td>
                   </tr>
                 </tbody>
               </table>
@@ -244,7 +212,7 @@ export default {
 
   .print-gallery__photo-4 {
     position: relative;
-    width: 405px;
+    width: 403px;
     height: 678px;
 
     background: url('~@/assets/img/index/index-eiffel-tower@1x.jpg') center / cover no-repeat;
@@ -352,7 +320,7 @@ export default {
       }
 
       &--photo-4 {
-        width: 361px;
+        width: 364px;
         height: 603px
       }
     }
@@ -559,6 +527,19 @@ export default {
       }
     }
 
+    .print-gallery__photo-description {
+      padding: 15px 5px;
+    }
+
+    .print-gallery__table-parameter {
+      font-size: 10px;
+    }
+
+    .print-gallery__table-field {
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
     .print-gallery__table-row {
       margin-bottom: -12px;
     }
@@ -646,19 +627,6 @@ export default {
         width: 168px;
         height: 278px;
       }
-    }
-
-    .print-gallery__photo-description {
-      padding: 15px 5px;
-    }
-
-    .print-gallery__table-parameter {
-      font-size: 10px;
-    }
-
-    .print-gallery__table-field {
-      font-size: 10px;
-      white-space: nowrap;
     }
 
     .print-gallery__photo-description button {

@@ -149,6 +149,7 @@ export default {
   }
 
   .photos-bathroom__left-gallery img {
+    object-fit: cover;
     cursor: pointer;
 
     &:nth-child(1) {

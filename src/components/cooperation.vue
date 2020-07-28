@@ -8,63 +8,15 @@
       </picture>
       <div class="cooperation__description-wrapper">
         <p class="cooperation__description-text">
-          Мы разработали ряд партнёрских выгодных условий. 
-          Если у вас имеется предложение или хотите получить 
-          данные по сотрудничеству в печати позвоните нам 
-          по номеру <a href="tel:89673000344">8967 300 03 44</a>  
-          или напишите на почту <a href="mailto:info@prismaprint.ru">info@prismaprint.ru</a> 
+          Дорогие дизайнеры и иллюстраторы! Вы можете с легкостью и удовольствием использовать 
+          возможности Призмапринт для реализации своих дизайнерских авторских проектов. 
+          Для этого можно заключить партнерство с Призмапринт. При этом рекомендованная 
+          стоимость м<sup>2</sup> для заказчика останется неизменной. Для получения партнерского 
+          предложения достаточно сделать запрос на почту или WhatsApp.
         </p>
         <div class="cooperation__description-list">
-          <div class="cooperation__description-item">
-            <div class="cooperation__icon" v-show="!isHiddenProject" @click="isHiddenProject = !isHiddenProject">
-              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="cooperation__icon" v-show="isHiddenProject" @click="isHiddenProject = false">
-              <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>По проектам</h3>
-            <p v-if="isHiddenProject">
-            У вас есть большие проекты для печати на постоянную основу, мы платим % от проекта. Выгодные условия
-            </p>
-          </div>
-          <div class="cooperation__description-item">
-            <div class="cooperation__icon" v-show="!isHiddenEquipment" @click="isHiddenEquipment = !isHiddenEquipment">
-              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="cooperation__icon" v-show="isHiddenEquipment" @click="isHiddenEquipment = false">
-              <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Продажа оборудования</h3>
-            <p v-if="isHiddenEquipment">
-              У вас есть большие проекты для печати на постоянную основу, мы платим % от проекта. Выгодные условия
-            </p>
-          </div>
-
-
-          <div class="cooperation__description-item">
-            <div class="cooperation__icon" v-show="!isHidden" @click="isHidden = !isHidden">
-              <svg  width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 0V7M7 7H0M7 7H14M7 7V14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <div class="cooperation__icon" v-show="isHidden" @click="isHidden = false">
-              <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1H7H14" stroke="white" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Промо (Взаимная реклама)</h3>
-            <p v-if="isHidden">
-              У вас есть большие проекты для печати на постоянную основу, мы платим % от проекта. Выгодные условия
-            </p>
-          </div>
+          <a href="tel:89673000344" target="_blank">8967 300 03 44</a>  
+          <a href="mailto:info@prismaprint.ru" target="_blank">info@prismaprint.ru</a> 
         </div>
       </div>    
 		</div>
@@ -117,79 +69,38 @@ export default {
   }
 
   .cooperation__container img {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .cooperation__description-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
   .cooperation__description-text {
-    margin: 0;
-    max-width: 430px;
+    margin: 0 0 30px 0;
 
     font-family: GothamPro;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 140%;
     color: rgba($color: #000000, $alpha: 0.6);
   }
 
-  .cooperation__description-text a {
-    font-weight: bold;
-    color: rgba($color: #000000, $alpha: 0.7);
+  .cooperation__description-text sup {
+    line-height: 80%;
   }
 
   .cooperation__description-list {
     display: flex;
+    flex-direction: column;
   }
 
-  .cooperation__description-item {
-    position: relative;
-    width: 335px;
-    margin-right: 80px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  .cooperation__icon {
-    position: absolute;
-    top: 0;
-    left: -40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-
+  .cooperation__description-list a {
     font-weight: bold;
-    font-size: 18px;
-    color: #ffffff;
-
-    background: #A30E4C;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .cooperation__description-item h3 {
-    margin: 0 0 5px 0;
-
-    font-weight: normal;
     font-size: 24px;
-    line-height: 29px;
-    color: #A30E4C;
-  }
-
-  .cooperation__description-item p {
-    margin: 0;
-
-    font-family: GothamPro;
-    font-size: 16px;
     line-height: 140%;
-    color: #343434;
+    color: rgba($color: #000000, $alpha: 0.6);
+    text-decoration: none;
   }
 
   @media (max-width: 1919px) {
@@ -204,24 +115,6 @@ export default {
     .cooperation__container img {
       width: 100%;
       object-fit: cover;
-    }
-
-    .cooperation__description-wrapper {
-      justify-content: flex-start;
-    }
-
-    .cooperation__description-list {
-      flex-direction: column;
-      margin-left: 115px;
-    }
-
-    .cooperation__description-item {
-      margin-bottom: 25px;
-      margin-right: 0;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -240,6 +133,11 @@ export default {
     .cooperation__container img {
       height: 233px;
     }
+
+    .cooperation__description-text,
+    .cooperation__description-list a {
+      font-size: 20px;
+    }
   }
 
   @media (max-width: 1365px) {
@@ -257,17 +155,9 @@ export default {
       height: 199px;
     }
 
-    .cooperation__description-wrapper {
-      justify-content: space-between;
-    }
-
-    .cooperation__description-text {
-      max-width: 46%;
-    }
-
-    .cooperation__description-list {
-      max-width: 45%;
-      margin-left: 0;
+    .cooperation__description-text,
+    .cooperation__description-list a {
+      font-size: 18px;
     }
   }
 
@@ -291,33 +181,6 @@ export default {
     .cooperation__container img {
       margin-bottom: 20px;
       height: 199px;
-    }
-
-    .cooperation__description-wrapper {
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .cooperation__description-text {
-      max-width: 100%;
-      margin-bottom: 45px;
-    }
-
-    .cooperation__description-list {
-      max-width: 100%;
-      padding-left: 45px;
-    }
-
-    .cooperation__description-item {
-      width: 100%;
-    }
-
-    .cooperation__description-item h3 {
-      font-size: 20px;
-    }
-
-    .cooperation__description-item p {
-      font-size: 14px;
     }
   }
 </style>

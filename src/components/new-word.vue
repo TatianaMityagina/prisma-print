@@ -4,19 +4,16 @@
 			<div class="new-word__description">
 				<h2>Новое слово в интерьере и экстерьере</h2>
 				<p>
-					Если вы находитесь на этом сайте, то вы 
-					сделали первый шаг к изменению вашего интерьера. 
-					Отныне он никогда не будет прежним
+					Робот Художник - революционная технология росписи стен. 
+					Art машина является превосходным синтезом параметров - скорости, 
+					качества и цветопередачи, и современных технологий.
 				</p>
 				<p>
-					Теперь просто отпустите свое воображение и вслух
-					представьте нам свою идею, и вы станете обладателем 
-					самого уникального интерьера, украшенного печатью 
-					от самого быстрого и инновационного принтера для 
-					настенных росписей, картин, фотографий, надписей или логотипов.
+					Детальная прорисовка изображения любой сложности, 4 скорости нанесения, 
+					экологически чистые краски придадут стенам экспрессии всего за несколько часов. 
+					Душа ваших стен скажет вам "Спасибо!"
 				</p>
 			</div>
-			<img class="new-word__image" src="~@/assets/img/index/index-sofa@1x.jpg" srcset="~@/assets/img/index/index-sofa@2x.jpg 2x" alt="Sofa" width="744" height="690">
 		</div>
   </div>
 </template>
@@ -32,8 +29,12 @@ export default {
 	.new-word {
 		display: flex;
 		justify-content: center;
-		padding-top: 375px;
+		padding: 375px 0;
 		width: 100%;
+    max-width: 1920px;
+		overflow: hidden;
+
+    background: url('~@/assets/img/index/index-printer@2x.png') bottom right / 1063px 1042px  no-repeat;
 	}
 
 	.new-word__container {
@@ -71,7 +72,7 @@ export default {
 
   @media (max-width: 1919px) {
 		.new-word {
-			padding-top: 175px;
+			background-size: 987px 968px;
 		}
 	
 		.new-word__container {
@@ -88,6 +89,7 @@ export default {
   @media (max-width: 1599px) {
 		.new-word {
 			padding-top: 135px;
+			background-size: 752px 738px;
 		}
 
 		.new-word__container {
@@ -109,12 +111,12 @@ export default {
   }
 
   @media (max-width: 1365px) {
-		.new-word__container {
-			max-width: 1120px;
+		.new-word {
+			background-position-x: 550px;
 		}
 
-		.new-word__description p {
-			width: 390px;
+		.new-word__container {
+			max-width: 1120px;
 		}
 
 		.new-word__image {
@@ -125,7 +127,9 @@ export default {
 
   @media (max-width: 1199px) {
     .new-word {
-			padding-top: 0;
+			padding: 50px 0 180px 0;
+			background: url('~@/assets/img/index/index-printer-768@1x.png') bottom right / 438px 630px  no-repeat;
+			background-position-x: right;
 		}
 
 		.new-word__container {
@@ -133,7 +137,7 @@ export default {
 		}
 
     .new-word__description {
-      max-width: 235px;
+      max-width: 322px;
     }
 
     .new-word__description h2 {
@@ -151,9 +155,11 @@ export default {
 		}
 	}
 	
-	@media (max-width: 768px) {
+	@media (max-width: 767px) {
     .new-word {
 			padding-top: 0;
+			padding-bottom: 338px;
+			background: url('~@/assets/img/index/index-printer@2x.png') bottom center / 100% 368px  no-repeat;
 		}
 
 		.new-word__container {

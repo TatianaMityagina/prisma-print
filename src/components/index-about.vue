@@ -6,19 +6,21 @@
         <div class="index-about__item index-about__item--first">
 				<img src="~@/assets/img/index/index-dialog@1x.jpg" srcset="~@/assets/img/index/index-dialog@2x.jpg 2x" alt="Photo-1" width="409" height="678">
 				<p>
-					Мы мобильны и любим украшать мир. Выехать в любую 
-					точку Краснодарского края, чтобы сделать ваш 
-					интерьер ярче красивее и уникальней- легко! 
-					Даже если ваша поверхность за пределами Кубани, 
-					мы знаем как решить этот вопрос
+					Мы мобильны и любим украшать мир. 
+          Выехать в любую точку Краснодарского края, 
+          чтобы сделать ваш интерьер ярче, красивее и уникальней- легко! 
+          Даже если ваша поверхность за пределами Кубани, мы знаем как решить этот вопрос. 
 				</p>
 			</div>
 
 			<div class="index-about__item index-about__item--second">
 				<p>
-					Наши дизайнеры разработают принт на вашу стену за вас, 
-					если ваша муза в отпуске
-				</p>
+					Наши дизайнеры разработают принт на вашу стену за вас, если ваша муза в отпуске.
+        </p>
+        <p>
+          Оригинальность, полностью интегрированная в ваш интерьер. 
+          Мы вместе добьемся ощущения абсолютного слияния и уместности росписи стен в интерьере.
+        </p>
 				<img src="~@/assets/img/index/index-men@1x.jpg" srcset="~@/assets/img/index/index-men@2x.jpg 2x" alt="Photo-2" width="409" height="678">
 			</div>
 
@@ -26,7 +28,7 @@
 				<img src="~@/assets/img/index/index-lamp@1x.jpg" srcset="~@/assets/img/index/index-lamp@2x.jpg 2x" alt="Photo-3" width="409" height="678">
 				<p>
 					Наша принципиальная позиция - индивидуальный подход. 
-					Наше кредо - быстро, чисто, качественно
+          Наше кредо - быстро, чисто, детально, профессионально.
 				</p>
 			</div>
       </div>
@@ -96,7 +98,7 @@ export default {
   }
 
   .index-about__item--second p {
-    padding: 60px 0;
+    margin-bottom: 20px;
   }
 
   .index-about__item--third p {
@@ -143,10 +145,6 @@ export default {
       padding-top: 20px;
     }
 
-    .index-about__item--second p {
-      padding: 30px 0;
-    }
-
     .index-about__item--third p {
       padding-top: 20px;
     }
@@ -177,10 +175,6 @@ export default {
 
     .index-about__item--first p {
       padding-top: 20px;
-    }
-
-    .index-about__item--second p {
-      padding: 30px 0;
     }
 
     .index-about__item--third p {
@@ -220,10 +214,6 @@ export default {
 
     .index-about__item--first p {
       padding-top: 20px;
-    }
-
-    .index-about__item--second p {
-      padding: 30px 0;
     }
 
     .index-about__item--third p {
