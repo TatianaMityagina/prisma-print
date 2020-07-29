@@ -217,7 +217,7 @@ export default {
       return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(2)
     },
     resultSum() {
-      if(this.pick === 'wall' && this.size < 1){
+      if(this.pick === 'wall' && this.size < 1) {
         return (0* this.size).toFixed(0)
       } else if(this.pick === 'wall' && 1 <= this.size < 3){
         return (3000 * this.size).toFixed(0)
@@ -225,6 +225,8 @@ export default {
         return (2500 * this.size).toFixed(0)
       } else if(this.pick === 'wall' && 10 <= this.size < 30) {
         return (2000 * this.size).toFixed(0)
+
+        
       } else if(this.pick === 'putty' && this.size < 1){
         return (0* this.size).toFixed(0)
       } else if(this.pick === 'putty' && 1 <= this.size < 3){

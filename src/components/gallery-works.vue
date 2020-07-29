@@ -42,23 +42,21 @@ export default {
         '/img/gallery/gallery-photo21.jpg',
         '/img/gallery/gallery-photo22.jpg',    	
         '/img/gallery/gallery-photo23.jpg',
-        '/img/gallery/gallery-photo24.jpg'
+        '/img/gallery/gallery-photo24.jpg',
+        '/img/gallery/gallery-photo25.jpg',    	
+        '/img/gallery/gallery-photo26.jpg',
+        '/img/gallery/gallery-photo27.jpg',
+        '/img/gallery/gallery-photo28.jpg',    	
+        '/img/gallery/gallery-photo29.jpg',
+        '/img/gallery/gallery-photo30.jpg',
+        '/img/gallery/gallery-photo31.jpg',    	
+        '/img/gallery/gallery-photo32.jpg',
+        '/img/gallery/gallery-photo33.jpg',
+        '/img/gallery/gallery-photo34.jpg',    	
+        '/img/gallery/gallery-photo35.jpg',
+        '/img/gallery/gallery-photo36.jpg'
       ]
     }
-  },
-  methods: {
-    getIllustrations () {
-      const path = require('path')
-      const fs = require('fs')
-      console.log(__dirname, path.join(__dirname, '/img/gallery'));
-      fs.readdir(path.join(__dirname, '../public/img/gallery'), (err, items) => {
-        if (err) { console.log(err) }
-        console.log(items)
-      })
-    }
-  },
-  mounted () {
-    this.getIllustrations()
   }
 }
 </script>
@@ -97,6 +95,7 @@ export default {
     margin: 0 14px 14px 0;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(6n) {
       margin-right: 0;
