@@ -1,16 +1,18 @@
 <template>
   <div class="office">
-    <CommercialPrint />
+    <OfficePrint />
     <PhotosOffice />
     <PhotosHotel />
     <PhotosMunicipal />
     <PhotosFitness />
     <PhotosSpa />
     <Advantages />
+    <CommercialPrint />
   </div>
 </template>
 
 <script>
+import OfficePrint from '../components/office-print'
 import CommercialPrint from '../components/commercial-print'
 import PhotosOffice from '../components/photos-office'
 import PhotosHotel from '../components/photos-hotel'
@@ -22,6 +24,7 @@ import Advantages from '../components/advantages'
 export default {
   name: 'Office',
   components: {
+    OfficePrint,
     CommercialPrint,
     PhotosOffice,
     PhotosHotel,
@@ -39,7 +42,6 @@ export default {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 80px;
   }
 </style>
 

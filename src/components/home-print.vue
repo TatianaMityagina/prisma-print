@@ -29,7 +29,7 @@
             <img src="~@/assets/img/home/home-livingroom@1x.jpg" srcset="~@/assets/img/home/home-livingroom@2x.jpg 2x" alt="Photo-4" width="317" height="476">
             <a class="home-print__btn" href="#livingroom"  v-scroll-to="'#livingroom'">Посмотреть</a>
           </div>
-          <h3>Гостинная</h3>
+          <h3>Гостиная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">

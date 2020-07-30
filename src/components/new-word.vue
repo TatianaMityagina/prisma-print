@@ -55,7 +55,7 @@ export default {
 	}
 
 	.new-word__description p {
-		width: 549px;
+		width: 535px;
 
 		font-family: GothamPro;
 		font-style: normal;

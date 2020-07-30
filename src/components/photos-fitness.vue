@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-fitness">
+  <div class="photos-fitness" id="fitness">
 		<div class="photos-fitness__container">
       <div class="photos-fitness__title-wrapper">
         <h2>Фитнес клуб</h2>
@@ -144,6 +144,7 @@ export default {
 
   .photos-fitness__left-gallery img {
     cursor: pointer;
+    object-fit: cover;
     
     &:nth-child(1) {
       grid-area: img1;
@@ -178,6 +179,7 @@ export default {
     margin-bottom: 5px;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(3n) {
       margin-right: 0;

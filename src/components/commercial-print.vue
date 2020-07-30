@@ -2,7 +2,7 @@
   <div class="commercial-print">
 		<div class="commercial-print__container">
       <h2>Коммерческая печать</h2>
-      <div class="commercial-print__list-wrapper commercial-print__list-wrapper--content-hidden">
+      <div class="commercial-print__list-wrapper" :class="{ 'commercial-print__list-wrapper--content-hidden': !show }">
         <ul class="commercial-print__list">
           <li>Кафе</li>
           <li>Рестораны</li>
@@ -74,9 +74,9 @@
           <li>Базы отдыха</li>
         </ul>
       </div>
-      <button type="button" class="commercial-print__btn commercial-print__btn--close" @click="toggleList">
-        <span class="commercial-print__btn-text commercial-print__btn-text--close">Посмотреть все</span>
-        <span class="commercial-print__btn-text commercial-print__btn-text--open">Скрыть</span>
+      <button type="button" class="commercial-print__btn" @click="toggleList">
+        <span class="commercial-print__btn-text" v-if="!show">Посмотреть все</span>
+        <span class="commercial-print__btn-text" v-else>Скрыть</span>
       </button> 
 		</div>
   </div>
@@ -85,21 +85,14 @@
 <script>
 export default {
   name: 'CommercialPrint',
+  data() {
+    return {
+      show: false
+    }
+  },
   methods: {
     toggleList() {
-      let listWrapper = document.querySelector('.commercial-print__list-wrapper');
-      var toggle = document.querySelector('.commercial-print__btn');
-      if (listWrapper.classList.contains('commercial-print__list-wrapper--content-hidden')) {
-        listWrapper.classList.remove('commercial-print__list-wrapper--content-hidden');
-        toggle.classList.remove('commercial-print__btn--close');
-
-        toggle.blur();
-      } else {
-        listWrapper.classList.add('commercial-print__list-wrapper--content-hidden');
-        toggle.classList.add('commercial-print__btn--close');
-
-        toggle.blur();
-      }
+      this.show = !this.show
     }
   }
 }
@@ -112,7 +105,7 @@ export default {
     justify-content: center;
     max-width: 1720px;
     margin-top: 106px;
-    margin-bottom: 250px;
+    margin-bottom: 0;
     padding: 60px 0;
     width: 100%;
 
@@ -169,13 +162,10 @@ export default {
     border: none;
     background: transparent;
     outline: none;
+    cursor: pointer;
   }
 
   @media (max-width: 1919px) {
-    .commercial-print {
-      margin-bottom: 220px;
-    }
-
     .commercial-print__container {
       max-width: 1400px;
     }
@@ -187,7 +177,6 @@ export default {
 
   @media (max-width: 1599px) {
     .commercial-print {
-      margin-bottom: 180px;
       padding: 40px 0;
     }
     
@@ -244,7 +233,6 @@ export default {
 
   @media (max-width: 767px) {
     .commercial-print {
-      margin-bottom: 85px;
       margin-top: 72px;
       padding-bottom: 20px;
     }

@@ -2,7 +2,7 @@
   <div class="photos-lounge">
 		<div class="photos-lounge__container" id="livingroom">
       <div class="photos-lounge__title-wrapper">
-        <h2>Гостинная</h2>
+        <h2>Гостиная</h2>
         <span>Там где уединение особенно важно</span>
       </div>
       <div class="photos-lounge__gallery">
@@ -16,20 +16,17 @@
         </div>
 
         <div class="photos-lounge__right">
-          <h3>Галерея идей для Гостинной</h3>
+          <h3>Галерея идей для Гостиной</h3>
           <div v-viewer class="photos-lounge__right-gallery clearfix">
             <template v-for="image in images">
               <img :src="image" :key="image" width="130" height="145">
             </template>
           </div>
           <p>
-            Мы уверены, вы уже знаете, что хотите напечатать. 
-            Просто загрузите ваше изображение и посмотрите, 
-            как оно будет выглядеть в предварительном просмотре.
-          </p>
-          <p>
-            Напоминаем, что печать производиться на соверешнно 
-            любой поверхности: стекло, керамическая плитка, дерево или бетон.
+            Побывали в отпуске своей мечты и хочется удержать вдохновение? 
+            Или хотите, чтобы в твою жизнь пришли важные перемены? 
+            Визуализируйте! Это легко на стенах самой посещаемой части твоего дома. 
+            Наполни вертикальные пространства силой своих ярких желаний.
           </p>
           <a class="photos-lounge__btn" href="#" @click="showPopup = true">
             Заказать печать в гостинную
@@ -151,6 +148,7 @@ export default {
 
   .photos-lounge__left-gallery img {
     cursor: pointer;
+    object-fit: cover;
     
     &:nth-child(1) {
       grid-area: img1;
@@ -185,6 +183,7 @@ export default {
     margin-bottom: 5px;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(3n) {
       margin-right: 0;

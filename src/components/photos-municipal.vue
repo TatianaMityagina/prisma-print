@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-municipal">
+  <div class="photos-municipal" id="municipal">
 		<div class="photos-municipal__container">
       <div class="photos-municipal__title-wrapper">
         <h2>Муниципалитет</h2>
@@ -149,6 +149,7 @@ export default {
 
   .photos-municipal__left-gallery img {
     cursor: pointer;
+    object-fit: cover;
     
     &:nth-child(1) {
       grid-area: img1;
@@ -183,6 +184,7 @@ export default {
     margin-bottom: 5px;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(3n) {
       margin-right: 0;

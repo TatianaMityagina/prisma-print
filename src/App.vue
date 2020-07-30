@@ -2,15 +2,18 @@
   <div id="app">
     <TopHeader />
     <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
   import TopHeader from './components/top-haeder'
+  import Footer from './components/footer'
 
   export default {
     components: {
-      TopHeader
+      TopHeader,
+      Footer
     }
   }
 </script>

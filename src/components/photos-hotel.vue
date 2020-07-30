@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-hotel">
+  <div class="photos-hotel" id="hotel">
 		<div class="photos-hotel__container">
       <div class="photos-hotel__title-wrapper">
         <h2>Гостинично ресторанный бизнес</h2>
@@ -144,6 +144,7 @@ export default {
 
   .photos-hotel__left-gallery img {
     cursor: pointer;
+    object-fit: cover;
     
     &:nth-child(1) {
       grid-area: img1;
@@ -178,6 +179,7 @@ export default {
     margin-bottom: 5px;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(3n) {
       margin-right: 0;

@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-office">
+  <div class="photos-office" id="office-print">
 		<div class="photos-office__container">
       <div class="photos-office__title-wrapper">
         <h2>офис</h2>
@@ -150,6 +150,7 @@ export default {
 
   .photos-office__left-gallery img {
     cursor: pointer;
+    object-fit: cover;
     
     &:nth-child(1) {
       grid-area: img1;
@@ -184,6 +185,7 @@ export default {
     margin-bottom: 5px;
 
     cursor: pointer;
+    object-fit: cover;
 
     &:nth-child(3n) {
       margin-right: 0;

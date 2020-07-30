@@ -15,8 +15,9 @@
           предложения достаточно сделать запрос на почту или WhatsApp.
         </p>
         <div class="cooperation__description-list">
-          <a href="tel:89673000344" target="_blank">8967 300 03 44</a>  
-          <a href="mailto:info@prismaprint.ru" target="_blank">info@prismaprint.ru</a> 
+          <a href="mailto:info@prismaprint.ru" target="_blank" rel="noopener">info@prismaprint.ru</a> 
+          <a href="tel:89673000344" target="_blank" rel="noopener">8967 300 03 44</a>  
+
         </div>
       </div>    
 		</div>
@@ -45,7 +46,6 @@ export default {
     justify-content: center;
     width: 100%;
     padding-top: 160px;
-    padding-bottom: 140px;
   }
 
   .cooperation__container {
@@ -164,7 +164,6 @@ export default {
   @media (max-width: 767px) {
     .cooperation {
       padding-top: 110px;
-      padding-bottom: 100px;
     }
 
     .cooperation__container {

@@ -46,14 +46,14 @@
               <li class="calculator__result-item">
                 <p>Ширина</p>
                 <div class="calculator__result-feild">
-                  <input type="text" id="width" v-model="valueWidth">
+                  <input type="text" id="width" v-model="valueWidth" pattern="^[ 0-9]+$">
                   <label for="width">см</label>
                 </div>
               </li>
               <li class="calculator__result-item">
                 <p>Высота</p>
                 <div class="calculator__result-feild">
-                  <input type="text" id="height" v-model="valueHeight">
+                  <input type="text" id="height" v-model="valueHeight" pattern="^[ 0-9]+$">
                   <label for="height">см</label>
                 </div>
               </li>
@@ -69,7 +69,7 @@
           </div>
             
           <div class="calculator__form-btn">
-            <button type="button" @click="showPopup = true" >Оставить заявки на печать</button>
+            <button type="button" @click="showPopup = true">Оставить заявки на печать</button>
             <a href="#" @click="showPopup = true">хочу дешевле!</a>
           </div>
         </form>
@@ -109,6 +109,8 @@
 import VueSlider from 'vue-slider-component'
 import '../assets/style/calculator.css'
 import Modal from '../components/modal'
+
+import priceRules from '@/constants/priceRules';
 
 export default {
   name: 'Calculator',
@@ -217,59 +219,10 @@ export default {
       return ((this.valueWidth / 100) * (this.valueHeight / 100)).toFixed(2)
     },
     resultSum() {
-      if(this.pick === 'wall' && this.size < 1) {
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'wall' && 1 <= this.size < 3){
-        return (3000 * this.size).toFixed(0)
-      } else if(this.pick === 'wall' && 3 <= this.size < 10) {
-        return (2500 * this.size).toFixed(0)
-      } else if(this.pick === 'wall' && 10 <= this.size < 30) {
-        return (2000 * this.size).toFixed(0)
+    
+      const prices = priceRules[this.pick].find(i => this.size < i.code).price * this.size;
 
-        
-      } else if(this.pick === 'putty' && this.size < 1){
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'putty' && 1 <= this.size < 3){
-        return (3000 * this.size).toFixed(0)
-      } else if(this.pick === 'putty' && 3 <= this.size < 10) {
-        return (2500 * this.size).toFixed(0)
-      } else if(this.pick === 'putty' && 10 <= this.size < 30) {
-        return (2000 * this.size).toFixed(0)
-      } else if(this.pick === 'plastic' && this.size < 1){
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'plastic' && 1 <= this.size < 3){
-        return (3150 * this.size).toFixed(0)
-      } else if(this.pick === 'plastic' && 3 <= this.size < 10) {
-        return (2625 * this.size).toFixed(0)
-      } else if(this.pick === 'plastic' && 10 <= this.size < 30) {
-        return (2100 * this.size).toFixed(0)
-      } else if(this.pick === 'ceramic' && this.size < 1) {
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'ceramic' && 1 <= this.size < 3) {
-        return (3150 * this.size).toFixed(0)
-      } else if(this.pick === 'ceramic' && 3 <= this.size < 10) {
-        return (2625 * this.size).toFixed(0)
-      } else if(this.pick === 'ceramic' && 10 <= this.size < 30) {
-        return (2100 * this.size).toFixed(0)
-      } else if(this.pick === 'glass' && this.size < 1) {
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'glass' && 1 <= this.size < 3){
-        return (3150 * this.size).toFixed(0)
-      } else if(this.pick === 'glass' && 3 <= this.size < 10) {
-        return (2625 * this.size).toFixed(0)
-      } else if(this.pick === 'glass' && 10 <= this.size < 30) {
-        return (2100 * this.size).toFixed(0)
-      } else if(this.pick === 'wood' && this.size < 1) {
-        return (0* this.size).toFixed(0)
-      } else if(this.pick === 'wood' && 1 <= this.size < 3){
-        return (3000 * this.size).toFixed(0)
-      } else if(this.pick === 'wood' && 3 <= this.size < 10) {
-        return (2500 * this.size).toFixed(0)
-      } else if(this.pick === 'wood' && 10 <= this.size < 30) {
-        return (2000 * this.size).toFixed(0)
-      } else {
-        return (0 * this.size).toFixed(0)
-      }
+      return prices.toFixed(0);
     }
   },
   created() {
@@ -483,7 +436,7 @@ export default {
   .calculator__result-feild input {
     border: none;
     outline: none;
-    max-width: 40px;
+    max-width: 45px;
   }
 
   .calculator__result-feild input[type=text] {
@@ -562,9 +515,6 @@ export default {
   width: 1px;
   height: 418px;
 }
-
-  @media (max-width: 1919px) {
-  }
 
   @media (max-width: 1599px) {
     .calculator__container {
