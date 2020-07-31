@@ -5,36 +5,47 @@
       <div class="office-print__list">
         <div class="office-print__item">
           <div class="office-print__image-wrapper">
+            <div class="b"></div>
             <img src="~@/assets/img/office/office-print1@1x.png" srcset="~@/assets/img/office/office-print1@2x.png 2x" alt="Photo-1" width="317" height="476">
-            <a class="office-print__btn" href="#kitchen" v-scroll-to="'#office-print'">Посмотреть</a>
+            <div class="office-print__btn-wrapper">
+              <a class="office-print__btn" href="#kitchen" v-scroll-to="'#office-print'">Посмотреть</a>
+            </div>
           </div>
           <h3>Офис</h3>
         </div>
         <div class="office-print__item">
           <div class="office-print__image-wrapper">
             <img src="~@/assets/img/office/office-print2@1x.png" srcset="~@/assets/img/office/office-print2@2x.png 2x" alt="Photo-1" width="317" height="476">
-            <a class="office-print__btn" href="#bathroom" v-scroll-to="'#hotel'">Посмотреть</a>
+            <div class="office-print__btn-wrapper">
+              <a class="office-print__btn" href="#bathroom" v-scroll-to="'#hotel'">Посмотреть</a>
+            </div>
           </div>
           <h3>Гостинично-ресторанный бизнес</h3>
         </div>
         <div class="office-print__item">
           <div class="office-print__image-wrapper">
             <img src="~@/assets/img/office/office-print3@1x.png" srcset="~@/assets/img/office/office-print3@2x.png 2x" alt="Photo-1" width="317" height="476">
-            <a class="office-print__btn" href="#childrenroom" v-scroll-to="'#municipal'">Посмотреть</a>
+            <div class="office-print__btn-wrapper">
+              <a class="office-print__btn" href="#childrenroom" v-scroll-to="'#municipal'">Посмотреть</a>
+            </div>
           </div>
           <h3>Муниципалитет</h3>
         </div>
         <div class="office-print__item">
           <div class="office-print__image-wrapper">
             <img src="~@/assets/img/office/office-print4@1x.png" srcset="~@/assets/img/office/office-print4@2x.png 2x" alt="Photo-1" width="317" height="476">
-            <a class="office-print__btn" href="#livingroom"  v-scroll-to="'#fitness'">Посмотреть</a>
+            <div class="office-print__btn-wrapper">
+              <a class="office-print__btn" href="#livingroom"  v-scroll-to="'#fitness'">Посмотреть</a>
+            </div>
           </div>
           <h3>Спорт</h3>
         </div>
         <div class="office-print__item">
           <div class="office-print__image-wrapper">
             <img src="~@/assets/img/office/office-print5@1x.png" srcset="~@/assets/img/office/office-print5@2x.png 2x" alt="Photo-1" width="317" height="476">
-            <a class="office-print__btn" href="#bedroom" v-scroll-to="'#spa'">Посмотреть</a>
+            <div class="office-print__btn-wrapper">
+              <a class="office-print__btn" href="#bedroom" v-scroll-to="'#spa'">Посмотреть</a>
+            </div>
           </div>
           <h3>Сфера услуг</h3>
         </div>
@@ -95,7 +106,7 @@ export default {
     margin-bottom: 10px;
 
     &:hover {
-      .office-print__btn {
+      .office-print__btn-wrapper {
         display: flex;
         transition-delay: 0.4s;
       }
@@ -106,12 +117,21 @@ export default {
     }
   }
 
-  .office-print__btn {
+  .office-print__btn-wrapper {   
     position: absolute;
-    top: 45%;
-    left: calc(50% - 55px);
+    top: 0;
+    width: 100%;
+    height: 98%;
 
     display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(0deg, rgba(67, 67, 67, 0.7), rgba(67, 67, 67, 0.7));
+  }
+
+  .office-print__btn {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 110px;
@@ -181,8 +201,6 @@ export default {
     }
 
     .office-print__btn {
-      left: calc(50% - 49px);
-
       width: 98px;
       height: 19px;
 
@@ -208,6 +226,10 @@ export default {
       width: 204px;
       height: 306px;
     }
+
+    .office-print__btn-wrapper {
+      height: 97.5%;
+    }
   }
 
   @media (max-width: 1199px) {
@@ -222,6 +244,10 @@ export default {
     .office-print__image-wrapper img {
       width: 122px;
       height: 184px;
+    }
+
+    .office-print__btn-wrapper {
+      height: 96%;
     }
 
     .office-print__item h3 {

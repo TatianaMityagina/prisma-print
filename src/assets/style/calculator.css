@@ -44,7 +44,7 @@
   cursor: pointer;
   width: 24px;
   height: 24px;
-  background: url('~@/assets/img/calculator-pin.svg') center / cover no-repeat;
+  background: url('~@/assets/img/calculator-pin.svg') center / contain no-repeat;
   
 }
 .vue-slider-dot-handle-focus {

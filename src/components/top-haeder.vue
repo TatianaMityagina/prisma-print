@@ -281,6 +281,9 @@ export default {
     padding: 40px 0 40px 0;
     width: 100%;
     min-height: 100vh;
+    height: 800px;
+    overflow: auto;
+    max-height: 100vh;
 
     background-color: #FFFFFF;
   }
@@ -551,7 +554,10 @@ export default {
 
     .interactive-menu {
       padding-top: 30px;
-      min-height: 100vh;
+      padding-bottom: 30px;
+      height: 700px;
+      overflow: auto;
+      max-height: 100vh;
       justify-content: flex-start;
     }
 
@@ -559,7 +565,7 @@ export default {
       padding: 35px 0 0 0;
       max-width: 100%;
 
-      background: url('~@/assets/img/triangle-mobile-menu.svg') center / cover no-repeat;
+      background: url('~@/assets/img/triangle-mobile-menu.svg') center / no-repeat;
     }
 
     .interactive-menu__button {

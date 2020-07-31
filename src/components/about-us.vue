@@ -7,7 +7,7 @@
         Призмапринт - это компания развивающая роспись стен  цифровой культурной эпохи. 
         Мы не меньше художников вкладываем душу в наши работы. 
         С нашим портфолио можно ознакомиться на нашем канале <a class="youtube" href="https://www.youtube.com/channel/UCK8IXhkzGufEuDhu7SI9jvA" target="_blank" rel="noopener">YouTube</a>, 
-        на сайте <a class="site" href="https://www.prismaprint.ru/" target="_blank" rel="noopener">prismaprint.ru</a> и в Инстаграм <a class="insta" href="https://instagram.com/prismaprint_" target="_blank" rel="noopener">@prismaprint</a>
+        на сайте <a class="site" href="https://www.prismaprint.ru/" target="_blank" rel="noopener">prismaprint.ru</a> и в Инстаграм <a class="insta" href="https://instagram.com/prismaprint_" target="_blank" rel="noopener">@prismaprint_</a>
         Настенный принтер может перенести любой фотомомент на любую вертикальную поверхность 
         с помощью экологически чистых ультрафиолетовых красок. Категории наших клиентов 
         ограничиваются фантазией. Мы работаем для полной аудитории - от детской спальни до 

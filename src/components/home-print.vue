@@ -6,35 +6,45 @@
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-kitchen@1x.jpg" srcset="~@/assets/img/home/home-kitchen@2x.jpg 2x" alt="Photo-1" width="317" height="476">
-            <a class="home-print__btn" href="#kitchen" v-scroll-to="'#kitchen'">Посмотреть</a>
+            <div class="home-print__btn-wrapper">
+              <a class="home-print__btn" href="#kitchen" v-scroll-to="'#kitchen'">Посмотреть</a>
+            </div>
           </div>
           <h3>Кухня</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bathroom@1x.jpg" srcset="~@/assets/img/home/home-bathroom@2x.jpg 2x" alt="Photo-2" width="317" height="476">
-            <a class="home-print__btn" href="#bathroom" v-scroll-to="'#bathroom'">Посмотреть</a>
+            <div class="home-print__btn-wrapper">
+              <a class="home-print__btn" href="#bathroom" v-scroll-to="'#bathroom'">Посмотреть</a>
+            </div>
           </div>
           <h3>Ванная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-childrenroom@1x.jpg" srcset="~@/assets/img/home/home-childrenroom@2x.jpg 2x" alt="Photo-3" width="317" height="476">
-            <a class="home-print__btn" href="#childrenroom" v-scroll-to="'#childrenroom'">Посмотреть</a>
+            <div class="home-print__btn-wrapper">
+              <a class="home-print__btn" href="#childrenroom" v-scroll-to="'#childrenroom'">Посмотреть</a>
+            </div>
           </div>
           <h3>Детская комната</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-livingroom@1x.jpg" srcset="~@/assets/img/home/home-livingroom@2x.jpg 2x" alt="Photo-4" width="317" height="476">
-            <a class="home-print__btn" href="#livingroom"  v-scroll-to="'#livingroom'">Посмотреть</a>
+            <div class="home-print__btn-wrapper">
+              <a class="home-print__btn" href="#livingroom"  v-scroll-to="'#livingroom'">Посмотреть</a>
+            </div>
           </div>
           <h3>Гостиная</h3>
         </div>
         <div class="home-print__item">
           <div class="home-print__image-wrapper">
             <img src="~@/assets/img/home/home-bedroom@1x.jpg" srcset="~@/assets/img/home/home-bedroom@2x.jpg 2x" alt="Photo-5" width="317" height="476">
-            <a class="home-print__btn" href="#bedroom" v-scroll-to="'#bedroom'">Посмотреть</a>
+            <div class="home-print__btn-wrapper">
+              <a class="home-print__btn" href="#bedroom" v-scroll-to="'#bedroom'">Посмотреть</a>
+            </div>
           </div>
           <h3>Спальная</h3>
         </div>
@@ -95,7 +105,7 @@ export default {
     margin-bottom: 10px;
 
     &:hover {
-      .home-print__btn {
+      .home-print__btn-wrapper {
         display: flex;
         transition-delay: 0.4s;
       }
@@ -106,12 +116,21 @@ export default {
     }
   }
 
-  .home-print__btn {
+  .home-print__btn-wrapper {   
     position: absolute;
-    top: 45%;
-    left: calc(50% - 55px);
+    top: 0;
+    width: 100%;
+    height: 98%;
 
     display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(0deg, rgba(67, 67, 67, 0.4), rgba(67, 67, 67, 0.4));
+  }
+
+  .home-print__btn {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 110px;
@@ -206,6 +225,10 @@ export default {
       width: 204px;
       height: 306px;
     }
+
+    .home-print__btn-wrapper { 
+      height: 97.5%;
+    }
   }
 
   @media (max-width: 1199px) {
@@ -220,6 +243,10 @@ export default {
     .home-print__image-wrapper img {
       width: 122px;
       height: 184px;
+    }
+
+    .home-print__btn-wrapper { 
+      height: 96%;
     }
 
     .home-print__item h3 {
