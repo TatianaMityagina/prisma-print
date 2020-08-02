@@ -18,7 +18,7 @@
       <div class="menu__contacts">
         <div class="menu__contacts-tel">
           <a href="tel:89673000344">8967 300 03 44</a>
-          <span>отдел печати</span>
+          <router-link to="/video" name="Video" style="text-decoration:none;"><span>отдел печати</span></router-link>
         </div>  
         
         <ul class="menu__social-list">
@@ -277,24 +277,22 @@ export default {
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 40px 0 40px 0;
     width: 100%;
     min-height: 100vh;
-    height: 800px;
-    overflow: auto;
-    max-height: 100vh;
 
     background-color: #FFFFFF;
   }
   
   .interactive-menu__button {
+    position:absolute;
+    top: 50px;
+    left: 120px;
+
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    margin-bottom: 28px;
-    max-width: 1720px;
-    width: 100%;
     cursor: pointer;
   }
 
@@ -397,7 +395,7 @@ export default {
   }
 
   .interactive-menu__contacts-tel {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     font-weight: 600;
     font-size: 28px;
@@ -428,7 +426,7 @@ export default {
   .interactive-menu__social-list {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    padding-top: 60px;
   }
 
   .interactive-menu__social-item {
@@ -460,10 +458,6 @@ export default {
     .menu {
       max-width: 1400px;
     }
-
-    .interactive-menu__button {
-      max-width: 1400px;
-    }
   }
 
   @media (max-width: 1599px) {
@@ -472,12 +466,39 @@ export default {
     }
 
     .interactive-menu__button {
-      margin-bottom: 40px;
-      max-width: 1168px;
+      top: 40px;
     }
 
-    .menu-nav__list-type a {
+    .menu-nav__list-type {
+      margin-bottom: 40px;
+    }
+
+    .menu-nav__list-type span {
       font-size: 48px;
+      line-height: 100%;
+    }
+
+    .menu-nav__list {
+      margin-bottom: 50px;
+    }
+
+    .menu-nav__list span {
+      font-size: 20px;
+      line-height: 100%;
+    }
+
+    .interactive-menu__contacts-tel {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    .interactive-menu__contacts-mail {
+      font-size: 20px;
+      line-height: 100%;
+    }
+
+    .interactive-menu__social-list[data-v-02710d0d] {
+      padding-top: 50px;
     }
   }
 
@@ -486,25 +507,35 @@ export default {
       max-width: 1120px;
     }
 
-    .interactive-menu__button {
-      max-width: 1120px;
-    }
-
     .menu-nav h1 {
       font-size: 22px;
     }
 
-    .menu-nav__list a {
-      font-size: 18px;
+    .interactive-menu__button {
+      top: 50px;
     }
-    
+
+    .menu-nav__list {
+      margin-bottom: 40px;
+    }
+
+    .menu-nav__list span {
+      font-size: 18px;
+      line-height: 100%;
+    }
+
     .interactive-menu__contacts-tel {
       font-size: 22px;
+      line-height: 100%;
+    }
+
+    .interactive-menu__social-list {
+      padding-top: 40px;
     }
   }
 
    @media (max-width: 1199px) {
-     .menu {
+    .menu {
       max-width: 688px;
     }
 
@@ -513,14 +544,13 @@ export default {
     }
 
     .interactive-menu__container {
-      padding: 20px 0 220px 0;
       max-width: 100%;
 
       background: url('~@/assets/img/index-intro-triangle-tablet.svg') top / contain no-repeat;
     }
 
     .interactive-menu__button {
-      max-width: 688px;
+      left: 60px;
     }
 
     .menu__logo img {
@@ -531,15 +561,15 @@ export default {
     .menu__burger {
       margin-right: 25px;
     }
-
-    .menu-nav__list-type span {
-      font-size: 48px;
+    
+    .menu-nav__list  {
+      margin-bottom:50px
     }
 
-    .menu-nav__list span {
-      font-size: 18px;
+    .interactive-menu__social-list {
+      padding-top: 50px;
     }
-   }
+  }
 
   @media (max-width: 767px) {
     .top-header {
@@ -558,6 +588,9 @@ export default {
       height: 700px;
       overflow: auto;
       max-height: 100vh;
+    //   height: 800px;
+    // overflow: auto;
+    // max-height: 100vh;
       justify-content: flex-start;
     }
 
@@ -569,12 +602,10 @@ export default {
     }
 
     .interactive-menu__button {
+      position: static;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0;
-      margin-bottom: 0;
-      max-width: 92vw;
     }
 
     .interactive-menu__button span {
@@ -621,31 +652,6 @@ export default {
 
     .menu__social-list {
       display: none;
-    }
-
-    .menu-nav__list-type {
-      margin-bottom: 30px;
-    }
-
-    .menu-nav__list-type li {
-      margin-bottom: 10px;
-    }
-
-    .menu-nav__list-item {
-      margin-bottom: 10px;
-    }
-
-    .interactive-menu__social-list {
-      margin-top: 40px;
-    }
-
-    .interactive-menu__contacts-tel {
-      margin-bottom: 10px;
-    }
-
-    .interactive-menu__contacts-mail {
-      font-size: 20px;
-    line-height: 100%;
     }
    }
 </style>

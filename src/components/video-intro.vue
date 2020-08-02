@@ -1,7 +1,7 @@
 <template>
   <div class="video-intro">
 		<div class="video-intro__container">   
-      <video class="video-intro__video" width="550" height="350" loop autoplay>
+      <video class="video-intro__video" width="550" height="350" loop controls>
         <source src="/video/printer.webm" type="video/webm">
         <source src="/video/printer.mp4" type="video/mp4">
         Ваш браузер не поддерживает видеотеги.
@@ -34,6 +34,10 @@ export default {
     width: 100%;
 
     background: url('~@/assets/img/index-intro-triangle.svg') center / cover no-repeat;
+  }
+
+  .video-intro__video {
+    outline: none;
   }
 
   @media (max-width: 1919px) {

@@ -70,7 +70,7 @@
             
           <div class="calculator__form-btn">
             <button type="button" @click="showPopup = true">Оставить заявки на печать</button>
-            <a href="#" @click="showPopup = true">хочу дешевле!</a>
+            <span class="calculator__btn-cheap" @click="showPopup = true">хочу дешевле!</span>
           </div>
         </form>
 
@@ -476,7 +476,7 @@ export default {
     cursor: pointer;
   }
 
-  .calculator__form-btn a {
+  .calculator__btn-cheap {
     font-family: Panton;
     font-weight: 600;
     font-size: 14px;
@@ -484,6 +484,7 @@ export default {
     text-align: center;
     color: #2F80ED;
     text-decoration: none;
+    cursor: pointer;
   }
 
   // Grafic

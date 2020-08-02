@@ -127,7 +127,7 @@ export default {
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(0deg, rgba(67, 67, 67, 0.7), rgba(67, 67, 67, 0.7));
+    background: linear-gradient(0deg, rgba(67, 67, 67, 0.4), rgba(67, 67, 67, 0.4));
   }
 
   .office-print__btn {
