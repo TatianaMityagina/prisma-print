@@ -181,13 +181,14 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     max-width: 1720px;
     width: 100%;
   }
 
   .menu__logo {
     display: flex;
+    align-items: center;
   }
 
   .menu__burger {

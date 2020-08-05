@@ -388,7 +388,7 @@ export default {
       margin-bottom: 120px;
       background-size: 237px 237px;
       background: url('~@/assets/img/office/office-office-mobile@1x.svg') top center / 237px 237px  no-repeat;
-      background-position-y: 35px;
+      background-position-y: 40px;
     }
 
     .photos-office__container {

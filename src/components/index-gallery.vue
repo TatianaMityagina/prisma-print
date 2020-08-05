@@ -82,6 +82,8 @@ export default {
     margin: 0 14px 14px 0;
 
     cursor: pointer;
+    object-fit: cover;
+    background-position: center;
 
     &:nth-child(6n) {
       margin-right: 0;

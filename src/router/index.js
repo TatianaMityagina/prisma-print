@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Index from '../views/Index.vue'
-import Video from '../views/Video.vue'
 import Home from '../views/Home.vue'
 import Office from '../views/Office.vue'
 import About from '../views/About.vue'
@@ -21,11 +20,6 @@ export default new VueRouter ({
       path: '/',
       name: 'Index',
       component: Index
-    },
-    {
-      path: '/video',
-      name: 'Video',
-      component: Video
     },
     {
       path: '/home',

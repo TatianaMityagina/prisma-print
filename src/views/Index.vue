@@ -1,6 +1,7 @@
 <template>
   <div class="index">
-    <Intro />
+    <VideoIntro />
+    <!-- <Intro /> -->
     <NewWord />
     <PrintGallery />
     <Advantages />
@@ -13,7 +14,8 @@
 </template>
 
 <script>
-import Intro from '../components/intro'
+import VideoIntro from '../components/video-intro'
+// import Intro from '../components/intro'
 import NewWord from '../components/new-word'
 import PrintGallery from '../components/print-gallery'
 import Advantages from '../components/advantages'
@@ -26,7 +28,8 @@ import Calculator from '../components/calculator'
 export default {
   name: 'Index',
   components: {
-    Intro,
+    VideoIntro,
+    // Intro,
     NewWord,
     PrintGallery,
     Advantages,
