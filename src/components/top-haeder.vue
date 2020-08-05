@@ -18,7 +18,7 @@
       <div class="menu__contacts">
         <div class="menu__contacts-tel">
           <a href="tel:89673000344">8967 300 03 44</a>
-          <router-link to="/video" name="Video" style="text-decoration:none;"><span>отдел печати</span></router-link>
+          <span>отдел печати</span>
         </div>  
         
         <ul class="menu__social-list">
